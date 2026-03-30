@@ -830,8 +830,154 @@
         }
 
         /* Slide 5B: WorkBuddy */
-        .slide-5b {
+        .slide-5b, .slide-5c {
             background: linear-gradient(180deg, #0F172A 0%, #1E293B 100%);
+        }
+
+        .wb-intro {
+            margin-top: 20px;
+        }
+
+        .wb-intro-main {
+            text-align: center;
+            margin-bottom: 28px;
+        }
+
+        .wb-logo {
+            margin-bottom: 20px;
+        }
+
+        .wb-logo-icon {
+            font-size: 48px;
+            margin-bottom: 8px;
+        }
+
+        .wb-logo-text {
+            font-size: 28px;
+            font-weight: 800;
+            color: var(--accent);
+            letter-spacing: 2px;
+        }
+
+        .wb-logo-sub {
+            font-size: 13px;
+            color: var(--text-gray);
+            margin-top: 4px;
+        }
+
+        .wb-intro-desc {
+            font-size: 16px;
+            line-height: 1.8;
+            color: #CBD5E1;
+            max-width: 700px;
+            margin: 0 auto;
+        }
+
+        .wb-vs-traditional {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .wb-vs-left, .wb-vs-right {
+            background: rgba(255, 255, 255, 0.03);
+            border-radius: 16px;
+            padding: 24px;
+        }
+
+        .wb-vs-left {
+            border: 1px solid rgba(255, 255, 255, 0.06);
+        }
+
+        .wb-vs-right {
+            border: 1px solid rgba(249, 115, 22, 0.3);
+            background: rgba(249, 115, 22, 0.05);
+        }
+
+        .wb-vs-left h4, .wb-vs-right h4 {
+            font-size: 15px;
+            margin-bottom: 14px;
+            color: #E2E8F0;
+        }
+
+        .wb-vs-left ul, .wb-vs-right ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        .wb-vs-left li, .wb-vs-right li {
+            font-size: 14px;
+            color: #94A3B8;
+            line-height: 2;
+            padding-left: 20px;
+            position: relative;
+        }
+
+        .wb-vs-left li::before {
+            content: "•";
+            position: absolute;
+            left: 0;
+            color: #64748B;
+        }
+
+        .wb-vs-right li::before {
+            content: "→";
+            position: absolute;
+            left: 0;
+            color: var(--accent);
+            font-weight: 700;
+        }
+
+        /* Slide 5C: WorkBuddy Features */
+        .wb-features-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 18px;
+            margin-top: 24px;
+        }
+
+        .wb-feature-card {
+            background: rgba(255, 255, 255, 0.03);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            border-radius: 16px;
+            padding: 22px;
+            transition: all 0.3s;
+        }
+
+        .wb-feature-card:hover {
+            transform: translateY(-4px);
+            border-color: var(--accent);
+            background: rgba(249, 115, 22, 0.05);
+        }
+
+        .wb-feature-icon {
+            font-size: 28px;
+            margin-bottom: 12px;
+        }
+
+        .wb-feature-card h4 {
+            font-size: 15px;
+            font-weight: 700;
+            color: #F1F5F9;
+            margin-bottom: 8px;
+        }
+
+        .wb-feature-card p {
+            font-size: 13px;
+            color: #94A3B8;
+            line-height: 1.6;
+            margin-bottom: 12px;
+        }
+
+        .wb-feature-example {
+            background: rgba(249, 115, 22, 0.1);
+            border-radius: 8px;
+            padding: 10px 14px;
+            font-size: 12px;
+            color: var(--accent);
+            font-style: italic;
         }
 
         /* Workshop Slides */
@@ -1911,6 +2057,7 @@
         <div class="emotion-dot"></div>
         <div class="emotion-dot"></div>
         <div class="emotion-dot"></div>
+        <div class="emotion-dot"></div>
     </div>
 
     <!-- ==================== SLIDE 1: Opening Hook ==================== -->
@@ -2190,54 +2337,125 @@
             <strong>养龙虾的本质，就是学会用AI工具帮你干活。</strong>学会了，你就有一个24小时不睡觉、不要工资、不会辞职的员工。
         </div>
 
-        <div class="page-num">05 / 14</div>
+        <div class="page-num">05 / 19</div>
     </section>
 
-    <!-- ==================== SLIDE 5B: WorkBuddy ==================== -->
+    <!-- ==================== SLIDE 5B: WorkBuddy 简介 ==================== -->
     <section class="slide slide-5b">
         <div class="timing-badge">⏱️ 工具 22-25分钟 | 情绪：期待</div>
         <div class="suspense-tag">🛠️ 今天的主角</div>
 
         <span class="section-tag">🛠️ 工具介绍</span>
-        <h2 class="slide-title">今天我们用什么工具？</h2>
+        <h2 class="slide-title">WorkBuddy 是什么？</h2>
 
-        <div class="concept-cards">
-            <div class="concept-card">
-                <div class="concept-icon">🤖</div>
-                <h3 class="concept-title">WorkBuddy</h3>
-                <p class="concept-desc">一个连接AI和企业微信/飞书/钉钉的平台。让AI成为你的数字员工，直接帮你干活。</p>
+        <div class="wb-intro">
+            <div class="wb-intro-main">
+                <div class="wb-logo">
+                    <div class="wb-logo-icon">🤖</div>
+                    <div class="wb-logo-text">WorkBuddy</div>
+                    <div class="wb-logo-sub">腾讯 · 全场景职场AI智能体</div>
+                </div>
+                <p class="wb-intro-desc">
+                    一句话说清楚：<strong>WorkBuddy 是你的AI数字员工桌面工作台。</strong><br>
+                    你只需要说需求，它自己规划、自己执行，直接把结果交给你。
+                </p>
             </div>
         </div>
 
-        <div class="demo-scenario">
-            <h4>🔗 WorkBuddy可以连接</h4>
-            <div class="demo-tasks">
-                <div class="demo-task">
-                    <div class="demo-task-icon">💬</div>
-                    <p>企业微信</p>
+        <div class="wb-vs-traditional">
+            <div class="wb-vs-left">
+                <h4>🤖 传统AI（如豆包、Kimi）</h4>
+                <ul>
+                    <li>你问问题，它给答案</li>
+                    <li>给建议，但不帮你做</li>
+                    <li>输出一段文字，完事了</li>
+                </ul>
+            </div>
+            <div class="wb-vs-right">
+                <h4>🚀 WorkBuddy</h4>
+                <ul>
+                    <li>你说需求，它直接干活</li>
+                    <li>自动操作文件、表格、文档</li>
+                    <li>交付可用的<strong>结果</strong>（文件/报表/PPT）</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="speaker-script">
+            平时你们用豆包、Kimi，问它一个问题，它给你一段文字——这叫<strong>"能说"</strong>。<br><br>
+            WorkBuddy不一样，你说"帮我做个招生报表"，它<strong>真的帮你做完，把文件交到你手上</strong>——这叫<strong>"能做"</strong>。
+        </div>
+
+        <div class="interaction-badge">🤔 你平时用AI主要用来做什么？</div>
+        <div class="page-num">06 / 19</div>
+    </section>
+
+    <!-- ==================== SLIDE 5C: WorkBuddy 功能 ==================== -->
+    <section class="slide slide-5c">
+        <div class="timing-badge">⏱️ 工具 25-28分钟 | 情绪：期待</div>
+        <div class="suspense-tag">💪 它能做什么</div>
+
+        <span class="section-tag">🛠️ WorkBuddy 功能</span>
+        <h2 class="slide-title">WorkBuddy 能帮你做什么？</h2>
+
+        <div class="wb-features-grid">
+            <div class="wb-feature-card">
+                <div class="wb-feature-icon">📝</div>
+                <h4>文档生成</h4>
+                <p>工作报告、会议纪要、方案策划<br>一句话自动生成完整文档</p>
+                <div class="wb-feature-example">
+                    "帮我写一份季度工作总结"
                 </div>
-                <div class="demo-task">
-                    <div class="demo-task-icon">📱</div>
-                    <p>私人微信</p>
+            </div>
+            <div class="wb-feature-card">
+                <div class="wb-feature-icon">📊</div>
+                <h4>数据分析</h4>
+                <p>上传表格，自动统计、分析、画图<br>秒出报表+洞察建议</p>
+                <div class="wb-feature-example">
+                    "分析这份招生数据，找出转化率最低的课程"
                 </div>
-                <div class="demo-task">
-                    <div class="demo-task-icon">✉️</div>
-                    <p>飞书</p>
+            </div>
+            <div class="wb-feature-card">
+                <div class="wb-feature-icon">🎨</div>
+                <h4>PPT/海报制作</h4>
+                <p>自动生成演示文稿、宣传海报<br>专业设计，一键产出</p>
+                <div class="wb-feature-example">
+                    "帮我做一份寒假班招生PPT"
                 </div>
-                <div class="demo-task">
-                    <div class="demo-task-icon">💬</div>
-                    <p>钉钉</p>
+            </div>
+            <div class="wb-feature-card">
+                <div class="wb-feature-icon">📁</div>
+                <h4>文件批量处理</h4>
+                <p>批量重命名、整理、格式转换<br>告别重复性手工操作</p>
+                <div class="wb-feature-example">
+                    "把这200个学员照片按班级分类整理"
+                </div>
+            </div>
+            <div class="wb-feature-card">
+                <div class="wb-feature-icon">💬</div>
+                <h4>微信/飞书/钉钉</h4>
+                <p>自动回复客户咨询、发送通知<br>7×24小时在线客服</p>
+                <div class="wb-feature-example">
+                    "帮我自动回复家长关于课程费用的咨询"
+                </div>
+            </div>
+            <div class="wb-feature-card">
+                <div class="wb-feature-icon">🔍</div>
+                <h4>深度调研</h4>
+                <p>竞品分析、行业研究、价格对比<br>自动搜索+整理+输出报告</p>
+                <div class="wb-feature-example">
+                    "帮我调研周边3家同行的课程定价"
                 </div>
             </div>
         </div>
 
         <div class="speaker-script">
-            今天我们就用<strong>WorkBuddy</strong>来演示——怎么用"说话"的方式，让AI帮你完成那些重复性工作。<br><br>
-            你们公司用哪个？飞书、钉钉还是企业微信？今天学的都能用上。
+            看到没有？<strong>不是一两个功能，是全方位的。</strong>以前你要开好几个软件才能干的事，现在一个WorkBuddy全搞定。<br><br>
+            接下来我就用这几个功能，现场给大家演示！
         </div>
 
-        <div class="interaction-badge">🙋 你们公司现在用哪个IM？</div>
-        <div class="page-num">06 / 18</div>
+        <div class="interaction-badge">🙋 哪个功能你最想学？</div>
+        <div class="page-num">07 / 19</div>
     </section>
 
     <!-- ==================== SLIDE 6: Workshop ==================== -->
@@ -2420,7 +2638,7 @@
         </div>
 
         <div class="interaction-badge">💡 相当于雇了一个24小时在线的客服</div>
-        <div class="page-num">08 / 17</div>
+        <div class="page-num">10 / 19</div>
     </section>
 
     <!-- ==================== SLIDE 9: Workshop 场景3 数据分析 ==================== -->
@@ -2881,7 +3099,7 @@
         </div>
 
         <div class="interaction-badge">🎯 课末反馈：每人说一个回去想试的场景</div>
-        <div class="page-num">15 / 17</div>
+        <div class="page-num">17 / 19</div>
     </section>
 
     <!-- ==================== SLIDE 16: CTA ==================== -->
@@ -2923,7 +3141,7 @@
             今天你们选择学习而不是观望，已经赢在了起点。
         </div>
 
-        <div class="page-num">16 / 17</div>
+        <div class="page-num">18 / 19</div>
     </section>
 
     <!-- ==================== SLIDE 17: Final ==================== -->
