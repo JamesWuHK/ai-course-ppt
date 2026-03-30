@@ -1,0 +1,2949 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>小企业AI入门实战课 - 丰富版</title>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@300;400;500;700;900&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --primary: #0F172A;
+            --secondary: #1E293B;
+            --accent: #F97316;
+            --accent-light: #FB923C;
+            --success: #22C55E;
+            --warning: #EAB308;
+            --danger: #EF4444;
+            --text-light: #F8FAFC;
+            --text-gray: #94A3B8;
+            --text-dark: #1E293B;
+        }
+
+        body {
+            font-family: 'Noto Sans SC', -apple-system, BlinkMacSystemFont, sans-serif;
+            background: var(--primary);
+            color: var(--text-light);
+            overflow-x: hidden;
+        }
+
+        /* Slide Base */
+        .slide {
+            width: 100vw;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            padding: 50px 80px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        /* Emotional Curve Bar */
+        .emotion-bar {
+            position: fixed;
+            left: 20px;
+            top: 50%;
+            transform: translateY(-50%);
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+            z-index: 1000;
+            opacity: 0.6;
+        }
+
+        .emotion-dot {
+            width: 8px;
+            height: 8px;
+            border-radius: 50%;
+            background: rgba(255,255,255,0.2);
+        }
+
+        .emotion-dot.active {
+            background: var(--accent);
+            box-shadow: 0 0 10px var(--accent);
+        }
+
+        /* Timing Badge */
+        .timing-badge {
+            position: absolute;
+            top: 20px;
+            left: 80px;
+            background: rgba(249, 115, 22, 0.15);
+            border: 1px solid rgba(249, 115, 22, 0.3);
+            color: var(--accent);
+            padding: 6px 16px;
+            border-radius: 20px;
+            font-size: 12px;
+            font-weight: 500;
+        }
+
+        /* Suspense Tag */
+        .suspense-tag {
+            position: absolute;
+            top: 20px;
+            right: 80px;
+            background: rgba(239, 68, 68, 0.15);
+            border: 1px solid rgba(239, 68, 68, 0.3);
+            color: #F87171;
+            padding: 6px 16px;
+            border-radius: 20px;
+            font-size: 12px;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            animation: pulse-red 2s infinite;
+        }
+
+        @keyframes pulse-red {
+            0%, 100% { opacity: 0.7; }
+            50% { opacity: 1; }
+        }
+
+        /* Speaker Script */
+        .speaker-script {
+            background: rgba(34, 197, 94, 0.08);
+            border: 1px solid rgba(34, 197, 94, 0.2);
+            border-left: 4px solid var(--success);
+            padding: 20px 28px;
+            border-radius: 0 16px 16px 0;
+            max-width: 900px;
+            margin: 30px auto;
+            font-size: 15px;
+            line-height: 1.8;
+            color: #86EFAC;
+        }
+
+        .speaker-script::before {
+            content: '🎤 讲师话术：';
+            font-weight: 700;
+            color: var(--success);
+            display: block;
+            margin-bottom: 8px;
+        }
+
+        /* Interaction Badge */
+        .interaction-badge {
+            position: absolute;
+            bottom: 80px;
+            right: 80px;
+            background: rgba(234, 179, 8, 0.15);
+            border: 1px solid rgba(234, 179, 8, 0.3);
+            color: var(--warning);
+            padding: 10px 20px;
+            border-radius: 12px;
+            font-size: 13px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        /* Slide 1: Opening Hook */
+        .slide-1 {
+            background: linear-gradient(135deg, #0F172A 0%, #1E293B 50%, #0F172A 100%);
+        }
+
+        .slide-1::before {
+            content: '';
+            position: absolute;
+            top: -30%;
+            right: -10%;
+            width: 900px;
+            height: 900px;
+            background: radial-gradient(circle, rgba(249, 115, 22, 0.12) 0%, transparent 60%);
+            border-radius: 50%;
+        }
+
+        .slide-1::after {
+            content: '';
+            position: absolute;
+            bottom: -20%;
+            left: -15%;
+            width: 700px;
+            height: 700px;
+            background: radial-gradient(circle, rgba(45, 58, 140, 0.15) 0%, transparent 60%);
+            border-radius: 50%;
+        }
+
+        .big-question {
+            font-size: 120px;
+            font-weight: 900;
+            color: var(--accent);
+            opacity: 0.15;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            white-space: nowrap;
+        }
+
+        .hook-badge {
+            background: linear-gradient(135deg, var(--accent) 0%, var(--accent-light) 100%);
+            padding: 14px 32px;
+            border-radius: 50px;
+            font-size: 14px;
+            font-weight: 600;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            margin-bottom: 40px;
+            animation: glow 2s infinite;
+        }
+
+        @keyframes glow {
+            0%, 100% { box-shadow: 0 0 20px rgba(249, 115, 22, 0.4); }
+            50% { box-shadow: 0 0 40px rgba(249, 115, 22, 0.7); }
+        }
+
+        .main-title {
+            font-size: 64px;
+            font-weight: 900;
+            text-align: center;
+            line-height: 1.2;
+            margin-bottom: 20px;
+            background: linear-gradient(135deg, #FFFFFF 0%, #CBD5E1 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .pain-vector {
+            font-size: 28px;
+            color: var(--accent);
+            font-weight: 500;
+            margin-bottom: 50px;
+        }
+
+        .pain-points-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 24px;
+            max-width: 1000px;
+            margin-top: 30px;
+        }
+
+        .pain-card {
+            background: rgba(255, 255, 255, 0.03);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            padding: 28px;
+            border-radius: 20px;
+            text-align: center;
+            transition: all 0.3s;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .pain-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 3px;
+            background: linear-gradient(90deg, var(--accent), var(--accent-light));
+            transform: scaleX(0);
+            transition: transform 0.3s;
+        }
+
+        .pain-card:hover::before {
+            transform: scaleX(1);
+        }
+
+        .pain-card:hover {
+            transform: translateY(-8px);
+            border-color: rgba(249, 115, 22, 0.3);
+        }
+
+        .pain-emoji {
+            font-size: 48px;
+            margin-bottom: 16px;
+        }
+
+        .pain-text {
+            font-size: 16px;
+            color: var(--text-gray);
+            line-height: 1.6;
+        }
+
+        .promise-box {
+            background: rgba(34, 197, 94, 0.1);
+            border: 2px solid rgba(34, 197, 94, 0.3);
+            padding: 24px 40px;
+            border-radius: 20px;
+            margin-top: 50px;
+            max-width: 800px;
+        }
+
+        .promise-box p {
+            font-size: 22px;
+            font-weight: 600;
+            color: #86EFAC;
+        }
+
+        .promise-highlight {
+            color: var(--accent);
+            font-weight: 700;
+        }
+
+        /* Slide 2: Icebreaker */
+        .slide-2 {
+            background: linear-gradient(180deg, #1E293B 0%, #0F172A 100%);
+        }
+
+        .poll-container {
+            max-width: 900px;
+            width: 100%;
+        }
+
+        .poll-title {
+            font-size: 42px;
+            font-weight: 700;
+            margin-bottom: 40px;
+            text-align: center;
+        }
+
+        .poll-question {
+            background: rgba(255, 255, 255, 0.03);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 24px;
+            padding: 32px;
+            margin-bottom: 24px;
+        }
+
+        .poll-question h3 {
+            font-size: 20px;
+            margin-bottom: 24px;
+            color: var(--accent);
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .poll-options {
+            display: flex;
+            gap: 16px;
+            flex-wrap: wrap;
+        }
+
+        .poll-option {
+            background: rgba(249, 115, 22, 0.1);
+            border: 1px solid rgba(249, 115, 22, 0.3);
+            padding: 16px 28px;
+            border-radius: 12px;
+            font-size: 16px;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+
+        .poll-option:hover {
+            background: rgba(249, 115, 22, 0.2);
+            transform: scale(1.05);
+        }
+
+        .poll-instruction {
+            text-align: center;
+            color: var(--text-gray);
+            font-size: 16px;
+            margin-top: 30px;
+        }
+
+        /* Slide 3: AI Basics */
+        .slide-3 {
+            background: linear-gradient(135deg, #0F172A 0%, #1E3A5F 100%);
+        }
+
+        .section-tag {
+            background: rgba(249, 115, 22, 0.15);
+            border: 1px solid rgba(249, 115, 22, 0.3);
+            color: var(--accent);
+            padding: 10px 24px;
+            border-radius: 30px;
+            font-size: 13px;
+            font-weight: 600;
+            letter-spacing: 1px;
+            margin-bottom: 30px;
+        }
+
+        .slide-title {
+            font-size: 48px;
+            font-weight: 800;
+            margin-bottom: 50px;
+            text-align: center;
+        }
+
+        .concept-cards {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 32px;
+            max-width: 1200px;
+        }
+
+        .concept-card {
+            background: rgba(255, 255, 255, 0.03);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            border-radius: 24px;
+            padding: 36px;
+            text-align: center;
+            transition: all 0.4s;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .concept-card::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: linear-gradient(90deg, var(--accent), var(--accent-light));
+            transform: scaleX(0);
+            transition: transform 0.4s;
+        }
+
+        .concept-card:hover::after {
+            transform: scaleX(1);
+        }
+
+        .concept-card:hover {
+            transform: translateY(-12px);
+            box-shadow: 0 30px 60px rgba(0, 0, 0, 0.3);
+        }
+
+        .concept-icon {
+            width: 90px;
+            height: 90px;
+            background: linear-gradient(135deg, var(--accent) 0%, var(--accent-light) 100%);
+            border-radius: 24px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 28px;
+            font-size: 42px;
+            box-shadow: 0 10px 30px rgba(249, 115, 22, 0.3);
+        }
+
+        .concept-title {
+            font-size: 24px;
+            font-weight: 700;
+            margin-bottom: 14px;
+        }
+
+        .concept-desc {
+            font-size: 15px;
+            color: var(--text-gray);
+            line-height: 1.7;
+        }
+
+        .ai-products {
+            display: grid;
+            grid-template-columns: repeat(5, 1fr);
+            gap: 16px;
+            max-width: 1100px;
+            margin-top: 50px;
+        }
+
+        .ai-product {
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            padding: 20px 16px;
+            border-radius: 16px;
+            text-align: center;
+            transition: all 0.3s;
+        }
+
+        .ai-product:hover {
+            background: rgba(249, 115, 22, 0.1);
+            border-color: var(--accent);
+        }
+
+        .ai-product-name {
+            font-size: 15px;
+            font-weight: 600;
+            margin-bottom: 6px;
+        }
+
+        .ai-product-desc {
+            font-size: 12px;
+            color: var(--text-gray);
+        }
+
+        /* Slide 4: AI vs Agent */
+        .slide-4 {
+            background: linear-gradient(135deg, #1E293B 0%, #0F172A 100%);
+        }
+
+        .comparison-wrapper {
+            position: relative;
+            max-width: 1200px;
+        }
+
+        .comparison-grid {
+            display: grid;
+            grid-template-columns: 1fr auto 1fr;
+            gap: 40px;
+            align-items: stretch;
+        }
+
+        .comparison-col {
+            background: rgba(255, 255, 255, 0.02);
+            border-radius: 28px;
+            padding: 40px;
+            position: relative;
+        }
+
+        .comparison-col.ai-col {
+            border: 2px solid rgba(99, 102, 241, 0.3);
+        }
+
+        .comparison-col.agent-col {
+            border: 2px solid rgba(249, 115, 22, 0.4);
+            background: rgba(249, 115, 22, 0.03);
+        }
+
+        .col-header {
+            display: flex;
+            align-items: center;
+            gap: 16px;
+            margin-bottom: 30px;
+        }
+
+        .col-icon {
+            width: 60px;
+            height: 60px;
+            border-radius: 16px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 28px;
+        }
+
+        .ai-col .col-icon {
+            background: linear-gradient(135deg, #6366F1, #8B5CF6);
+        }
+
+        .agent-col .col-icon {
+            background: linear-gradient(135deg, var(--accent), var(--accent-light));
+        }
+
+        .col-title {
+            font-size: 28px;
+            font-weight: 700;
+        }
+
+        .ai-col .col-title {
+            color: #818CF8;
+        }
+
+        .agent-col .col-title {
+            color: var(--accent);
+        }
+
+        .col-subtitle {
+            font-size: 14px;
+            color: var(--text-gray);
+            margin-top: 4px;
+        }
+
+        .feature-list {
+            list-style: none;
+        }
+
+        .feature-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 14px;
+            padding: 16px 0;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+            font-size: 16px;
+            line-height: 1.5;
+        }
+
+        .feature-item:last-child {
+            border-bottom: none;
+        }
+
+        .feature-check {
+            width: 28px;
+            height: 28px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+            margin-top: 2px;
+        }
+
+        .ai-col .feature-check {
+            background: rgba(99, 102, 241, 0.2);
+            color: #818CF8;
+        }
+
+        .agent-col .feature-check {
+            background: rgba(249, 115, 22, 0.2);
+            color: var(--accent);
+        }
+
+        .vs-center {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 24px;
+            font-weight: 800;
+            color: var(--text-gray);
+        }
+
+        .example-box {
+            background: rgba(0, 0, 0, 0.3);
+            border-radius: 16px;
+            padding: 24px;
+            margin-top: 24px;
+        }
+
+        .example-box h4 {
+            font-size: 13px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            color: var(--text-gray);
+            margin-bottom: 12px;
+        }
+
+        .example-box p {
+            font-size: 16px;
+            line-height: 1.6;
+        }
+
+        /* Slide 5: 养龙虾 */
+        .slide-5 {
+            background: linear-gradient(180deg, #0F172A 0%, #1E293B 100%);
+        }
+
+        .lobster-container {
+            max-width: 1000px;
+            width: 100%;
+        }
+
+        .misunderstanding {
+            background: rgba(239, 68, 68, 0.08);
+            border: 1px solid rgba(239, 68, 68, 0.2);
+            border-radius: 24px;
+            padding: 32px;
+            margin-bottom: 30px;
+        }
+
+        .misunderstanding h4 {
+            color: #F87171;
+            font-size: 18px;
+            margin-bottom: 20px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .wrong-items {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 12px;
+        }
+
+        .wrong-item {
+            background: rgba(239, 68, 68, 0.15);
+            padding: 12px 24px;
+            border-radius: 12px;
+            font-size: 15px;
+            color: #FCA5A5;
+        }
+
+        .correct-understanding {
+            background: rgba(34, 197, 94, 0.08);
+            border: 2px solid rgba(34, 197, 94, 0.3);
+            border-radius: 24px;
+            padding: 40px;
+        }
+
+        .correct-understanding h4 {
+            color: #22C55E;
+            font-size: 22px;
+            margin-bottom: 24px;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .correct-main {
+            font-size: 26px;
+            font-weight: 700;
+            color: #86EFAC;
+            margin-bottom: 24px;
+            line-height: 1.5;
+        }
+
+        .correct-main span {
+            color: var(--accent);
+        }
+
+        .correct-desc {
+            font-size: 16px;
+            color: #94A3B8;
+            line-height: 1.8;
+        }
+
+        .lobster-benefit {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+            margin-top: 30px;
+        }
+
+        .benefit-item {
+            background: rgba(249, 115, 22, 0.1);
+            border-radius: 16px;
+            padding: 24px;
+            text-align: center;
+        }
+
+        .benefit-icon {
+            font-size: 36px;
+            margin-bottom: 12px;
+        }
+
+        .benefit-text {
+            font-size: 15px;
+            color: #FED7AA;
+        }
+
+        /* Slide 6: Workshop Intro */
+        .slide-6 {
+            background: linear-gradient(135deg, #1E293B 0%, #312E81 50%, #1E293B 100%);
+        }
+
+        .workshop-title {
+            font-size: 56px;
+            font-weight: 900;
+            margin-bottom: 20px;
+            background: linear-gradient(135deg, #FFFFFF 0%, #CBD5E1 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .workshop-subtitle {
+            font-size: 24px;
+            color: var(--text-gray);
+            margin-bottom: 60px;
+        }
+
+        .activity-cards {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 24px;
+            max-width: 1200px;
+        }
+
+        .activity-card {
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 24px;
+            padding: 32px 24px;
+            text-align: center;
+            transition: all 0.4s;
+            position: relative;
+        }
+
+        .activity-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 60px;
+            height: 4px;
+            background: var(--accent);
+            border-radius: 0 0 4px 4px;
+        }
+
+        .activity-card:hover {
+            transform: translateY(-12px);
+            background: rgba(249, 115, 22, 0.1);
+            border-color: var(--accent);
+        }
+
+        .activity-number {
+            width: 56px;
+            height: 56px;
+            background: linear-gradient(135deg, var(--accent), var(--accent-light));
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 24px;
+            font-weight: 800;
+            margin: 0 auto 20px;
+        }
+
+        .activity-title {
+            font-size: 20px;
+            font-weight: 700;
+            margin-bottom: 10px;
+        }
+
+        .activity-desc {
+            font-size: 14px;
+            color: var(--text-gray);
+            line-height: 1.6;
+        }
+
+        .demo-scenario {
+            background: rgba(0, 0, 0, 0.3);
+            border-radius: 20px;
+            padding: 28px 36px;
+            margin-top: 50px;
+            max-width: 900px;
+        }
+
+        .demo-scenario h4 {
+            color: var(--accent);
+            font-size: 16px;
+            margin-bottom: 16px;
+        }
+
+        .demo-tasks {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 16px;
+        }
+
+        .demo-task {
+            background: rgba(255, 255, 255, 0.05);
+            padding: 16px;
+            border-radius: 12px;
+            font-size: 14px;
+            text-align: center;
+        }
+
+        .demo-task-icon {
+            font-size: 24px;
+            margin-bottom: 8px;
+        }
+
+        /* Workshop Slides */
+        .slide-workshop {
+            background: linear-gradient(180deg, #0F172A 0%, #1E293B 100%);
+        }
+
+        .workshop-demo {
+            max-width: 1100px;
+            width: 100%;
+            margin-top: 30px;
+        }
+
+        .workshop-step {
+            text-align: center;
+            margin-bottom: 24px;
+        }
+
+        .step-badge {
+            display: inline-block;
+            background: rgba(249, 115, 22, 0.15);
+            border: 1px solid rgba(249, 115, 22, 0.3);
+            color: var(--accent);
+            padding: 8px 20px;
+            border-radius: 20px;
+            font-size: 14px;
+            font-weight: 600;
+            margin-bottom: 16px;
+        }
+
+        .user-input {
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 16px;
+            padding: 20px 28px;
+            font-size: 16px;
+            color: #FED7AA;
+            line-height: 1.7;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .workshop-arrow {
+            text-align: center;
+            color: var(--text-gray);
+            font-size: 14px;
+            margin: 20px 0;
+        }
+
+        /* 朋友圈文案场景 */
+        .ai-output {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+        }
+
+        .output-card {
+            background: rgba(255, 255, 255, 0.03);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            border-radius: 16px;
+            padding: 20px;
+            transition: all 0.3s;
+        }
+
+        .output-card:hover {
+            transform: translateY(-4px);
+            border-color: var(--accent);
+        }
+
+        .output-label {
+            font-size: 13px;
+            color: var(--accent);
+            font-weight: 600;
+            margin-bottom: 12px;
+            text-align: center;
+        }
+
+        .output-content {
+            font-size: 14px;
+            line-height: 1.7;
+            color: #CBD5E1;
+        }
+
+        /* 微信客服场景 */
+        .chat-demo {
+            max-width: 700px;
+            margin: 0 auto;
+        }
+
+        .chat-left, .chat-right {
+            display: flex;
+            gap: 12px;
+            margin-bottom: 16px;
+            align-items: flex-start;
+        }
+
+        .chat-right {
+            flex-direction: row-reverse;
+        }
+
+        .chat-avatar {
+            width: 40px;
+            height: 40px;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 20px;
+            flex-shrink: 0;
+        }
+
+        .chat-bubble {
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 16px;
+            padding: 14px 18px;
+            max-width: 480px;
+            font-size: 14px;
+            line-height: 1.6;
+        }
+
+        .chat-bubble.customer {
+            border-left: 3px solid #6366F1;
+        }
+
+        .chat-bubble.ai {
+            background: rgba(249, 115, 22, 0.1);
+            border-right: 3px solid var(--accent);
+        }
+
+        .chat-time {
+            font-size: 11px;
+            color: var(--text-gray);
+            margin-bottom: 6px;
+        }
+
+        .ai-processing {
+            text-align: center;
+            padding: 16px;
+            color: var(--text-gray);
+            font-size: 14px;
+        }
+
+        .process-icon {
+            font-size: 20px;
+            margin-bottom: 8px;
+            animation: pulse 1s infinite;
+        }
+
+        @keyframes pulse {
+            0%, 100% { opacity: 0.5; }
+            50% { opacity: 1; }
+        }
+
+        /* 数据分析场景 */
+        .data-output {
+            background: rgba(0, 0, 0, 0.3);
+            border-radius: 20px;
+            padding: 28px;
+        }
+
+        .data-stats {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+            margin-bottom: 24px;
+        }
+
+        .stat-card {
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 16px;
+            padding: 24px;
+            text-align: center;
+        }
+
+        .stat-card.highlight {
+            background: rgba(249, 115, 22, 0.15);
+            border: 1px solid rgba(249, 115, 22, 0.3);
+        }
+
+        .stat-number {
+            font-size: 42px;
+            font-weight: 800;
+            color: var(--accent);
+            margin-bottom: 8px;
+        }
+
+        .stat-label {
+            font-size: 14px;
+            color: var(--text-gray);
+        }
+
+        .data-chart {
+            margin-bottom: 20px;
+        }
+
+        .chart-title {
+            font-size: 16px;
+            font-weight: 600;
+            margin-bottom: 16px;
+            color: #CBD5E1;
+        }
+
+        .chart-bar {
+            display: flex;
+            align-items: center;
+            gap: 16px;
+            margin-bottom: 12px;
+        }
+
+        .bar-label {
+            width: 80px;
+            font-size: 14px;
+            color: var(--text-gray);
+        }
+
+        .bar-track {
+            flex: 1;
+            height: 28px;
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 6px;
+            overflow: hidden;
+        }
+
+        .bar-fill {
+            height: 100%;
+            background: linear-gradient(90deg, var(--accent), var(--accent-light));
+            border-radius: 6px;
+            display: flex;
+            align-items: center;
+            justify-content: flex-end;
+            padding-right: 12px;
+            font-size: 13px;
+            font-weight: 600;
+            color: white;
+            min-width: 50px;
+        }
+
+        .data-insight {
+            background: rgba(34, 197, 94, 0.1);
+            border: 1px solid rgba(34, 197, 94, 0.2);
+            border-radius: 12px;
+            padding: 16px 20px;
+            display: flex;
+            gap: 12px;
+            align-items: flex-start;
+        }
+
+        .insight-icon {
+            font-size: 20px;
+        }
+
+        .insight-text {
+            font-size: 14px;
+            line-height: 1.6;
+            color: #86EFAC;
+        }
+
+        /* Slide 7: Case Studies */
+        .slide-7 {
+            background: linear-gradient(180deg, #0F172A 0%, #1E293B 100%);
+        }
+
+        .cases-header {
+            text-align: center;
+            margin-bottom: 50px;
+        }
+
+        .cases-header h2 {
+            font-size: 44px;
+            font-weight: 800;
+            margin-bottom: 16px;
+        }
+
+        .cases-header p {
+            font-size: 18px;
+            color: var(--text-gray);
+        }
+
+        .case-studies {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 28px;
+            max-width: 1300px;
+        }
+
+        .case-study {
+            background: rgba(255, 255, 255, 0.03);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            border-radius: 24px;
+            overflow: hidden;
+            transition: all 0.4s;
+        }
+
+        .case-study:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 30px 60px rgba(0, 0, 0, 0.3);
+        }
+
+        .case-header {
+            padding: 24px 28px;
+            display: flex;
+            align-items: center;
+            gap: 16px;
+        }
+
+        .case-study:nth-child(1) .case-header {
+            background: linear-gradient(135deg, #6366F1, #8B5CF6);
+        }
+
+        .case-study:nth-child(2) .case-header {
+            background: linear-gradient(135deg, var(--accent), var(--accent-light));
+        }
+
+        .case-study:nth-child(3) .case-header {
+            background: linear-gradient(135deg, #22C55E, #10B981);
+        }
+
+        .case-icon {
+            width: 52px;
+            height: 52px;
+            background: rgba(255, 255, 255, 0.2);
+            border-radius: 14px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 26px;
+        }
+
+        .case-title {
+            font-size: 20px;
+            font-weight: 700;
+        }
+
+        .case-body {
+            padding: 28px;
+        }
+
+        .case-section {
+            margin-bottom: 20px;
+        }
+
+        .case-section:last-child {
+            margin-bottom: 0;
+        }
+
+        .case-label {
+            font-size: 11px;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            color: var(--text-gray);
+            margin-bottom: 8px;
+        }
+
+        .case-content {
+            font-size: 15px;
+            line-height: 1.6;
+            color: #CBD5E1;
+        }
+
+        .case-result {
+            background: rgba(34, 197, 94, 0.1);
+            border-radius: 12px;
+            padding: 16px 20px;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .result-icon {
+            width: 36px;
+            height: 36px;
+            background: var(--success);
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 18px;
+        }
+
+        .result-text {
+            font-size: 15px;
+            color: #86EFAC;
+            font-weight: 600;
+        }
+
+        /* Slide 8: More Cases */
+        .slide-8 {
+            background: linear-gradient(135deg, #1E293B 0%, #0F172A 100%);
+        }
+
+        .more-cases-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 28px;
+            max-width: 1200px;
+        }
+
+        .more-case {
+            background: rgba(255, 255, 255, 0.03);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            border-radius: 20px;
+            padding: 28px;
+            display: flex;
+            gap: 20px;
+            transition: all 0.3s;
+        }
+
+        .more-case:hover {
+            background: rgba(255, 255, 255, 0.06);
+            border-color: rgba(249, 115, 22, 0.3);
+        }
+
+        .more-case-icon {
+            width: 64px;
+            height: 64px;
+            background: linear-gradient(135deg, var(--accent), var(--accent-light));
+            border-radius: 16px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 30px;
+            flex-shrink: 0;
+        }
+
+        .more-case-content h4 {
+            font-size: 18px;
+            font-weight: 700;
+            margin-bottom: 10px;
+        }
+
+        .more-case-content p {
+            font-size: 14px;
+            color: var(--text-gray);
+            line-height: 1.6;
+        }
+
+        .more-case-result {
+            margin-top: 12px;
+            font-size: 14px;
+            color: #86EFAC;
+            font-weight: 500;
+        }
+
+        /* Slide 9: RTGF */
+        .slide-9 {
+            background: linear-gradient(180deg, #0F172A 0%, #1E3A5F 100%);
+        }
+
+        .rtgf-formula {
+            max-width: 1200px;
+            width: 100%;
+        }
+
+        .rtgf-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 24px;
+            margin-bottom: 50px;
+        }
+
+        .rtgf-card {
+            background: rgba(255, 255, 255, 0.03);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            border-radius: 24px;
+            padding: 32px 24px;
+            text-align: center;
+            position: relative;
+            transition: all 0.4s;
+        }
+
+        .rtgf-card:hover {
+            transform: translateY(-12px);
+            border-color: var(--accent);
+            box-shadow: 0 20px 50px rgba(249, 115, 22, 0.15);
+        }
+
+        .rtgf-letter {
+            width: 70px;
+            height: 70px;
+            background: linear-gradient(135deg, var(--accent), var(--accent-light));
+            border-radius: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 36px;
+            font-weight: 900;
+            margin: 0 auto 24px;
+            box-shadow: 0 10px 30px rgba(249, 115, 22, 0.3);
+        }
+
+        .rtgf-name {
+            font-size: 22px;
+            font-weight: 700;
+            color: var(--accent);
+            margin-bottom: 6px;
+        }
+
+        .rtgf-meaning {
+            font-size: 14px;
+            color: var(--text-gray);
+            margin-bottom: 16px;
+        }
+
+        .rtgf-detail {
+            font-size: 14px;
+            color: #CBD5E1;
+            line-height: 1.5;
+        }
+
+        .rtgf-example {
+            margin-top: 16px;
+            padding: 14px;
+            background: rgba(249, 115, 22, 0.1);
+            border-radius: 12px;
+            font-size: 13px;
+            color: #FED7AA;
+            text-align: left;
+        }
+
+        .rtgf-example::before {
+            content: '💡 示例：';
+            font-weight: 700;
+            display: block;
+            margin-bottom: 6px;
+            color: var(--accent);
+        }
+
+        /* Slide 10: RTGF Example */
+        .slide-10 {
+            background: linear-gradient(135deg, #1E293B 0%, #312E81 100%);
+        }
+
+        .comparison-example {
+            max-width: 1100px;
+            width: 100%;
+        }
+
+        .bad-good-wrapper {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
+        }
+
+        .bad-example {
+            background: rgba(239, 68, 68, 0.08);
+            border: 2px solid rgba(239, 68, 68, 0.3);
+            border-radius: 24px;
+            padding: 36px;
+        }
+
+        .bad-example h4 {
+            color: #F87171;
+            font-size: 18px;
+            margin-bottom: 20px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .bad-prompt {
+            background: rgba(0, 0, 0, 0.3);
+            padding: 20px 24px;
+            border-radius: 12px;
+            font-size: 16px;
+            color: #FCA5A5;
+            font-style: italic;
+            margin-bottom: 20px;
+        }
+
+        .bad-result {
+            font-size: 14px;
+            color: var(--text-gray);
+            line-height: 1.6;
+        }
+
+        .good-example {
+            background: rgba(34, 197, 94, 0.08);
+            border: 2px solid rgba(34, 197, 94, 0.3);
+            border-radius: 24px;
+            padding: 36px;
+        }
+
+        .good-example h4 {
+            color: #22C55E;
+            font-size: 18px;
+            margin-bottom: 20px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .good-prompt {
+            background: rgba(0, 0, 0, 0.3);
+            padding: 20px 24px;
+            border-radius: 12px;
+            font-size: 14px;
+            color: #86EFAC;
+            line-height: 1.8;
+            margin-bottom: 20px;
+        }
+
+        .good-result {
+            font-size: 14px;
+            color: #86EFAC;
+            line-height: 1.6;
+        }
+
+        /* Slide 11: Skill Ecosystem */
+        .slide-11 {
+            background: linear-gradient(180deg, #0F172A 0%, #1E293B 100%);
+        }
+
+        .skill-intro {
+            text-align: center;
+            max-width: 800px;
+            margin-bottom: 50px;
+        }
+
+        .skill-intro h2 {
+            font-size: 44px;
+            font-weight: 800;
+            margin-bottom: 20px;
+        }
+
+        .skill-intro p {
+            font-size: 18px;
+            color: var(--text-gray);
+            line-height: 1.7;
+        }
+
+        .skill-analogy {
+            background: rgba(249, 115, 22, 0.1);
+            border: 1px solid rgba(249, 115, 22, 0.2);
+            border-radius: 20px;
+            padding: 24px 36px;
+            max-width: 700px;
+            margin: 0 auto 50px;
+            text-align: center;
+        }
+
+        .analogy-row {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 30px;
+            font-size: 20px;
+        }
+
+        .analogy-item {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .analogy-arrow {
+            font-size: 28px;
+            color: var(--accent);
+        }
+
+        .skill-categories {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 20px;
+            max-width: 1200px;
+        }
+
+        .skill-cat {
+            background: rgba(255, 255, 255, 0.03);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            border-radius: 20px;
+            padding: 28px;
+            text-align: center;
+            transition: all 0.3s;
+        }
+
+        .skill-cat:hover {
+            transform: translateY(-8px);
+            border-color: var(--accent);
+        }
+
+        .skill-cat-icon {
+            font-size: 40px;
+            margin-bottom: 16px;
+        }
+
+        .skill-cat-title {
+            font-size: 18px;
+            font-weight: 700;
+            margin-bottom: 8px;
+        }
+
+        .skill-cat-count {
+            font-size: 13px;
+            color: var(--accent);
+        }
+
+        .skill-cat-examples {
+            font-size: 12px;
+            color: var(--text-gray);
+            margin-top: 10px;
+        }
+
+        /* Slide 12: Live Demo */
+        .slide-12 {
+            background: linear-gradient(135deg, #1E293B 0%, #0F172A 100%);
+        }
+
+        .demo-container {
+            max-width: 1100px;
+            width: 100%;
+        }
+
+        .demo-header {
+            text-align: center;
+            margin-bottom: 50px;
+        }
+
+        .demo-header h2 {
+            font-size: 44px;
+            font-weight: 800;
+            margin-bottom: 16px;
+        }
+
+        .demo-steps {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 24px;
+        }
+
+        .demo-step {
+            background: rgba(255, 255, 255, 0.03);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            border-radius: 24px;
+            padding: 32px 24px;
+            text-align: center;
+            position: relative;
+        }
+
+        .demo-step::after {
+            content: '→';
+            position: absolute;
+            right: -24px;
+            top: 50%;
+            transform: translateY(-50%);
+            font-size: 24px;
+            color: var(--accent);
+        }
+
+        .demo-step:last-child::after {
+            display: none;
+        }
+
+        .step-number {
+            width: 48px;
+            height: 48px;
+            background: linear-gradient(135deg, var(--accent), var(--accent-light));
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 20px;
+            font-weight: 800;
+            margin: 0 auto 20px;
+        }
+
+        .step-task {
+            font-size: 16px;
+            font-weight: 600;
+            margin-bottom: 10px;
+            color: #FED7AA;
+        }
+
+        .step-result {
+            font-size: 14px;
+            color: var(--text-gray);
+            line-height: 1.5;
+        }
+
+        .demo-output {
+            background: rgba(0, 0, 0, 0.4);
+            border-radius: 20px;
+            padding: 32px;
+            margin-top: 40px;
+        }
+
+        .demo-output h4 {
+            color: var(--accent);
+            font-size: 16px;
+            margin-bottom: 20px;
+        }
+
+        .output-items {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 16px;
+        }
+
+        .output-item {
+            background: rgba(34, 197, 94, 0.1);
+            border-radius: 12px;
+            padding: 16px 20px;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            font-size: 14px;
+            color: #86EFAC;
+        }
+
+        /* Slide 13: Summary */
+        .slide-13 {
+            background: linear-gradient(135deg, #1E293B 0%, #312E81 100%);
+        }
+
+        .summary-container {
+            max-width: 1000px;
+            text-align: center;
+        }
+
+        .summary-quote {
+            font-size: 38px;
+            font-weight: 700;
+            line-height: 1.4;
+            margin-bottom: 60px;
+            background: linear-gradient(135deg, #FFFFFF 0%, #CBD5E1 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .takeaways-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 32px;
+            margin-bottom: 50px;
+        }
+
+        .takeaway {
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 24px;
+            padding: 36px 28px;
+            text-align: center;
+            transition: all 0.4s;
+        }
+
+        .takeaway:hover {
+            transform: translateY(-10px);
+            background: rgba(249, 115, 22, 0.1);
+        }
+
+        .takeaway-number {
+            width: 60px;
+            height: 60px;
+            background: linear-gradient(135deg, var(--accent), var(--accent-light));
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 26px;
+            font-weight: 900;
+            margin: 0 auto 24px;
+        }
+
+        .takeaway-title {
+            font-size: 22px;
+            font-weight: 700;
+            margin-bottom: 10px;
+        }
+
+        .takeaway-desc {
+            font-size: 14px;
+            color: var(--text-gray);
+        }
+
+        .action-box {
+            background: linear-gradient(135deg, var(--accent), var(--accent-light));
+            border-radius: 20px;
+            padding: 28px 48px;
+            display: inline-block;
+        }
+
+        .action-box p {
+            font-size: 22px;
+            font-weight: 700;
+        }
+
+        /* Slide 14: CTA */
+        .slide-14 {
+            background: linear-gradient(135deg, #0F172A 0%, #1E293B 50%, #0F172A 100%);
+        }
+
+        .cta-container {
+            text-align: center;
+            max-width: 900px;
+        }
+
+        .cta-emoji {
+            font-size: 100px;
+            margin-bottom: 30px;
+        }
+
+        .cta-title {
+            font-size: 60px;
+            font-weight: 900;
+            margin-bottom: 20px;
+        }
+
+        .cta-items {
+            display: flex;
+            flex-direction: column;
+            gap: 16px;
+            margin: 40px 0;
+        }
+
+        .cta-item {
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            padding: 22px 36px;
+            border-radius: 16px;
+            font-size: 18px;
+            display: flex;
+            align-items: center;
+            gap: 16px;
+            text-align: left;
+            transition: all 0.3s;
+        }
+
+        .cta-item:hover {
+            background: rgba(249, 115, 22, 0.1);
+            border-color: var(--accent);
+        }
+
+        .cta-item-icon {
+            width: 44px;
+            height: 44px;
+            background: linear-gradient(135deg, var(--accent), var(--accent-light));
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 20px;
+            flex-shrink: 0;
+        }
+
+        .cta-footer {
+            margin-top: 50px;
+            padding: 32px 60px;
+            background: linear-gradient(135deg, var(--accent), var(--accent-light));
+            border-radius: 24px;
+            display: inline-block;
+        }
+
+        .cta-footer p {
+            font-size: 26px;
+            font-weight: 800;
+        }
+
+        /* Page Number */
+        .page-num {
+            position: absolute;
+            bottom: 30px;
+            right: 40px;
+            font-size: 14px;
+            color: #475569;
+        }
+
+        /* Navigation */
+        .nav-dots {
+            position: fixed;
+            right: 30px;
+            top: 50%;
+            transform: translateY(-50%);
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            z-index: 1000;
+        }
+
+        .nav-dot {
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.2);
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+
+        .nav-dot:hover, .nav-dot.active {
+            background: var(--accent);
+            transform: scale(1.4);
+        }
+
+        /* Scroll hint */
+        .scroll-hint {
+            position: absolute;
+            bottom: 40px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 8px;
+            color: #64748B;
+            font-size: 12px;
+        }
+
+        .scroll-arrow {
+            width: 20px;
+            height: 20px;
+            border-right: 2px solid #64748B;
+            border-bottom: 2px solid #64748B;
+            transform: rotate(45deg);
+            animation: bounce 1.5s infinite;
+        }
+
+        @keyframes bounce {
+            0%, 100% { transform: rotate(45deg) translateY(0); opacity: 0.3; }
+            50% { transform: rotate(45deg) translateY(5px); opacity: 1; }
+        }
+
+        /* Responsive */
+        @media (max-width: 1200px) {
+            .concept-cards, .cases-grid, .skill-categories { grid-template-columns: repeat(2, 1fr); }
+            .rtgf-grid, .demo-steps { grid-template-columns: repeat(2, 1fr); }
+        }
+
+        @media (max-width: 768px) {
+            .main-title { font-size: 42px; }
+            .slide-title { font-size: 36px; }
+            .pain-points-grid, .bad-good-wrapper { grid-template-columns: 1fr; }
+            .emotion-bar, .suspense-tag, .interaction-badge { display: none; }
+        }
+
+        @media print {
+            .slide { page-break-after: always; min-height: 100vh; }
+            .nav-dots, .emotion-bar { display: none; }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <div class="nav-dots">
+        <div class="nav-dot active" onclick="goToSlide(0)"></div>
+        <div class="nav-dot" onclick="goToSlide(1)"></div>
+        <div class="nav-dot" onclick="goToSlide(2)"></div>
+        <div class="nav-dot" onclick="goToSlide(3)"></div>
+        <div class="nav-dot" onclick="goToSlide(4)"></div>
+        <div class="nav-dot" onclick="goToSlide(5)"></div>
+        <div class="nav-dot" onclick="goToSlide(6)"></div>
+        <div class="nav-dot" onclick="goToSlide(7)"></div>
+        <div class="nav-dot" onclick="goToSlide(8)"></div>
+        <div class="nav-dot" onclick="goToSlide(9)"></div>
+        <div class="nav-dot" onclick="goToSlide(10)"></div>
+        <div class="nav-dot" onclick="goToSlide(11)"></div>
+        <div class="nav-dot" onclick="goToSlide(12)"></div>
+        <div class="nav-dot" onclick="goToSlide(13)"></div>
+        <div class="nav-dot" onclick="goToSlide(14)"></div>
+        <div class="nav-dot" onclick="goToSlide(15)"></div>
+        <div class="nav-dot" onclick="goToSlide(16)"></div>
+    </div>
+
+    <!-- Emotion Bar -->
+    <div class="emotion-bar">
+        <div class="emotion-dot active"></div>
+        <div class="emotion-dot"></div>
+        <div class="emotion-dot"></div>
+        <div class="emotion-dot"></div>
+        <div class="emotion-dot"></div>
+        <div class="emotion-dot"></div>
+        <div class="emotion-dot"></div>
+        <div class="emotion-dot"></div>
+        <div class="emotion-dot"></div>
+        <div class="emotion-dot"></div>
+        <div class="emotion-dot"></div>
+        <div class="emotion-dot"></div>
+        <div class="emotion-dot"></div>
+        <div class="emotion-dot"></div>
+        <div class="emotion-dot"></div>
+        <div class="emotion-dot"></div>
+        <div class="emotion-dot"></div>
+    </div>
+
+    <!-- ==================== SLIDE 1: Opening Hook ==================== -->
+    <section class="slide slide-1">
+        <div class="timing-badge">⏱️ 开场 0-2分钟 | 情绪：好奇心峰值</div>
+        <div class="suspense-tag">🔥 悬念大师秘籍</div>
+
+        <div class="big-question">?</div>
+
+        <div class="hook-badge">🎯 专为0基础小企业主设计</div>
+        <h1 class="main-title">小企业AI入门实战课</h1>
+        <p class="pain-vector">每天忙到飞起，想改变却无从下手？</p>
+
+        <div class="pain-points-grid">
+            <div class="pain-card">
+                <div class="pain-emoji">📱</div>
+                <p class="pain-text">每天花2小时回客户同样的问题</p>
+            </div>
+            <div class="pain-card">
+                <div class="pain-emoji">✍️</div>
+                <p class="pain-text">写朋友圈文案想半天，改了又改</p>
+            </div>
+            <div class="pain-card">
+                <div class="pain-emoji">📊</div>
+                <p class="pain-text">月底算账算到头疼，数据还乱七八糟</p>
+            </div>
+        </div>
+
+        <div class="speaker-script">
+            在正式开始之前，我问大家一个问题——你们店里有没有那种事情，每天都要做，明明很烦，但又不得不做？比如每天发朋友圈、算账、回客户问同样一个问题... 好，我告诉你一个秘密——这些事情，以后你只需要说一句话，AI帮你全干了。<br><br>
+            <strong>今天我会让你们看到，一个从来没有学过AI的人，怎么在10分钟内，用一句话做完平时要花2小时的事。</strong>
+        </div>
+
+        <div class="promise-box">
+            <p>今天结束的时候，你会带着<span class="promise-highlight">一套可落地的AI作战方案</span>离开——而且，我已经为你们准备好了。</p>
+        </div>
+
+        <div class="scroll-hint">
+            <div class="scroll-arrow"></div>
+            <span>向下滚动</span>
+        </div>
+        <div class="page-num">01 / 14</div>
+    </section>
+
+    <!-- ==================== SLIDE 2: Icebreaker ==================== -->
+    <section class="slide slide-2">
+        <div class="timing-badge">⏱️ 破冰 2-5分钟 | 情绪：参与感建立</div>
+        <div class="suspense-tag">🤝 互动开始</div>
+
+        <div class="poll-container">
+            <h2 class="poll-title">课前小调查 📋</h2>
+
+            <div class="poll-question">
+                <h3>❓ 问题1：你以前用过AI工具吗？</h3>
+                <div class="poll-options">
+                    <div class="poll-option">打 1 ：完全没用过</div>
+                    <div class="poll-option">打 2 ：听说过但没用过</div>
+                    <div class="poll-option">打 3 ：偶尔在用</div>
+                    <div class="poll-option">打 4 ：经常在用</div>
+                </div>
+            </div>
+
+            <div class="poll-question">
+                <h3>❓ 问题2：你平时最头疼的重复工作是什么？</h3>
+                <div class="poll-options">
+                    <div class="poll-option">写文案</div>
+                    <div class="poll-option">算账/数据分析</div>
+                    <div class="poll-option">回复客户</div>
+                    <div class="poll-option">做图/做海报</div>
+                    <div class="poll-option">发朋友圈</div>
+                    <div class="poll-option">整理资料</div>
+                </div>
+            </div>
+
+            <p class="poll-instruction">在评论区打数字或文字告诉我 👇</p>
+        </div>
+
+        <div class="speaker-script">
+            大家可以在评论区打1、2、3告诉我——<br><br>
+            我看到有人说"写文案"，有人说"算账"，有人说"回客户"——<strong>这些问题待会我都会让你们看到AI怎么解决</strong>。刚才说写文案头疼的学员，留神——接下来我让你看看什么叫10秒钟写3条文案。
+        </div>
+
+        <div class="interaction-badge">🎯 互动环节：收集学员痛点</div>
+        <div class="page-num">02 / 14</div>
+    </section>
+
+    <!-- ==================== SLIDE 3: What is AI ==================== -->
+    <section class="slide slide-3">
+        <div class="timing-badge">⏱️ 概念 5-12分钟 | 情绪：认知建立</div>
+        <div class="suspense-tag">💡 快速补脑</div>
+
+        <span class="section-tag">📚 基础概念</span>
+        <h2 class="slide-title">什么是AI？</h2>
+
+        <div class="concept-cards">
+            <div class="concept-card">
+                <div class="concept-icon">🧠</div>
+                <h3 class="concept-title">聪明的虚拟大脑</h3>
+                <p class="concept-desc">读过全世界所有的书、看过所有的视频、听过所有的对话。你问它什么都能回答，像一个全世界知识最渊博的朋友。</p>
+            </div>
+            <div class="concept-card">
+                <div class="concept-icon">⏰</div>
+                <h3 class="concept-title">24小时在线</h3>
+                <p class="concept-desc">随时待命、不要工资、不会疲倦。你的超级助理，凌晨3点找你它也在。</p>
+            </div>
+            <div class="concept-card">
+                <div class="concept-icon">💬</div>
+                <h3 class="concept-title">会聊天的助手</h3>
+                <p class="concept-desc">像Siri/小爱同学的超级升级版。你问它答，像和一个很聪明的人聊天。</p>
+            </div>
+        </div>
+
+        <div class="ai-products">
+            <div class="ai-product">
+                <div class="ai-product-name">豆包</div>
+                <div class="ai-product-desc">智能小助手</div>
+            </div>
+            <div class="ai-product">
+                <div class="ai-product-name">Kimi</div>
+                <div class="ai-product-desc">文书助手</div>
+            </div>
+            <div class="ai-product">
+                <div class="ai-product-name">通义千问</div>
+                <div class="ai-product-desc">阿里版ChatGPT</div>
+            </div>
+            <div class="ai-product">
+                <div class="ai-product-name">文心一言</div>
+                <div class="ai-product-desc">百度版ChatGPT</div>
+            </div>
+            <div class="ai-product">
+                <div class="ai-product-name">ChatGPT</div>
+                <div class="ai-product-desc">国外最火的AI</div>
+            </div>
+        </div>
+
+        <div class="speaker-script">
+            你们用过其中任何一个吗？没用过也没关系，你就理解为——这些是<strong>"会聊天的超级知识库"</strong>。你问它答，像和一个很聪明的人聊天。
+        </div>
+
+        <div class="page-num">03 / 14</div>
+    </section>
+
+    <!-- ==================== SLIDE 4: AI vs Agent ==================== -->
+    <section class="slide slide-4">
+        <div class="timing-badge">⏱️ 核心 12-18分钟 | 情绪：兴奋期</div>
+        <div class="suspense-tag">⚡ 关键区分</div>
+
+        <span class="section-tag">⚡ 核心区别</span>
+        <h2 class="slide-title">AI 和 Agent 有什么区别？</h2>
+
+        <div class="comparison-wrapper">
+            <div class="comparison-grid">
+                <div class="comparison-col ai-col">
+                    <div class="col-header">
+                        <div class="col-icon">🤖</div>
+                        <div>
+                            <h3 class="col-title">AI 人工智能</h3>
+                            <p class="col-subtitle">能说</p>
+                        </div>
+                    </div>
+                    <ul class="feature-list">
+                        <li class="feature-item">
+                            <span class="feature-check">👤</span>
+                            <span>像一个<strong>聪明的顾问军师</strong></span>
+                        </li>
+                        <li class="feature-item">
+                            <span class="feature-check">💬</span>
+                            <span>回答问题、写东西、给建议</span>
+                        </li>
+                        <li class="feature-item">
+                            <span class="feature-check">📖</span>
+                            <span>你问它"怎么做红烧肉"，它告诉你步骤</span>
+                        </li>
+                        <li class="feature-item">
+                            <span class="feature-check">🎯</span>
+                            <span>给你<strong>答案和建议</strong>，但不帮你执行</span>
+                        </li>
+                    </ul>
+                    <div class="example-box">
+                        <h4>举个例子</h4>
+                        <p>你问："我想开一家奶茶店，帮我分析一下" → AI给你写一份分析报告</p>
+                    </div>
+                </div>
+
+                <div class="vs-center">VS</div>
+
+                <div class="comparison-col agent-col">
+                    <div class="col-header">
+                        <div class="col-icon">🚀</div>
+                        <div>
+                            <h3 class="col-title">Agent 智能代理</h3>
+                            <p class="col-subtitle">能做</p>
+                        </div>
+                    </div>
+                    <ul class="feature-list">
+                        <li class="feature-item">
+                            <span class="feature-check">💼</span>
+                            <span>像一个<strong>能干的执行员工</strong></span>
+                        </li>
+                        <li class="feature-item">
+                            <span class="feature-check">⚙️</span>
+                            <span>帮你执行任务、操作电脑、处理文件</span>
+                        </li>
+                        <li class="feature-item">
+                            <span class="feature-check">🚀</span>
+                            <span>你说"帮我做红烧肉"，它直接帮你做</span>
+                        </li>
+                        <li class="feature-item">
+                            <span class="feature-check">🔥</span>
+                            <span>帮你<strong>搞定一切</strong>，你只管说需求</span>
+                        </li>
+                    </ul>
+                    <div class="example-box">
+                        <h4>举个例子</h4>
+                        <p>你说："帮我开一家奶茶店" → Agent帮你注册、选址、分析、装修全搞定</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="speaker-script">
+            简单说：<strong>AI是"能说"，Agent是"能做"</strong>。<br><br>
+            你们就把Agent理解成一个——<strong>你给它下命令，它帮你干活的那种员工</strong>。<br><br>
+            咱们今天要学的，就是怎么让这个"AI员工"帮你经营生意。
+        </div>
+
+        <div class="interaction-badge">🤔 思考：你的店里有什么事情是重复的？</div>
+        <div class="page-num">04 / 14</div>
+    </section>
+
+    <!-- ==================== SLIDE 5: 养龙虾 ==================== -->
+    <section class="slide slide-5">
+        <div class="timing-badge">⏱️ 热点 18-22分钟 | 情绪：好奇</div>
+        <div class="suspense-tag">🦞 热门话题</div>
+
+        <span class="section-tag">🔥 热门话题</span>
+        <h2 class="slide-title">什么是"养龙虾"？</h2>
+
+        <div class="lobster-container">
+            <div class="misunderstanding">
+                <h4>❌ 错误理解</h4>
+                <div class="wrong-items">
+                    <span class="wrong-item">养龙虾是某个公司的AI游戏</span>
+                    <span class="wrong-item">养龙虾是OpenClaw推出的产品</span>
+                    <span class="wrong-item">养龙虾就是玩一个应用</span>
+                </div>
+            </div>
+
+            <div class="correct-understanding">
+                <h4>✅ 正确理解</h4>
+                <p class="correct-main">
+                    <span>养龙虾 = 学会使用OpenClaw这个开源AI工具</span>
+                </p>
+                <p class="correct-desc">
+                    OpenClaw是一个开源AI Agent框架，它的Logo是红色小龙虾，所以网友叫它"养龙虾"。"养龙虾"就是学会用这个工具——学会了，你就有一个<strong>24小时不睡觉、不要工资、不会辞职的数字员工</strong>！
+                </p>
+
+                <div class="lobster-benefit">
+                    <div class="benefit-item">
+                        <div class="benefit-icon">⏰</div>
+                        <p class="benefit-text">24小时在线</p>
+                    </div>
+                    <div class="benefit-item">
+                        <div class="benefit-icon">💰</div>
+                        <p class="benefit-text">不要工资</p>
+                    </div>
+                    <div class="benefit-item">
+                        <div class="benefit-icon">🔥</div>
+                        <p class="benefit-text">不会辞职</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="speaker-script">
+            最近科技圈有个热词叫"养龙虾"，很多人以为是真的养虾——不是！<br><br>
+            <strong>养龙虾的本质，就是学会用AI工具帮你干活。</strong>学会了，你就有一个24小时不睡觉、不要工资、不会辞职的员工。
+        </div>
+
+        <div class="page-num">05 / 14</div>
+    </section>
+
+    <!-- ==================== SLIDE 6: Workshop ==================== -->
+    <section class="slide slide-6">
+        <div class="timing-badge">⏱️ 演示 22-30分钟 | 情绪：第一波高潮</div>
+        <div class="suspense-tag">🎬 现场震撼演示</div>
+
+        <h2 class="workshop-title">你来说，我来做</h2>
+        <p class="workshop-subtitle">说出你最头疼的事，我现场用Agent帮你做！</p>
+
+        <div class="activity-cards">
+            <div class="activity-card">
+                <div class="activity-number">1</div>
+                <h3 class="activity-title">说出困扰</h3>
+                <p class="activity-desc">告诉讲师你最头疼的重复工作是什么</p>
+            </div>
+            <div class="activity-card">
+                <div class="activity-number">2</div>
+                <h3 class="activity-title">现场演示</h3>
+                <p class="activity-desc">讲师用Agent现场帮你解决</p>
+            </div>
+            <div class="activity-card">
+                <div class="activity-number">3</div>
+                <h3 class="activity-title">满意度打分</h3>
+                <p class="activity-desc">满意/一般/不满意</p>
+            </div>
+            <div class="activity-card">
+                <div class="activity-number">4</div>
+                <h3 class="activity-title">拿走方案</h3>
+                <p class="activity-desc">这个指令你回去就能用</p>
+            </div>
+        </div>
+
+        <div class="demo-scenario">
+            <h4>🎯 演示场景：假设我是奶茶店老板</h4>
+            <div class="demo-tasks">
+                <div class="demo-task">
+                    <div class="demo-task-icon">📊</div>
+                    <p>看昨天数据</p>
+                </div>
+                <div class="demo-task">
+                    <div class="demo-task-icon">✍️</div>
+                    <p>写今日朋友圈</p>
+                </div>
+                <div class="demo-task">
+                    <div class="demo-task-icon">💬</div>
+                    <p>回复客户咨询</p>
+                </div>
+                <div class="demo-task">
+                    <div class="demo-task-icon">🎨</div>
+                    <p>做促销海报</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="speaker-script">
+            大家看好了——接下来我要演示的这个功能，一般人我不告诉他。<br><br>
+            <strong>10秒钟之后，你会看到什么叫"说一句话，AI帮你全干完"。</strong><br><br>
+            你们告诉我一个你们店里的困扰，我现在就演示怎么用AI解决它。
+        </div>
+
+        <div class="interaction-badge">🙋 现场点名互动</div>
+        <div class="page-num">06 / 17</div>
+    </section>
+
+    <!-- ==================== SLIDE 7: Workshop 场景1 朋友圈文案 ==================== -->
+    <section class="slide slide-workshop">
+        <div class="timing-badge">⏱️ Workshop 30-40分钟 | 情绪：动手体验</div>
+        <div class="suspense-tag">✍️ 场景一</div>
+
+        <span class="section-tag">🎯 Workshop 实操</span>
+        <h2 class="slide-title">场景一：朋友圈文案自动生成</h2>
+
+        <div class="workshop-demo">
+            <div class="workshop-step">
+                <div class="step-badge">📝 你只需要说</div>
+                <div class="user-input">
+                    "帮我写3条招生朋友圈，针对K12数学培训，突出寒假优惠和名师团队"
+                </div>
+            </div>
+
+            <div class="workshop-arrow">⬇️ AI自动生成 ⬇️</div>
+
+            <div class="ai-output">
+                <div class="output-card">
+                    <div class="output-label">版本1：走心风格</div>
+                    <div class="output-content">
+                        🧮 期末考试结束了，您孩子的数学成绩还满意吗？<br><br>
+                        我们准备了<span style="color: #F97316;">寒假数学提升班</span>，由<span style="color: #F97316;">省重点名师</span>授课，专治"一听就会、一做就废"！<br><br>
+                        📅 限招20人，扫码预约免费试听👇
+                    </div>
+                </div>
+                <div class="output-card">
+                    <div class="output-label">版本2：促销风格</div>
+                    <div class="output-content">
+                        🎉 <strong>限时福利！</strong><br><br>
+                        寒假数学班<span style="color: #F97316;">立减500元</span>+赠送价值299元学习方法课！<br><br>
+                        名额仅剩8个，点击下方链接立即报名→
+                    </div>
+                </div>
+                <div class="output-card">
+                    <div class="output-label">版本3：问答互动</div>
+                    <div class="output-content">
+                        ❓ 孩子数学考砸了？先别急着骂！<br><br>
+                        90%的家长不知道，<span style="color: #F97316;">寒假是弯道超车的最佳时机</span>！<br><br>
+                        评论区扣"1"，我帮你分析孩子问题
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="speaker-script">
+            看明白了？你只需要<strong>说清楚你要什么</strong>，AI自动生成多个版本给你选。<br><br>
+            <strong>这就是"说需求就行"的力量——你不用学怎么写，AI帮你写。</strong>
+        </div>
+
+        <div class="interaction-badge">🙋 想试试？课后可以自己体验</div>
+        <div class="page-num">07 / 17</div>
+    </section>
+
+    <!-- ==================== SLIDE 8: Workshop 场景2 微信客服 ==================== -->
+    <section class="slide slide-workshop">
+        <div class="timing-badge">⏱️ Workshop 40-50分钟 | 情绪：惊叹</div>
+        <div class="suspense-tag">💬 场景二</div>
+
+        <span class="section-tag">🎯 Workshop 实操</span>
+        <h2 class="slide-title">场景二：微信客服自动回复</h2>
+
+        <div class="workshop-demo">
+            <div class="chat-demo">
+                <div class="chat-left">
+                    <div class="chat-avatar">👤</div>
+                    <div class="chat-bubble customer">
+                        <div class="chat-time">14:32</div>
+                        你好，我想问一下你们学费多少？
+                    </div>
+                </div>
+                
+                <div class="ai-processing">
+                    <div class="process-icon">⚡</div>
+                    <div class="process-text">AI自动处理中...</div>
+                </div>
+
+                <div class="chat-right">
+                    <div class="chat-bubble ai">
+                        <div class="chat-time">14:32</div>
+                        您好！感谢咨询~<br><br>
+                        我们的课程费用是这样的：<br>
+                        📚 小班课：5800元/学期<br>
+                        🎯 一对一：200元/课时<br>
+                        🌟 寒假班：限时优惠直降800元！<br><br>
+                        您孩子多大了？我帮您推荐合适的课程~
+                    </div>
+                    <div class="chat-avatar">🏠</div>
+                </div>
+
+                <div class="chat-left">
+                    <div class="chat-avatar">👤</div>
+                    <div class="chat-bubble customer">
+                        <div class="chat-time">14:33</div>
+                        可以试听吗？
+                    </div>
+                </div>
+
+                <div class="chat-right">
+                    <div class="chat-bubble ai">
+                        <div class="chat-time">14:33</div>
+                        当然可以！🎉<br><br>
+                        我们提供<span style="color: #F97316;">免费试听</span>，限前15名预约的家长~<br><br>
+                        扫码下方二维码即可预约：
+                    </div>
+                    <div class="chat-avatar">🏠</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="speaker-script">
+            看到了吗？客户问什么，AI自动识别问题类型，<span style="color: #F97316;">7×24小时秒回</span>，永远不累、永远不烦。<br><br>
+            <strong>这就是你的"数字员工"——不请假、不辞职、工资为零。</strong>
+        </div>
+
+        <div class="interaction-badge">💡 相当于雇了一个24小时在线的客服</div>
+        <div class="page-num">08 / 17</div>
+    </section>
+
+    <!-- ==================== SLIDE 9: Workshop 场景3 数据分析 ==================== -->
+    <section class="slide slide-workshop">
+        <div class="timing-badge">⏱️ Workshop 50-60分钟 | 情绪：惊喜</div>
+        <div class="suspense-tag">📊 场景三</div>
+
+        <span class="section-tag">🎯 Workshop 实操</span>
+        <h2 class="slide-title">场景三：数据分析报表自动化</h2>
+
+        <div class="workshop-demo">
+            <div class="workshop-step">
+                <div class="step-badge">📊 你只需要说</div>
+                <div class="user-input">
+                    "分析这份招生数据，统计各课程报名人数，计算转化率，找出最热门课程"
+                </div>
+            </div>
+
+            <div class="workshop-arrow">⬇️ AI自动处理 ⬇️</div>
+
+            <div class="data-output">
+                <div class="data-stats">
+                    <div class="stat-card">
+                        <div class="stat-number">156</div>
+                        <div class="stat-label">总咨询人数</div>
+                    </div>
+                    <div class="stat-card highlight">
+                        <div class="stat-number">89</div>
+                        <div class="stat-label">最终报名</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-number">57%</div>
+                        <div class="stat-label">转化率</div>
+                    </div>
+                </div>
+
+                <div class="data-chart">
+                    <div class="chart-title">📈 各课程报名排名</div>
+                    <div class="chart-bar">
+                        <div class="bar-label">数学培优</div>
+                        <div class="bar-track"><div class="bar-fill" style="width: 85%;">42人</div></div>
+                    </div>
+                    <div class="chart-bar">
+                        <div class="bar-label">英语强化</div>
+                        <div class="bar-track"><div class="bar-fill" style="width: 65%;">31人</div></div>
+                    </div>
+                    <div class="chart-bar">
+                        <div class="bar-label">物理冲刺</div>
+                        <div class="bar-track"><div class="bar-fill" style="width: 45%;">22人</div></div>
+                    </div>
+                </div>
+
+                <div class="data-insight">
+                    <div class="insight-icon">💡</div>
+                    <div class="insight-text">
+                        <strong>AI洞察：</strong>数学培优转化率最高(72%)，建议加大推广力度；英语咨询量大但转化偏低，需优化咨询话术
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="speaker-script">
+            以前你要花2小时导数据，做表格、画图表——<strong>现在一句话，10秒钟，报表+洞察全部出来。</strong><br><br>
+            这就是为什么我说：<strong>AI不是替代你，是让你更强大。</strong>
+        </div>
+
+        <div class="interaction-badge">🎯 课后你可以用自己数据试试</div>
+        <div class="page-num">09 / 17</div>
+    </section>
+
+    <!-- ==================== SLIDE 10: Case Studies 1 ==================== -->
+    <section class="slide slide-7">
+        <div class="timing-badge">⏱️ 案例 60-80分钟 | 情绪：学习深入</div>
+        <div class="suspense-tag">📊 真实案例</div>
+
+        <div class="cases-header">
+            <h2>教育培训行业AI应用案例</h2>
+            <p>这些机构已经在用AI了，你还在等什么？</p>
+        </div>
+
+        <div class="case-studies">
+            <div class="case-study">
+                <div class="case-header">
+                    <div class="case-icon">🏫</div>
+                    <h3 class="case-title">K12学科培训机构</h3>
+                </div>
+                <div class="case-body">
+                    <div class="case-section">
+                        <p class="case-label">痛点</p>
+                        <p class="case-content">家长咨询重复问题多（课程价格、上课时间、教学效果），客服人手不足，响应慢导致流失严重</p>
+                    </div>
+                    <div class="case-section">
+                        <p class="case-label">AI解决方案</p>
+                        <p class="case-content">Agent 7×24小时自动回复家长咨询，结合课程顾问的话术生成个性化推荐，分析家长需求自动分配意向等级</p>
+                    </div>
+                    <div class="case-section">
+                        <p class="case-label">AI提示词</p>
+                        <p class="case-content">"你是机构的课程顾问，家长问课程价格时，回复时突出暑期优惠和名师班..."</p>
+                    </div>
+                    <div class="case-result">
+                        <div class="result-icon">📈</div>
+                        <p class="result-text">响应速度提升10倍，线索转化率提升40%</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="case-study">
+                <div class="case-header">
+                    <div class="case-icon">📚</div>
+                    <h3 class="case-title">职业技能培训班</h3>
+                </div>
+                <div class="case-body">
+                    <div class="case-section">
+                        <p class="case-label">痛点</p>
+                        <p class="case-content">学员学习进度参差不齐，老师无法一对一回访，无法及时发现掉队学员，完课率只有45%</p>
+                    </div>
+                    <div class="case-section">
+                        <p class="case-label">AI解决方案</p>
+                        <p class="case-content">Agent自动跟踪学员学习数据，每天生成学习报告，识别掉队风险并自动触发关怀消息和补救建议</p>
+                    </div>
+                    <div class="case-section">
+                        <p class="case-label">AI提示词</p>
+                        <p class="case-content">"分析学员这周的学习数据，识别看课时长下降超过30%的学员，给出跟进建议"</p>
+                    </div>
+                    <div class="case-result">
+                        <div class="result-icon">🎯</div>
+                        <p class="result-text">学员完课率从45%提升至78%</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="case-study">
+                <div class="case-header">
+                    <div class="case-icon">🎨</div>
+                    <h3 class="case-title">少儿兴趣培训机构</h3>
+                </div>
+                <div class="case-body">
+                    <div class="case-section">
+                        <p class="case-label">痛点</p>
+                        <p class="case-content">家长总问"孩子学得怎么样"，老师课后要花大量时间写个性化反馈，消耗精力还家长不满意</p>
+                    </div>
+                    <div class="case-section">
+                        <p class="case-label">AI解决方案</p>
+                        <p class="case-content">Agent自动生成学员成长档案，根据课堂表现数据生成个性化家长汇报，支持一键分享朋友圈</p>
+                    </div>
+                    <div class="case-section">
+                        <p class="case-label">AI提示词</p>
+                        <p class="case-content">"根据小明这学期的舞蹈课表现，生成一份给家长的成长汇报，突出进步和下阶段建议"</p>
+                    </div>
+                    <div class="case-result">
+                        <div class="result-icon">😍</div>
+                        <p class="result-text">家长满意度从60%提升至95%</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="speaker-script">
+            你们看，这家培训机构以前客服只能覆盖30%的咨询，用了AI之后，<strong>100%的咨询都能在30秒内响应</strong>。<br><br>
+            而且不是那种机械的自动回复——是结合你们机构的话术、风格、课程特点的<strong>个性化回复</strong>。
+        </div>
+
+        <div class="interaction-badge">🤔 思考：你的机构有哪些重复性工作？</div>
+        <div class="page-num">10 / 17</div>
+    </section>
+
+    <!-- ==================== SLIDE 11: More Cases ==================== -->
+    <section class="slide slide-8">
+        <div class="timing-badge">⏱️ 案例续 50-60分钟 | 情绪：启发思考</div>
+        <div class="suspense-tag">💡 更多场景</div>
+
+        <span class="section-tag">📚 行业拓展</span>
+        <h2 class="slide-title">更多教育培训场景</h2>
+
+        <div class="more-cases-grid">
+            <div class="more-case">
+                <div class="more-case-icon">🎓</div>
+                <div class="more-case-content">
+                    <h4>企业内训部门</h4>
+                    <p>新员工入职培训内容标准化，Agent自动回答HR相关问题，生成培训报告和员工能力画像</p>
+                    <p class="more-case-result">✓ 培训部门工作量减少60%</p>
+                </div>
+            </div>
+
+            <div class="more-case">
+                <div class="more-case-icon">📝</div>
+                <div class="more-case-content">
+                    <h4>留学咨询机构</h4>
+                    <p>根据学生背景自动生成选校方案，回复"我能申请什么学校"类问题，生成个性化文书框架</p>
+                    <p class="more-case-result">✓ 咨询转化率提升35%</p>
+                </div>
+            </div>
+
+            <div class="more-case">
+                <div class="more-case-icon">👶</div>
+                <div class="more-case-content">
+                    <h4>母婴培训机构</h4>
+                    <p>自动跟踪宝宝成长数据，生成阶段性育儿建议，推送适龄课程和活动，自动回复家长育儿问题</p>
+                    <p class="more-case-result">✓ 客户粘性提升50%</p>
+                </div>
+            </div>
+
+            <div class="more-case">
+                <div class="more-case-icon">🏋️</div>
+                <div class="more-case-content">
+                    <h4>健身私教工作室</h4>
+                    <p>根据学员训练数据生成个性化训练计划，自动跟进饮食和作息，生成月度进步报告，预警健康风险</p>
+                    <p class="more-case-result">✓ 私教课续费率提升40%</p>
+                </div>
+            </div>
+
+            <div class="more-case">
+                <div class="more-case-icon">🎭</div>
+                <div class="more-case-content">
+                    <h4>语言培训机构</h4>
+                    <p>AI陪练口语，纠正发音，生成学习日报，自动安排复习计划，分析薄弱点推送专项练习</p>
+                    <p class="more-case-result">✓ 学员平均提分1.5个等级</p>
+                </div>
+            </div>
+
+            <div class="more-case">
+                <div class="more-case-icon">🎯</div>
+                <div class="more-case-content">
+                    <h4>中小学课外辅导</h4>
+                    <p>自动批改作业并生成错题分析，推送类似题型练习，给出学生知识点掌握画像给家长</p>
+                    <p class="more-case-result">✓ 老师批改时间减少70%</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="speaker-script">
+            这还没完——你们发现没有，这些案例有一个共同点：<br><br>
+            <strong>AI做的都是那些重复性高、规则明确的工作。</strong><br><br>
+            而你们作为老板，最值钱的时间应该花在哪儿？——<strong>创意、决策、深度沟通</strong>。AI帮你省下的时间，就是你多赚的钱。
+        </div>
+
+        <div class="interaction-badge">🙋 说说你是做什么行业的？</div>
+        <div class="page-num">11 / 17</div>
+    </section>
+
+    <!-- ==================== SLIDE 12: New Paradigm ==================== -->
+    <section class="slide slide-9">
+        <div class="timing-badge">⏱️ 核心技能 75-85分钟 | 情绪：掌握感</div>
+        <div class="suspense-tag">🎯 范式转变</div>
+
+        <span class="section-tag">⚡ 新思维</span>
+        <h2 class="slide-title">旧思维 vs 新思维</h2>
+
+        <div class="comparison-example">
+            <div class="bad-good-wrapper">
+                <div class="bad-example">
+                    <h4>❌ 旧思维：学习如何操作AI</h4>
+                    <div class="bad-prompt">
+                        "我需要学怎么写好prompt"<br>
+                        "要记住RTGF这些公式"<br>
+                        "要了解怎么调参数"
+                    </div>
+                    <p class="bad-result">
+                        <strong>问题：</strong>把人变成了AI的工具，把简单的事情搞复杂了。<br><br>
+                        <strong>结果：</strong>学了一大堆理论，真正用的时候还是不会。
+                    </p>
+                </div>
+
+                <div class="good-example">
+                    <h4>✅ 新思维：AI是能干的员工</h4>
+                    <div class="good-prompt">
+                        "我只管说需求<br>
+                        Agent自动搞懂我要什么<br>
+                        帮我调用合适的Skill完成任务"
+                    </div>
+                    <p class="good-result">
+                        <strong>核心：</strong>把AI当能干的员工，不是一门要学的技术。<br><br>
+                        <strong>结果：</strong>你专心做决策，Agent帮你执行。
+                    </p>
+                </div>
+            </div>
+        </div>
+
+        <div class="speaker-script">
+            <strong>重要提醒：你们今天不用记任何公式。</strong><br><br>
+            以前的AI课教你"怎么写好prompt"——那是旧思维。<br><br>
+            <strong>新思维是：你把AI当员工。员工听不懂，你换一种方式说就行了。</strong><br><br>
+            就像你让新员工做事，不会做就教他，AI也一样——说清楚、多迭代、越用越顺。
+        </div>
+
+        <div class="interaction-badge">💡 记住：你是老板，AI是员工</div>
+        <div class="page-num">12 / 17</div>
+    </section>
+
+    <!-- ==================== SLIDE 13: Skill in Action ==================== -->
+    <section class="slide slide-10">
+        <div class="timing-badge">⏱️ 演示 85-95分钟 | 情绪：恍然大悟</div>
+        <div class="suspense-tag">🔥 实际演示</div>
+
+        <span class="section-tag">🛠️ Skill实战</span>
+        <h2 class="slide-title">说需求，Agent自动搞定</h2>
+
+        <div class="demo-container">
+            <div class="demo-header">
+                <h2>Agent数字员工实战</h2>
+                <p>输入一句话，Agent自动调用多个Skill完成复杂任务</p>
+            </div>
+
+            <div class="demo-steps">
+                <div class="demo-step">
+                    <div class="step-number">1</div>
+                    <p class="step-task">📊 读取数据</p>
+                    <p class="step-result">调用飞书Skill，自动读取多维表销售数据</p>
+                </div>
+                <div class="demo-step">
+                    <div class="step-number">2</div>
+                    <p class="step-task">📈 数据分析</p>
+                    <p class="step-result">调用分析Skill，计算统计、排序、找规律</p>
+                </div>
+                <div class="demo-step">
+                    <div class="step-number">3</div>
+                    <p class="step-task">📝 生成报告</p>
+                    <p class="step-result">调用文档Skill，自动写入飞书文档</p>
+                </div>
+                <div class="demo-step">
+                    <div class="step-number">4</div>
+                    <p class="step-task">💬 发送通知</p>
+                    <p class="step-result">调用IM Skill，发送到运营群</p>
+                </div>
+            </div>
+
+            <div class="demo-output">
+                <h4>🎯 你输入的指令：</h4>
+                <p style="font-size: 16px; color: #FED7AA; margin-bottom: 20px; line-height: 1.8;">
+                    "分析一下上周飞书表格里的销售数据，生成一份分析报告，通过飞书发给合伙人"
+                </p>
+                <div class="output-items">
+                    <div class="output-item">✓ 昨天芋泥波波销量最高（156杯）</div>
+                    <div class="output-item">✓ 经典奶茶销量下降20%</div>
+                    <div class="output-item">✓ 周末是高峰，工作日需要推广</div>
+                    <div class="output-item">✓ 报告已同步发至合伙人</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="speaker-script">
+            你们看——以前这个流程，你要手动导出数据、打开Excel、分析、写报告、发邮件... <strong>现在一句话，10秒钟，全自动搞定。</strong><br><br>
+            而且背后调用的这些Skill，你完全不需要知道怎么用——<strong>你只需要说你想要什么结果。</strong>
+        </div>
+
+        <div class="interaction-badge">🎯 思考：你能用这个方式做什么？</div>
+        <div class="page-num">13 / 17</div>
+    </section>
+
+    <!-- ==================== SLIDE 14: Skill Ecosystem ==================== -->
+    <section class="slide slide-11">
+        <div class="timing-badge">⏱️ 生态 95-105分钟 | 情绪：成就期</div>
+        <div class="suspense-tag">🔥 重要趋势</div>
+
+        <div class="skill-intro">
+            <h2>Skill生态 —— Agent的超能力</h2>
+            <p>Agent之所以强大，是因为背后有Skill生态。就像手机有App Store，Agent有Skill Store。你说需求，Agent自动调用合适的Skill帮你搞定。</p>
+        </div>
+
+        <div class="skill-analogy">
+            <div class="analogy-row">
+                <div class="analogy-item">
+                    <span>📱</span>
+                    <strong>手机</strong>
+                </div>
+                <span class="analogy-arrow">=</span>
+                <div class="analogy-item">
+                    <span>🤖</span>
+                    <strong>Agent</strong>
+                </div>
+                <span class="analogy-arrow">=</span>
+                <div class="analogy-item">
+                    <span>🛒</span>
+                    <strong>App Store</strong>
+                </div>
+                <span class="analogy-arrow">=</span>
+                <div class="analogy-item">
+                    <span>⚡</span>
+                    <strong>Skill生态</strong>
+                </div>
+            </div>
+        </div>
+
+        <div class="skill-categories">
+            <div class="skill-cat">
+                <div class="skill-cat-icon">📄</div>
+                <h4 class="skill-cat-title">办公套件</h4>
+                <p class="skill-cat-count">飞书/钉钉/企微</p>
+                <p class="skill-cat-examples">文档、表格、日历、IM、会议、审批</p>
+            </div>
+            <div class="skill-cat">
+                <div class="skill-cat-icon">🎨</div>
+                <h4 class="skill-cat-title">设计创意</h4>
+                <p class="skill-cat-count">海报/图像/视频</p>
+                <p class="skill-cat-examples">一句话生成可用海报、图片、视频</p>
+            </div>
+            <div class="skill-cat">
+                <div class="skill-cat-icon">📊</div>
+                <h4 class="skill-cat-title">数据分析</h4>
+                <p class="skill-cat-count">读取/分析/报表</p>
+                <p class="skill-cat-examples">自动分析销售、生成图表报告</p>
+            </div>
+            <div class="skill-cat">
+                <div class="skill-cat-icon">🔍</div>
+                <h4 class="skill-cat-title">搜索知识</h4>
+                <p class="skill-cat-count">查资料/竞品/价格</p>
+                <p class="skill-cat-examples">全网搜索，信息聚合</p>
+            </div>
+        </div>
+
+        <div class="speaker-script">
+            这里有个大新闻——<strong>2026年3月这一周，飞书、钉钉、企业微信三家同时宣布开源了自己的CLI工具。</strong><br><br>
+            意思是：AI Agent现在可以直接操控这三个平台的所有功能。<strong>不管你们公司用哪个，都已经被打通了。</strong>
+        </div>
+
+        <div class="page-num">14 / 17</div>
+    </section>
+
+    <!-- ==================== SLIDE 15: Summary ==================== -->
+    <section class="slide slide-12">
+        <div class="timing-badge">⏱️ 总结 105-115分钟 | 情绪：行动冲动</div>
+        <div class="suspense-tag">✅ 关键带走</div>
+
+        <span class="section-tag">✅ 课程总结</span>
+
+        <div class="summary-container">
+            <p class="summary-quote">
+                "Agent时代<br>你只需要说话<br>AI帮你搞定一切"
+            </p>
+
+            <div class="takeaways-grid">
+                <div class="takeaway">
+                    <div class="takeaway-number">1</div>
+                    <h3 class="takeaway-title">说需求就行</h3>
+                    <p class="takeaway-desc">把AI当能干的员工<br>不用学prompt公式</p>
+                </div>
+                <div class="takeaway">
+                    <div class="takeaway-number">2</div>
+                    <h3 class="takeaway-title">Skill生态</h3>
+                    <p class="takeaway-desc">Agent背后的超能力库<br>飞书/钉钉/企微全覆盖</p>
+                </div>
+                <div class="takeaway">
+                    <div class="takeaway-number">3</div>
+                    <h3 class="takeaway-title">迭代优化</h3>
+                    <p class="takeaway-desc">和Agent协作越用越顺手<br>把AI当实习生培养</p>
+                </div>
+            </div>
+
+            <div class="action-box">
+                <p>🚀 今天回去，用Agent完成一个你平时要做的工作</p>
+            </div>
+        </div>
+
+        <div class="speaker-script">
+            好，2小时学了很多，但回去不行动等于零。<br><br>
+            <strong>今天你们比90%的同行先走了一步。</strong>Agent不是替代你，是让你更强大。<br><br>
+            回去就用起来，让Agent成为你的超级员工！
+        </div>
+
+        <div class="interaction-badge">🎯 课末反馈：每人说一个回去想试的场景</div>
+        <div class="page-num">15 / 17</div>
+    </section>
+
+    <!-- ==================== SLIDE 16: CTA ==================== -->
+    <section class="slide slide-13">
+        <div class="timing-badge">⏱️ 收尾 115-120分钟 | 情绪：紧迫感</div>
+        <div class="suspense-tag">🎁 限时福利</div>
+
+        <div class="cta-container">
+            <div class="cta-emoji">🚀</div>
+            <h2 class="cta-title">今日行动</h2>
+
+            <div class="cta-items">
+                <div class="cta-item">
+                    <div class="cta-item-icon">✓</div>
+                    <span>本周内，每天用Agent完成<strong>至少1个</strong>任务</span>
+                </div>
+                <div class="cta-item">
+                    <div class="cta-item-icon">✓</div>
+                    <span>把今天学到的"<strong>说需求就行</strong>"思维用起来</span>
+                </div>
+                <div class="cta-item">
+                    <div class="cta-item-icon">✓</div>
+                    <span>在学员群<strong>分享你的第一个Agent成果</strong></span>
+                </div>
+                <div class="cta-item">
+                    <div class="cta-item-icon">✓</div>
+                    <span>遇到问题<strong>随时在群里提问</strong>，别自己扛着</span>
+                </div>
+            </div>
+
+            <div class="cta-footer">
+                <p>🎁 答对问题的同学，私信我领神秘礼物</p>
+            </div>
+        </div>
+
+        <div class="speaker-script">
+            最后送大家一句话——<br><br>
+            <strong>AI不会替代你，但会用AI的人会替代不会用的人。</strong><br><br>
+            今天你们选择学习而不是观望，已经赢在了起点。
+        </div>
+
+        <div class="page-num">16 / 17</div>
+    </section>
+
+    <!-- ==================== SLIDE 17: Final ==================== -->
+    <section class="slide slide-14">
+        <div class="timing-badge">⏱️ 最后 120分钟 | 情绪：温暖结束</div>
+        <div class="suspense-tag">🙏 感谢</div>
+
+        <div class="cta-container">
+            <div class="cta-emoji">🤝</div>
+            <h2 class="cta-title">谢谢你萌</h2>
+            <p style="font-size: 24px; color: var(--text-gray); margin: 30px 0 50px;">
+                你们的参与让这堂课变得不一样
+            </p>
+
+            <div class="summary-container" style="margin-top: 40px;">
+                <div class="takeaways-grid">
+                    <div class="takeaway">
+                        <div class="takeaway-number">🌟</div>
+                        <h3 class="takeaway-title">记住</h3>
+                        <p class="takeaway-desc">AI是工具<br>你是主人</p>
+                    </div>
+                    <div class="takeaway">
+                        <div class="takeaway-number">💪</div>
+                        <h3 class="takeaway-title">行动</h3>
+                        <p class="takeaway-desc">今天就开始<br>别等明天</p>
+                    </div>
+                    <div class="takeaway">
+                        <div class="takeaway-number">🔥</div>
+                        <h3 class="takeaway-title">坚持</h3>
+                        <p class="takeaway-desc">和Agent协作<br>会越来越顺</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="cta-footer" style="margin-top: 50px;">
+                <p>有问题随时找我 🤙</p>
+            </div>
+        </div>
+
+        <div class="page-num">17 / 17</div>
+    </section>
+
+    <script>
+        // Navigation
+        const slides = document.querySelectorAll('.slide');
+        const dots = document.querySelectorAll('.nav-dot');
+        const emotions = document.querySelectorAll('.emotion-dot');
+
+        function goToSlide(index) {
+            slides[index].scrollIntoView({ behavior: 'smooth' });
+        }
+
+        // Update nav on scroll
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    const index = Array.from(slides).indexOf(entry.target);
+                    dots.forEach((dot, i) => dot.classList.toggle('active', i === index));
+                    emotions.forEach((em, i) => em.classList.toggle('active', i === index));
+                }
+            });
+        }, { threshold: 0.5 });
+
+        slides.forEach(slide => observer.observe(slide));
+
+        // Keyboard nav
+        document.addEventListener('keydown', (e) => {
+            const current = Array.from(dots).findIndex(d => d.classList.contains('active'));
+            if (e.key === 'ArrowDown' || e.key === 'PageDown') {
+                if (current < slides.length - 1) goToSlide(current + 1);
+            } else if (e.key === 'ArrowUp' || e.key === 'PageUp') {
+                if (current > 0) goToSlide(current - 1);
+            }
+        });
+    </script>
+</body>
+</html>
