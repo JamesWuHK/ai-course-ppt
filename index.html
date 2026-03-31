@@ -2459,6 +2459,69 @@
             color: #FED7AA;
         }
 
+        .capability-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 18px;
+            margin-top: 22px;
+        }
+
+        .capability-card {
+            background: rgba(15, 23, 42, 0.78);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            border-radius: 20px;
+            padding: 20px;
+            box-shadow: 0 16px 36px rgba(15, 23, 42, 0.28);
+        }
+
+        .capability-head {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            margin-bottom: 12px;
+        }
+
+        .capability-icon {
+            width: 42px;
+            height: 42px;
+            border-radius: 14px;
+            background: linear-gradient(135deg, rgba(249, 115, 22, 0.95), rgba(251, 146, 60, 0.9));
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 20px;
+            flex-shrink: 0;
+        }
+
+        .capability-card h4 {
+            font-size: 18px;
+            color: #F8FAFC;
+            margin-bottom: 2px;
+        }
+
+        .capability-sub {
+            font-size: 12px;
+            color: #94A3B8;
+            letter-spacing: 0.2px;
+        }
+
+        .capability-card p {
+            font-size: 14px;
+            line-height: 1.75;
+            color: #CBD5E1;
+        }
+
+        .capability-output {
+            margin-top: 14px;
+            background: rgba(249, 115, 22, 0.08);
+            border: 1px solid rgba(249, 115, 22, 0.18);
+            border-radius: 14px;
+            padding: 12px 14px;
+            font-size: 13px;
+            line-height: 1.7;
+            color: #FED7AA;
+        }
+
         /* Page Number */
         .page-num {
             position: absolute;
@@ -2524,7 +2587,7 @@
         @media (max-width: 1200px) {
             .concept-cards, .cases-grid, .skill-categories, .function-grid, .tool-map { grid-template-columns: repeat(2, 1fr); }
             .rtgf-grid, .demo-steps { grid-template-columns: repeat(2, 1fr); }
-            .wb-features-grid, .official-proof-strip, .prepared-demos-grid { grid-template-columns: repeat(2, 1fr); }
+            .wb-features-grid, .official-proof-strip, .prepared-demos-grid, .capability-grid { grid-template-columns: repeat(2, 1fr); }
             .prepared-demo-card, .workshop-layout, .experiment-layout { grid-template-columns: 1fr; }
         }
 
@@ -2534,7 +2597,7 @@
             .pain-points-grid, .bad-good-wrapper, .function-grid, .tool-map { grid-template-columns: 1fr; }
             .emotion-bar, .suspense-tag { display: none; }
             .harvest-strip, .conversion-list { grid-template-columns: 1fr; }
-            .wb-features-grid, .official-proof-strip, .prepared-demos-grid, .activity-cards, .demo-tasks, .ai-output, .data-stats, .experiment-mini-grid { grid-template-columns: 1fr; }
+            .wb-features-grid, .official-proof-strip, .prepared-demos-grid, .activity-cards, .demo-tasks, .ai-output, .data-stats, .experiment-mini-grid, .capability-grid { grid-template-columns: 1fr; }
         }
 
         @media print {
@@ -3700,33 +3763,61 @@
             <div class="cta-emoji">🚀</div>
             <h2 class="cta-title">今天先入门，线下再学更高阶怎么用</h2>
 
-            <div class="cta-items">
-                <div class="cta-item">
-                    <div class="cta-item-icon">✓</div>
-                    <span>今天先把 1 个<strong>高频、低风险</strong>的任务亲手跑起来</span>
-                </div>
-                <div class="cta-item">
-                    <div class="cta-item-icon">✓</div>
-                    <span>今天先用"<strong>对象 + 任务 + 约束 + 输出</strong>"模板写出第一条指令</span>
-                </div>
-                <div class="cta-item">
-                    <div class="cta-item-icon">✓</div>
-                    <span>今天先给这个任务设置一个<strong>人工审核点</strong>，再正式投入使用</span>
-                </div>
-                <div class="cta-item">
-                    <div class="cta-item-icon">✓</div>
-                    <span>今天先<strong>复盘你的第一个 AI 成果</strong>，看看它值不值得继续复制</span>
-                </div>
+            <div class="promise-box" style="max-width: 980px; margin: 28px auto 0;">
+                <p>线下不会重复讲入门概念，而是直接进入更高阶的实战能力：怎么把 AI 从“会聊天”升级到“会协作、会执行、会沉淀资产”。</p>
             </div>
 
             <div class="conversion-box">
                 <h3>线下进阶会继续打开这些更高阶能力</h3>
                 <p>线下课不只是再听一遍概念，而是把你机构的真实资料带进来，继续往“更省人、更成体系、更像数字员工协作”去升级。</p>
-                <div class="conversion-list">
-                    <div class="conversion-item">如何培养“数字员工”：把招生助理、教务助理、复盘助理这类重复岗位动作，拆成 AI 能先接住的一套流程。</div>
-                    <div class="conversion-item">如何把机构往“一人公司效率”推进：一个老板先带着 AI 跑文案、整理、分析、跟进，不靠堆人也能先把基础运转起来。</div>
-                    <div class="conversion-item">如何用 Agent 串联多个动作：搜资料、写文案、做表格、出海报、做周报，不再是一问一答，而是一条任务往前跑。</div>
-                    <div class="conversion-item">如何沉淀成机构资产：把提示词、知识库、SOP、检查表做成老师和前台以后都能复用的标准件。</div>
+                <div class="capability-grid">
+                    <div class="capability-card">
+                        <div class="capability-head">
+                            <div class="capability-icon">👥</div>
+                            <div>
+                                <h4>培养数字员工</h4>
+                                <div class="capability-sub">把重复岗位动作拆成 AI 流程</div>
+                            </div>
+                        </div>
+                        <p>继续往前学，怎么把招生助理、教务助理、复盘助理这些重复动作拆开，让 AI 先接住一部分标准工作。</p>
+                        <div class="capability-output">预告产出：岗位任务拆解表、数字员工职责边界、人工审核点清单</div>
+                    </div>
+
+                    <div class="capability-card">
+                        <div class="capability-head">
+                            <div class="capability-icon">⚡</div>
+                            <div>
+                                <h4>一人公司效率</h4>
+                                <div class="capability-sub">一个老板先带着 AI 跑基础运营</div>
+                            </div>
+                        </div>
+                        <p>继续往前学，怎么让 1 个人带着 AI 同时跑文案、整理、分析、跟进，把小机构先做出“不靠堆人也能转”的底盘。</p>
+                        <div class="capability-output">预告产出：单人工作流地图、每日例行动作板、老板专用任务面板</div>
+                    </div>
+
+                    <div class="capability-card">
+                        <div class="capability-head">
+                            <div class="capability-icon">🧠</div>
+                            <div>
+                                <h4>Agent 串联执行</h4>
+                                <div class="capability-sub">从一问一答升级成多步任务推进</div>
+                            </div>
+                        </div>
+                        <p>继续往前学，怎么让 Agent 连起来做搜索、写作、表格、海报、周报，不再停留在“帮我写一句”，而是往交付物走。</p>
+                        <div class="capability-output">预告产出：多步任务链示意、Agent 工作流样板、交付物检查表</div>
+                    </div>
+
+                    <div class="capability-card">
+                        <div class="capability-head">
+                            <div class="capability-icon">🗂️</div>
+                            <div>
+                                <h4>机构 AI 资产化</h4>
+                                <div class="capability-sub">把一次试跑沉淀成长期可复用标准件</div>
+                            </div>
+                        </div>
+                        <p>继续往前学，怎么把提示词、知识库、SOP、检查表沉淀下来，让老师和前台以后也能按同一套口径稳定复用。</p>
+                        <div class="capability-output">预告产出：机构提示词库、门店知识库框架、SOP 与检查表模板</div>
+                    </div>
                 </div>
             </div>
 
