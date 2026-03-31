@@ -47,15 +47,7 @@
 
         /* Emotional Curve Bar */
         .emotion-bar {
-            position: fixed;
-            left: 20px;
-            top: 50%;
-            transform: translateY(-50%);
-            display: flex;
-            flex-direction: column;
-            gap: 8px;
-            z-index: 1000;
-            opacity: 0.6;
+            display: none;
         }
 
         .emotion-dot {
@@ -72,33 +64,12 @@
 
         /* Timing Badge */
         .timing-badge {
-            position: absolute;
-            top: 20px;
-            left: 80px;
-            background: rgba(249, 115, 22, 0.15);
-            border: 1px solid rgba(249, 115, 22, 0.3);
-            color: var(--accent);
-            padding: 6px 16px;
-            border-radius: 20px;
-            font-size: 12px;
-            font-weight: 500;
+            display: none;
         }
 
         /* Suspense Tag */
         .suspense-tag {
-            position: absolute;
-            top: 20px;
-            right: 80px;
-            background: rgba(239, 68, 68, 0.15);
-            border: 1px solid rgba(239, 68, 68, 0.3);
-            color: #F87171;
-            padding: 6px 16px;
-            border-radius: 20px;
-            font-size: 12px;
-            display: flex;
-            align-items: center;
-            gap: 6px;
-            animation: pulse-red 2s infinite;
+            display: none;
         }
 
         @keyframes pulse-red {
@@ -108,40 +79,29 @@
 
         /* Speaker Script */
         .speaker-script {
-            background: rgba(34, 197, 94, 0.08);
-            border: 1px solid rgba(34, 197, 94, 0.2);
-            border-left: 4px solid var(--success);
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-left: 4px solid var(--accent);
             padding: 20px 28px;
             border-radius: 0 16px 16px 0;
             max-width: 900px;
             margin: 30px auto;
             font-size: 15px;
             line-height: 1.8;
-            color: #86EFAC;
+            color: #E2E8F0;
         }
 
         .speaker-script::before {
-            content: '🎤 讲师话术：';
+            content: '本页要点';
             font-weight: 700;
-            color: var(--success);
+            color: #F8FAFC;
             display: block;
             margin-bottom: 8px;
         }
 
         /* Interaction Badge */
         .interaction-badge {
-            position: absolute;
-            bottom: 80px;
-            right: 80px;
-            background: rgba(234, 179, 8, 0.15);
-            border: 1px solid rgba(234, 179, 8, 0.3);
-            color: var(--warning);
-            padding: 10px 20px;
-            border-radius: 12px;
-            font-size: 13px;
-            display: flex;
-            align-items: center;
-            gap: 8px;
+            display: none;
         }
 
         /* Slide 1: Opening Hook */
@@ -2087,8 +2047,7 @@
         </div>
 
         <div class="speaker-script">
-            在正式开始之前，我问大家一个问题——你们机构里有没有那种事情，每天都要做，明明不难，但特别耗人？比如反复回复家长、整理试听名单、写群通知、做课后反馈。<br><br>
-            <strong>今天这堂课不是教你追热词，而是带你找出三类最适合先交给 AI 的任务：高频、低风险、可复核。</strong>
+            教培机构最先适合用 AI 的，不是“全自动运营”，而是那些<strong>高频、低风险、可复核</strong>的任务。典型切口包括：家长标准问答、招生内容起稿、校区数据整理与复盘。
         </div>
 
         <div class="promise-box">
@@ -2136,8 +2095,7 @@
         </div>
 
         <div class="speaker-script">
-            大家可以在评论区打1、2、3告诉我。<br><br>
-            我已经看到有老师提到"回家长""做反馈""写招生文案"——<strong>这些正是教培机构最适合先用 AI 提效的场景</strong>。待会儿我们不讲虚的，直接拿教培任务来拆。
+            课前自查的目的，是先找到机构里最耗时的重复工作。通常值得优先尝试 AI 的，是回复家长、写通知文案、做反馈和整理数据这几类任务。
         </div>
 
         <div class="interaction-badge">🎯 互动环节：收集学员痛点</div>
@@ -2194,7 +2152,7 @@
         </div>
 
         <div class="speaker-script">
-            你们用过其中任何一个吗？没用过也没关系。先把它理解成一个<strong>"能理解任务、能起草内容、能帮你整理信息的助手"</strong>，这样就够用了。
+            先把 AI 理解成一个<strong>能理解任务、起草内容、整理信息</strong>的助手即可。对初学者来说，不需要先掌握复杂术语，先会用它解决具体工作就足够。
         </div>
 
         <div class="page-num">03 / 19</div>
@@ -2279,8 +2237,7 @@
         </div>
 
         <div class="speaker-script">
-            简单说：<strong>AI更像会思考和起草，Agent更像会调用工具往前执行。</strong><br><br>
-            但今天我们不神化任何工具。<strong>真正的落地点，是先把机构里那些重复、规则清晰、能复核的事情交给它。</strong>
+            可以把 AI 理解为“更擅长理解和起草”，把执行型 AI 理解为“更擅长调用工具继续推进任务”。真正值得落地的，是机构里那些<strong>重复、规则清晰、能复核</strong>的事务。
         </div>
 
         <div class="interaction-badge">🤔 思考：你机构里哪些事情最标准化？</div>
@@ -2332,8 +2289,7 @@
         </div>
 
         <div class="speaker-script">
-            教培机构不是最晚该用 AI 的一批，反而是<strong>最容易从重复任务里先见效的一批</strong>。<br><br>
-            真正重要的不是追热点，而是先判断：<strong>哪些任务适合先交给 AI 打底，哪些任务一定要老师和校长把关。</strong>
+            教培机构的优势在于，许多工作流程天然具有标准化特征。只要先区分清楚“适合 AI 打底的任务”和“必须人工把关的任务”，就很容易在早期看到成效。
         </div>
 
         <div class="page-num">05 / 19</div>
@@ -2381,8 +2337,7 @@
         </div>
 
         <div class="speaker-script">
-            今天不是让大家只学某一个产品，而是看懂一种工作方式。<br><br>
-            如果一个工具既能理解你的要求，又能帮你调用表格、文档和文件系统，那它就更适合拿来做<strong>招生、通知、复盘这类教培执行任务</strong>。
+            这一页想说明的不是某个产品本身，而是一种工作方式：如果一个工具既能理解需求，又能处理文档、表格和文件，它就更适合拿来做招生、通知和复盘等教培执行任务。
         </div>
 
         <div class="interaction-badge">🤔 你平时用AI主要用来做什么？</div>
@@ -2449,8 +2404,7 @@
         </div>
 
         <div class="speaker-script">
-            看到没有？重点不是“一个按钮包打天下”，而是<strong>把老师和运营最耗时的标准动作先抽出来</strong>。<br><br>
-            接下来我就用这几类任务，现场给大家演示怎么落地。
+            重点不是“一个按钮包打天下”，而是先把老师和运营最耗时、最标准化的动作抽出来，再看哪些环节适合交给 AI 提速。
         </div>
 
         <div class="interaction-badge">🙋 哪个功能你最想学？</div>
@@ -2511,9 +2465,7 @@
         </div>
 
         <div class="speaker-script">
-            大家看好了。<br><br>
-            我们今天不追求“一句话全自动”，而是要看懂：<strong>一个教培任务怎么被拆成可执行的步骤，哪些由 AI 先完成，哪些留给人来确认。</strong><br><br>
-            你们告诉我一个机构里的具体困扰，我现在就演示给大家看。
+            下面的三个场景不是为了展示“全自动”，而是为了看清楚：一个真实的教培任务，怎样被拆成多个步骤，以及哪些步骤适合由 AI 先完成。
         </div>
 
         <div class="interaction-badge">🙋 现场点名互动</div>
@@ -2567,8 +2519,7 @@
         </div>
 
         <div class="speaker-script">
-            看明白了？你只需要<strong>说清楚对象、目标和边界</strong>，AI就能先生成多个版本给你选。<br><br>
-            真正的用法不是直接发出去，而是<strong>先让它替你起稿，再由你挑一版、改一句、定口径。</strong>
+            招生文案最适合的用法，是让 AI <strong>先起草多个版本</strong>，再由老师或运营统一口径、挑选版本、做最后润色，而不是直接发布。
         </div>
 
         <div class="interaction-badge">🙋 想试试？课后可以自己体验</div>
@@ -2629,8 +2580,7 @@
         </div>
 
         <div class="speaker-script">
-            看到了吗？AI最适合先做的是<strong>首轮接待、信息归类、标准问题回复草稿</strong>。<br><br>
-            但只要涉及<span style="color: #F97316;">价格承诺、名额承诺、升学结果、个性化判断</span>，一定要转人工确认。这一步不能省。
+            家长咨询场景里，AI 最适合先做的是<strong>首轮接待、信息归类和标准问题草拟回复</strong>。涉及价格、名额、结果判断和个性化建议时，必须转人工确认。
         </div>
 
         <div class="interaction-badge">💡 先用它接住标准问题，再把关键问题交给老师</div>
@@ -2697,8 +2647,7 @@
         </div>
 
         <div class="speaker-script">
-            以前这类复盘，往往要先导数据、再拉表、再写结论。<br><br>
-            现在你可以先让 AI 在几分钟内给你一版<span style="color: #F97316;">可检查的报表和洞察草稿</span>，你再决定哪些要继续跟进，哪些要交给老师落实。
+            在数据复盘场景里，AI 的价值是先快速给出一版<strong>可检查的报表和洞察草稿</strong>，帮助校区更快看见问题，再由人来决定后续动作。
         </div>
 
         <div class="interaction-badge">🎯 课后你可以用自己数据试试</div>
@@ -2793,8 +2742,7 @@
         </div>
 
         <div class="speaker-script">
-            这里我特意把数字改成示意口径。<br><br>
-            真正值得你们带走的不是“别人涨了多少”，而是：<strong>当家长咨询、学习跟进、课后反馈这些任务被标准化之后，老师和顾问就能把精力放回真正重要的沟通上。</strong>
+            本页案例使用的是<strong>示意口径</strong>，重点不在于某个增长数字，而在于看懂任务拆法：当家长咨询、学习跟进、课后反馈被标准化后，人力就能重新回到高价值沟通上。
         </div>
 
         <div class="interaction-badge">🤔 思考：你的机构有哪些重复性工作？</div>
@@ -2866,9 +2814,7 @@
         </div>
 
         <div class="speaker-script">
-            这些任务有一个共同点：<br><br>
-            <strong>重复率高、规则相对明确、结果容易检查。</strong><br><br>
-            所以今天回去你们不要上来就做“全自动招生”，先从这些任务里挑一个切口最稳的开始。
+            适合先交给 AI 的任务通常同时满足三个条件：<strong>重复率高、规则相对明确、结果容易检查</strong>。起步时，优先从这类任务里挑一个最稳的切口。
         </div>
 
         <div class="interaction-badge">🙋 先圈出你机构里最标准化的一个任务</div>
@@ -2914,8 +2860,7 @@
         </div>
 
         <div class="speaker-script">
-            这一页是今天最重要的风险页。<br><br>
-            教培机构一旦涉及<span style="color: #F97316;">学员隐私、家长承诺、价格政策、学习判断</span>，就不要偷懒。<strong>AI 先帮你快，专业判断必须由人来守。</strong>
+            这一页最重要的结论是：只要涉及<span style="color: #F97316;">学员隐私、家长承诺、价格政策、学习判断</span>，AI 只能协助提速，最终判断必须由人负责。
         </div>
 
         <div class="interaction-badge">💡 记住：快可以交给 AI，决定必须留给人</div>
@@ -2974,8 +2919,7 @@
         </div>
 
         <div class="speaker-script">
-            所以今天不是完全不讲 prompt，而是<strong>不把它讲复杂</strong>。<br><br>
-            你回去只要记住这一句话：<strong>对象、任务、约束、输出格式。</strong>大多数教培场景，先靠这个模板就已经够用了。
+            大多数教培场景并不需要复杂提示词。先记住一个最小模板：<strong>对象、任务、约束、输出格式</strong>，就足以覆盖大部分起稿、整理和分析类任务。
         </div>
 
         <div class="interaction-badge">🎯 思考：你能用这个方式做什么？</div>
@@ -3044,8 +2988,7 @@
         </div>
 
         <div class="speaker-script">
-            这里我把原来那种“平台全部同时打通”的说法删掉了。<br><br>
-            更稳的表达是：<strong>越来越多办公平台和工具正在变得更容易被 AI 调用或接入自动化流程</strong>。但具体能做到哪一步，要看你现在用的工具、版本、权限和组织配置。
+            更稳妥的工具判断方式是：先看它能否接住你的真实任务，再看权限、版本和接入方式。不同平台的可用能力会有差异，不宜做一刀切判断。
         </div>
 
         <div class="page-num">16 / 19</div>
@@ -3087,9 +3030,7 @@
         </div>
 
         <div class="speaker-script">
-            好，2小时学了很多，但回去不行动等于零。<br><br>
-            <strong>今天最重要的收获不是“又认识了一个热词”，而是你已经知道该从哪里开始。</strong><br><br>
-            先把老师和运营从重复事务里解放出来，再把时间还给教学质量和家长沟通。
+            本课最重要的收获，不是认识了多少新词，而是已经明确了落地顺序：先从重复事务中释放老师和运营的时间，再把精力还给教学质量和家长沟通。
         </div>
 
         <div class="interaction-badge">🎯 课末反馈：每人说一个回去想试的场景</div>
@@ -3130,9 +3071,7 @@
         </div>
 
         <div class="speaker-script">
-            最后送大家一句话——<br><br>
-            <strong>不是谁更会喊口号谁赢，而是谁先把 AI 变成真实工作流，谁就更早释放团队时间。</strong><br><br>
-            今天你们选择开始试，而不是继续观望，这一步很重要。
+            真正有效的 AI 落地，不靠口号，而靠把一个个真实任务接入日常工作流。先试一个场景，再逐步扩展，通常比一次性铺开更稳。
         </div>
 
         <div class="page-num">18 / 19</div>
