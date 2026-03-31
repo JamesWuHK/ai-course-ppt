@@ -1,3 +1,8 @@
+// Legacy archive: this generator reflects an older small-business deck.
+// The current published courseware is the teaching-industry version in `index.html`
+// and `ppt_content.md`. Keep this file only as historical reference until a new
+// PPT generator is rebuilt from the updated course structure.
+
 const pptxgen = require("pptxgenjs");
 
 // 创建演示文稿
