@@ -1047,6 +1047,148 @@
             font-style: italic;
         }
 
+        .official-proof-strip {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 18px;
+            margin-top: 28px;
+            max-width: 1180px;
+        }
+
+        .official-proof-card {
+            background: rgba(255, 255, 255, 0.04);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            border-radius: 18px;
+            overflow: hidden;
+            box-shadow: 0 18px 40px rgba(15, 23, 42, 0.32);
+        }
+
+        .official-proof-thumb {
+            position: relative;
+            background: rgba(15, 23, 42, 0.9);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+        }
+
+        .official-proof-thumb img {
+            width: 100%;
+            aspect-ratio: 16 / 10;
+            object-fit: cover;
+            display: block;
+        }
+
+        .official-proof-tag {
+            position: absolute;
+            top: 12px;
+            left: 12px;
+            background: rgba(15, 23, 42, 0.85);
+            color: #F8FAFC;
+            border: 1px solid rgba(255, 255, 255, 0.12);
+            border-radius: 999px;
+            padding: 6px 10px;
+            font-size: 11px;
+            font-weight: 700;
+            letter-spacing: 0.5px;
+        }
+
+        .official-proof-body {
+            padding: 16px 18px 18px;
+        }
+
+        .official-proof-body h4 {
+            font-size: 16px;
+            color: #F8FAFC;
+            margin-bottom: 8px;
+        }
+
+        .official-proof-body p {
+            font-size: 13px;
+            line-height: 1.7;
+            color: #94A3B8;
+        }
+
+        .prepared-demos-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 22px;
+            max-width: 1180px;
+            width: 100%;
+            margin-top: 34px;
+        }
+
+        .prepared-demo-card {
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 24px;
+            overflow: hidden;
+            display: grid;
+            grid-template-columns: 1.1fr 1fr;
+            min-height: 280px;
+        }
+
+        .prepared-demo-shot {
+            background: rgba(2, 6, 23, 0.7);
+            border-right: 1px solid rgba(255, 255, 255, 0.08);
+        }
+
+        .prepared-demo-shot img {
+            width: 100%;
+            height: 100%;
+            display: block;
+            object-fit: cover;
+        }
+
+        .prepared-demo-content {
+            padding: 22px 22px 20px;
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+        }
+
+        .prepared-demo-label {
+            display: inline-flex;
+            align-items: center;
+            align-self: flex-start;
+            background: rgba(249, 115, 22, 0.12);
+            border: 1px solid rgba(249, 115, 22, 0.22);
+            color: #FED7AA;
+            border-radius: 999px;
+            padding: 7px 12px;
+            font-size: 11px;
+            font-weight: 700;
+            letter-spacing: 0.4px;
+        }
+
+        .prepared-demo-card h3 {
+            font-size: 20px;
+            color: #F8FAFC;
+        }
+
+        .prepared-demo-card p {
+            font-size: 14px;
+            line-height: 1.7;
+            color: #CBD5E1;
+        }
+
+        .prepared-demo-command {
+            background: rgba(15, 23, 42, 0.85);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            border-radius: 14px;
+            padding: 14px 16px;
+            color: #FED7AA;
+            font-size: 13px;
+            line-height: 1.7;
+        }
+
+        .prepared-demo-chain {
+            font-size: 12px;
+            line-height: 1.7;
+            color: #94A3B8;
+        }
+
+        .prepared-demo-chain strong {
+            color: var(--accent);
+        }
+
         /* Workshop Slides */
         .slide-workshop {
             background: linear-gradient(180deg, #0F172A 0%, #1E293B 100%);
@@ -1092,6 +1234,111 @@
             color: var(--text-gray);
             font-size: 14px;
             margin: 20px 0;
+        }
+
+        .workshop-layout {
+            display: grid;
+            grid-template-columns: 1.08fr 0.92fr;
+            gap: 24px;
+            align-items: start;
+        }
+
+        .workshop-visuals {
+            display: grid;
+            gap: 18px;
+        }
+
+        .workshop-shot {
+            background: rgba(255, 255, 255, 0.04);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 18px 44px rgba(15, 23, 42, 0.28);
+        }
+
+        .workshop-shot img {
+            width: 100%;
+            display: block;
+            object-fit: cover;
+            max-height: 340px;
+        }
+
+        .workshop-shot figcaption {
+            padding: 14px 16px 16px;
+            font-size: 13px;
+            color: #CBD5E1;
+            line-height: 1.7;
+        }
+
+        .workshop-shot figcaption strong {
+            color: #F8FAFC;
+        }
+
+        .workshop-notes {
+            display: grid;
+            gap: 14px;
+        }
+
+        .workshop-note {
+            background: rgba(255, 255, 255, 0.04);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            border-radius: 18px;
+            padding: 18px 20px;
+        }
+
+        .workshop-note h4 {
+            font-size: 15px;
+            color: var(--accent);
+            margin-bottom: 10px;
+        }
+
+        .workshop-note p {
+            font-size: 14px;
+            line-height: 1.8;
+            color: #CBD5E1;
+        }
+
+        .workshop-note ul {
+            list-style: none;
+            display: grid;
+            gap: 10px;
+        }
+
+        .workshop-note li {
+            font-size: 14px;
+            line-height: 1.7;
+            color: #CBD5E1;
+            padding-left: 18px;
+            position: relative;
+        }
+
+        .workshop-note li::before {
+            content: "•";
+            position: absolute;
+            left: 0;
+            top: 0;
+            color: var(--accent);
+            font-weight: 700;
+        }
+
+        .workshop-note strong {
+            color: #F8FAFC;
+        }
+
+        .mini-tag-row {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+
+        .mini-tag {
+            background: rgba(249, 115, 22, 0.1);
+            border: 1px solid rgba(249, 115, 22, 0.2);
+            color: #FED7AA;
+            border-radius: 999px;
+            padding: 8px 12px;
+            font-size: 12px;
+            font-weight: 600;
         }
 
         /* 朋友圈文案场景 */
@@ -2112,6 +2359,8 @@
         @media (max-width: 1200px) {
             .concept-cards, .cases-grid, .skill-categories, .function-grid, .tool-map { grid-template-columns: repeat(2, 1fr); }
             .rtgf-grid, .demo-steps { grid-template-columns: repeat(2, 1fr); }
+            .wb-features-grid, .official-proof-strip, .prepared-demos-grid { grid-template-columns: repeat(2, 1fr); }
+            .prepared-demo-card, .workshop-layout { grid-template-columns: 1fr; }
         }
 
         @media (max-width: 768px) {
@@ -2120,6 +2369,7 @@
             .pain-points-grid, .bad-good-wrapper, .function-grid, .tool-map { grid-template-columns: 1fr; }
             .emotion-bar, .suspense-tag { display: none; }
             .harvest-strip, .conversion-list { grid-template-columns: 1fr; }
+            .wb-features-grid, .official-proof-strip, .prepared-demos-grid, .activity-cards, .demo-tasks, .ai-output, .data-stats { grid-template-columns: 1fr; }
         }
 
         @media print {
@@ -2149,6 +2399,7 @@
         <div class="nav-dot" onclick="goToSlide(15)"></div>
         <div class="nav-dot" onclick="goToSlide(16)"></div>
         <div class="nav-dot" onclick="goToSlide(17)"></div>
+        <div class="nav-dot" onclick="goToSlide(18)"></div>
     </div>
 
     <!-- Emotion Bar -->
@@ -2205,7 +2456,7 @@
         </div>
 
         <div class="promise-box">
-            <p>今天结束的时候，你会带着<span class="promise-highlight">一套适合教培机构先落地的 AI 清单</span>离开，而且每一步都能回去试。</p>
+            <p>今天结束的时候，你会带着<span class="promise-highlight">能立刻回校区试一次的任务清单、指令模板和审核边界</span>离开，而不是只带走几个概念词。</p>
         </div>
 
         <div class="harvest-strip">
@@ -2258,7 +2509,7 @@
             课前自查的目的，是先找到机构里最耗时的重复工作。通常值得优先尝试 AI 的，是回复家长、写通知文案、做反馈和整理数据这几类任务。
         </div>
 
-        <div class="interaction-badge live">直播互动题：如果你只能先解决 1 个问题，你会选“咨询、文案、反馈、数据”里的哪一个？</div>
+        <div class="interaction-badge live">直播互动题：请在评论区直接打出你今天最想先解决的 1 个问题。四个关键词里只能选一个：咨询、文案、反馈、数据。</div>
         <div class="page-num">02 / 19</div>
     </section>
 
@@ -2486,64 +2737,97 @@
         <div class="suspense-tag">💪 它能做什么</div>
 
         <span class="section-tag">🛠️ WorkBuddy 干货页</span>
-        <h2 class="slide-title">WorkBuddy 公开文档里最值得演示的 6 类能力</h2>
+        <h2 class="slide-title">WorkBuddy 里这几类 Skill，今天值得直接演示</h2>
 
         <div class="wb-features-grid">
             <div class="wb-feature-card">
-                <div class="wb-feature-icon">📁</div>
-                <h4>文件批量处理</h4>
-                <p>批量重命名、归档、分类、整理本地文件。<br>这是 WorkBuddy 官方文档里明确写到的核心场景之一。</p>
+                <div class="wb-feature-icon">🧰</div>
+                <h4>技能市场</h4>
+                <p>先启用对的 Skill，再做对的任务。<br>这一页要让学员看到 Buddy 不是只有一个聊天框，而是一整套可调用能力。</p>
                 <div class="wb-feature-example">
-                    "把这批试听照片按校区、班级和日期自动归档"
+                    "先把今天要演示的办公文档、搜索、浏览器这几类 Skill 打开"
                 </div>
             </div>
             <div class="wb-feature-card">
                 <div class="wb-feature-icon">📄</div>
-                <h4>文档 / 表格 / PPT 生成</h4>
-                <p>官方文档明确提到它能生成文档、表格和 PPT。<br>这比单纯聊天更适合做校区周报和活动说明。</p>
+                <h4>办公文档四件套</h4>
+                <p>PDF / Word / PPT / Excel 都能直接读、改、生成。<br>很适合做教培机构周报、课后总结和活动汇报。</p>
                 <div class="wb-feature-example">
-                    "根据这周招生数据，生成一份复盘文档和一页汇报 PPT"
-                </div>
-            </div>
-            <div class="wb-feature-card">
-                <div class="wb-feature-icon">🎨</div>
-                <h4>多模态内容创作</h4>
-                <p>不只是写文字，还能串联图片、海报、内容素材。<br>适合招生宣传、公开课预热和活动包装。</p>
-                <div class="wb-feature-example">
-                    "写一条公开课宣传文案，并配一张海报主视觉"
+                    "把试听数据表、会议纪要和模板，整理成复盘文档和一页 PPT"
                 </div>
             </div>
             <div class="wb-feature-card">
                 <div class="wb-feature-icon">📊</div>
-                <h4>数据深度分析</h4>
-                <p>官方文档明确支持深度分析。<br>对于教培机构，最实用的就是试听、到课、转化、续班这些数据链路。</p>
+                <h4>数据分析并可视化</h4>
+                <p>官方实践页明确展示了“读表 → 出图 → 给结论”的完整过程。<br>对试听、到课、转化这些数据最有用。</p>
                 <div class="wb-feature-example">
-                    "分析这份试听表，找出到课率最低的来源渠道"
+                    "按班型和校区统计试听到课率，做图并写出复盘结论"
                 </div>
             </div>
             <div class="wb-feature-card">
-                <div class="wb-feature-icon">🔍</div>
-                <h4>行业调研</h4>
-                <p>官方文档也把行业调研列为核心场景。<br>这对校区选题、竞品观察、价格带判断很实用。</p>
+                <div class="wb-feature-icon">🔎</div>
+                <h4>Web Search</h4>
+                <p>不是只搜一堆链接，而是可以先搜资料，再交给 AI 归纳。<br>很适合做公开课选题、竞品观察和热点追踪。</p>
                 <div class="wb-feature-example">
-                    "整理周边 3 家机构的公开课主题、价格和宣传卖点"
+                    "搜最近 30 天周边机构公开课主题，筛出最值得看的 5 条"
                 </div>
             </div>
             <div class="wb-feature-card">
-                <div class="wb-feature-icon">🧩</div>
-                <h4>多智能体并行处理</h4>
-                <p>官方文档里还提到多智能体并行处理。<br>小白不用先学原理，但要知道它可以把一个复杂任务拆开并行推进。</p>
+                <div class="wb-feature-icon">🖱️</div>
+                <h4>Agent Browser</h4>
+                <p>当网页需要点击、展开、滚动、截图时，Browser 这类 Skill 才真正接得住。<br>适合做网页留档和页面信息提取。</p>
                 <div class="wb-feature-example">
-                    "一边整理 FAQ，一边分析试听数据，一边起草家长通知"
+                    "打开这几家机构的活动页，读完后整理摘要并截图留档"
+                </div>
+            </div>
+            <div class="wb-feature-card">
+                <div class="wb-feature-icon">🗂️</div>
+                <h4>右侧产物与预览</h4>
+                <p>结果不是只出在聊天区里。<br>产物、文件、变更、预览都能在右侧面板里复核，这一点对教学和机构使用都很关键。</p>
+                <div class="wb-feature-example">
+                    "生成完 PPT 后，直接在右侧看产物、预览文件、检查改动"
+                </div>
+            </div>
+        </div>
+
+        <div class="official-proof-strip">
+            <div class="official-proof-card">
+                <div class="official-proof-thumb">
+                    <span class="official-proof-tag">官方截图 1</span>
+                    <img src="assets/screenshots/workbuddy-skills-market.png" alt="WorkBuddy 技能市场截图">
+                </div>
+                <div class="official-proof-body">
+                    <h4>技能市场不是摆设</h4>
+                    <p>这一张图最适合用来告诉学员：Buddy 里已经有很多现成 Skill，不同任务要先匹配不同能力，而不是拿一个万能提示词硬顶。</p>
+                </div>
+            </div>
+            <div class="official-proof-card">
+                <div class="official-proof-thumb">
+                    <span class="official-proof-tag">官方截图 2</span>
+                    <img src="assets/screenshots/workbuddy-office-suite.png" alt="WorkBuddy 办公文档四件套截图">
+                </div>
+                <div class="official-proof-body">
+                    <h4>文档、PPT、表格是能直接产出的</h4>
+                    <p>这一张图能把“会聊天”和“真能交付文件”分开。学员看见产物列表和预览区，才会真正理解 Agent 和单纯对话的区别。</p>
+                </div>
+            </div>
+            <div class="official-proof-card">
+                <div class="official-proof-thumb">
+                    <span class="official-proof-tag">官方截图 3</span>
+                    <img src="assets/screenshots/workbuddy-right-sidebar.png" alt="WorkBuddy 右侧边栏截图">
+                </div>
+                <div class="official-proof-body">
+                    <h4>产物可以复核，改动可以回看</h4>
+                    <p>对教培机构来说，这比“生成得快”更重要。因为最后发给家长和老师的内容，一定要能看得见、查得到、改得动。</p>
                 </div>
             </div>
         </div>
 
         <div class="speaker-script">
-            这页的重点是：<strong>WorkBuddy 的价值不只是“能聊天”，而是它已经把文件、文档、PPT、分析、调研、多模态创作这些场景真正做成了可执行能力。</strong>今天课堂里至少要让学员看到其中几条是怎么跑起来的。
+            这页的重点是：<strong>WorkBuddy 的干货不在“词多高级”，而在“哪些 Skill 已经能直接接住真实任务”。</strong>这节直播里，我们不临场乱试，而是直接按官方能力路径演示“文档/PPT、数据分析、网页调研、技能选择与结果复核”。
         </div>
 
-        <div class="interaction-badge live">直播互动：如果今天只能深挖 1 个 WorkBuddy 能力，你最想继续看“文件处理、PPT 生成、多模态创作、数据分析、行业调研、多智能体”里的哪一个？</div>
+        <div class="interaction-badge live">直播互动：如果今天只能深挖 1 个 WorkBuddy 能力，你最想继续看哪一个？请直接选：文档/PPT、数据分析、网页调研、技能市场。</div>
         <div class="page-num">07 / 19</div>
     </section>
 
@@ -2552,183 +2836,207 @@
         <div class="timing-badge">⏱️ 演示 25-30分钟 | 情绪：第一波高潮</div>
         <div class="suspense-tag">🎬 现场震撼演示</div>
 
-        <h2 class="workshop-title">直播 Workshop：你出题，我们一起拆</h2>
-        <p class="workshop-subtitle">从一个真实教培任务出发，现场拆成“AI 先做什么，人再确认什么”。</p>
+        <h2 class="workshop-title">直播 Workshop：你投票，我现场拆这 4 条预案</h2>
+        <p class="workshop-subtitle">不是只看结果，而是一起看清楚任务怎么拆、指令怎么写、产物怎么验。你回去才能真的自己跑一遍。</p>
 
         <div class="activity-cards">
             <div class="activity-card">
                 <div class="activity-number">1</div>
-                <h3 class="activity-title">你来出题</h3>
-                <p class="activity-desc">从你机构真实任务里挑 1 个场景</p>
+                <h3 class="activity-title">先看界面</h3>
+                <p class="activity-desc">先让你知道这一步在 Buddy 里到底长什么样</p>
             </div>
             <div class="activity-card">
                 <div class="activity-number">2</div>
-                <h3 class="activity-title">一起拆解</h3>
-                <p class="activity-desc">看它能被拆成哪些步骤和审核点</p>
+                <h3 class="activity-title">再抄指令</h3>
+                <p class="activity-desc">每页只带走一句最小可复用指令</p>
             </div>
             <div class="activity-card">
                 <div class="activity-number">3</div>
-                <h3 class="activity-title">一起判断</h3>
-                <p class="activity-desc">判断哪些适合 AI，哪些必须人工</p>
+                <h3 class="activity-title">拆后台能力</h3>
+                <p class="activity-desc">让你听懂后台到底调了哪些 Skill</p>
             </div>
             <div class="activity-card">
                 <div class="activity-number">4</div>
-                <h3 class="activity-title">带走模板</h3>
-                <p class="activity-desc">把这个场景改成你自己机构的版本</p>
+                <h3 class="activity-title">看最终产物</h3>
+                <p class="activity-desc">每页都明确最后到底要验什么结果</p>
             </div>
         </div>
 
-        <div class="demo-scenario">
-            <h4>🎯 演示场景：假设我是校区校长</h4>
-            <div class="demo-tasks">
-                <div class="demo-task">
-                    <div class="demo-task-icon">📊</div>
-                    <p>看本周试听数据</p>
+        <div class="prepared-demos-grid">
+            <div class="prepared-demo-card">
+                <div class="prepared-demo-shot">
+                    <img src="assets/screenshots/workbuddy-office-suite.png" alt="WorkBuddy 办公文档四件套演示截图">
                 </div>
-                <div class="demo-task">
-                    <div class="demo-task-icon">✍️</div>
-                    <p>写今晚家长群通知</p>
+                <div class="prepared-demo-content">
+                    <span class="prepared-demo-label">预案 A | 办公文档四件套</span>
+                    <h3>校区周复盘：文档 + PPT 一次出齐</h3>
+                    <p>适合直播里第一个重锤演示。它最容易让学员感觉到“不是写一段字，而是真的把文件做出来了”。</p>
+                    <div class="prepared-demo-command">你只需要说：把本周试听数据表、教研纪要和周汇报模板整理成 1 页摘要、1 份复盘文档和 1 页汇报 PPT。</div>
+                    <div class="prepared-demo-chain"><strong>调用链：</strong>读文件 → 提炼结构 → 生成 Word / PPT / Excel 产物 → 右侧预览复核</div>
                 </div>
-                <div class="demo-task">
-                    <div class="demo-task-icon">💬</div>
-                    <p>回复试听咨询</p>
+            </div>
+            <div class="prepared-demo-card">
+                <div class="prepared-demo-shot">
+                    <img src="assets/screenshots/workbuddy-web-search.png" alt="WorkBuddy Web Search 演示截图">
                 </div>
-                <div class="demo-task">
-                    <div class="demo-task-icon">🎨</div>
-                    <p>做公开课海报</p>
+                <div class="prepared-demo-content">
+                    <span class="prepared-demo-label">预案 B | Web Search</span>
+                    <h3>公开课调研：先搜，再筛，再归纳</h3>
+                    <p>这页最适合讲给校长、运营和市场老师听，因为他们最需要快速收集公开信息，而不是手动翻十几个网页。</p>
+                    <div class="prepared-demo-command">你只需要说：搜最近 30 天本地教培机构公开课主题，筛出最值得参考的 5 条，并解释为什么值得看。</div>
+                    <div class="prepared-demo-chain"><strong>调用链：</strong>联网检索 → 按时间过滤 → AI 摘要归纳 → 得到可讨论的候选清单</div>
+                </div>
+            </div>
+            <div class="prepared-demo-card">
+                <div class="prepared-demo-shot">
+                    <img src="assets/screenshots/workbuddy-agent-browser.png" alt="WorkBuddy Agent Browser 演示截图">
+                </div>
+                <div class="prepared-demo-content">
+                    <span class="prepared-demo-label">预案 C | Agent Browser</span>
+                    <h3>网页留档：把需要点开和滚动的页面真正读完</h3>
+                    <p>这条最适合接在搜索后面，告诉学员有些网页不是搜到就算了，还要点开、展开、截图，才算完成任务。</p>
+                    <div class="prepared-demo-command">你只需要说：打开这几家机构的活动页，读完需要展开的内容，整理摘要并为关键页面截图留档。</div>
+                    <div class="prepared-demo-chain"><strong>调用链：</strong>打开网页 → 点击 / 滚动 / 展开 → 提取信息 → 输出摘要与截图文件</div>
+                </div>
+            </div>
+            <div class="prepared-demo-card">
+                <div class="prepared-demo-shot">
+                    <img src="assets/screenshots/workbuddy-skills-market.png" alt="WorkBuddy 技能市场演示截图">
+                </div>
+                <div class="prepared-demo-content">
+                    <span class="prepared-demo-label">预案 D | 技能市场</span>
+                    <h3>现场告诉学员：先选 Skill，再谈流程</h3>
+                    <p>这一页的作用不是炫功能，而是降低新手恐惧感。学员会知道不用自己从零造系统，很多能力已经可以直接启用。</p>
+                    <div class="prepared-demo-command">你只需要说：今天这节课只保留办公文档、Web Search 和 Agent Browser 三类 Skill，其他先不展开。</div>
+                    <div class="prepared-demo-chain"><strong>调用链：</strong>明确任务 → 选择合适 Skill → 降低误调用 → 让演示更稳定</div>
                 </div>
             </div>
         </div>
 
         <div class="speaker-script">
-            今天这 3 条演示链路，分别对应 WorkBuddy 很适合拿来讲干货的 3 种能力：<strong>内容起稿、多轮回复辅助、数据分析与文档输出。</strong>
+            这一页要传递给学员的不是“看我临场发挥多厉害”，而是：<strong>真正靠谱的 AI 直播课，应该把演示口令、截图、调用链和预期产物提前准备好。</strong>这样学员才知道自己回去也能照着复现。
         </div>
 
-        <div class="interaction-badge live">直播 Workshop：请在评论区发一个你机构的真实任务名称，比如“试听邀约”“家长群通知”“课后反馈”“周数据复盘”。</div>
+        <div class="interaction-badge live">直播互动：这 4 条预案里，你最想先看哪条？请直接在评论区刷 A/B/C/D。A 周复盘文档/PPT，B 公开课调研，C 网页留档，D 技能市场。</div>
         <div class="page-num">08 / 19</div>
     </section>
 
-    <!-- ==================== SLIDE 7: Workshop 场景1 朋友圈文案 ==================== -->
+    <!-- ==================== SLIDE 7: Workshop 场景1 文档与PPT ==================== -->
     <section class="slide slide-workshop">
         <div class="timing-badge">⏱️ Workshop 30-40分钟 | 情绪：动手体验</div>
         <div class="suspense-tag">✍️ 场景一</div>
 
         <span class="section-tag">🎯 Workshop 实操</span>
-        <h2 class="slide-title">场景一：招生文案批量起稿</h2>
+        <h2 class="slide-title">场景一：周数据复盘 + 文档 / PPT 一次出齐</h2>
 
         <div class="workshop-demo">
-            <div class="workshop-step">
-                <div class="step-badge">📝 你只需要说</div>
-                <div class="user-input">
-                    "帮我写3条寒假班招生朋友圈，面向三到六年级家长，突出试听课、提分目标和师资稳定感"
+            <div class="workshop-layout">
+                <div class="workshop-visuals">
+                    <figure class="workshop-shot">
+                        <img src="assets/screenshots/workbuddy-practice-ppt.png" alt="WorkBuddy 根据素材制作 PPT 的输入截图">
+                        <figcaption><strong>官方实操截图：</strong>先把数据表、纪要、模板一起给 Buddy，再明确页数、受众、风格和待确认规则。</figcaption>
+                    </figure>
+                    <figure class="workshop-shot">
+                        <img src="assets/screenshots/workbuddy-office-suite.png" alt="WorkBuddy 生成文档和 PPT 产物的截图">
+                        <figcaption><strong>预期效果：</strong>右侧直接出现 Word / PPT / Excel 产物，老师可以先预览，再决定是否发给团队。</figcaption>
+                    </figure>
                 </div>
-            </div>
 
-            <div class="workshop-arrow">本次调用链：文案生成能力 → 多版本改写 → 人工挑选定稿</div>
-
-            <div class="workshop-arrow">⬇️ AI自动生成 ⬇️</div>
-
-            <div class="ai-output">
-                <div class="output-card">
-                    <div class="output-label">版本1：走心风格</div>
-                    <div class="output-content">
-                        寒假不是“补作业”的时间，而是把薄弱点补回来的黄金窗口。<br><br>
-                        我们的<span style="color: #F97316;">寒假数学提升班</span>面向三到六年级家长，先做诊断，再给出个性化提升建议。<br><br>
-                        📅 本周试听开放预约，欢迎私信领取测评表。
+                <div class="workshop-notes">
+                    <div class="workshop-note">
+                        <h4>📝 你只需要说</h4>
+                        <p>“我上传了本周试听数据表、家长会纪要和周汇报模板。请整理成 1 页校区摘要、1 份周复盘文档、1 页汇报 PPT。重点写试听人数、到课率、转化率、主要问题和下周动作；不确定的数据请标成【待确认】。”</p>
                     </div>
-                </div>
-                <div class="output-card">
-                    <div class="output-label">版本2：促销风格</div>
-                    <div class="output-content">
-                        🎉 本周公开课预约开启。<br><br>
-                        想了解孩子目前的数学短板，可以先来听一节<span style="color: #F97316;">寒假班试听课</span>，再决定是否报名。<br><br>
-                        名额和活动政策以校区老师最终通知为准。
+                    <div class="workshop-note">
+                        <h4>⚙️ 本次调用链</h4>
+                        <ul>
+                            <li><strong>读文件：</strong>先读 Excel、Word、PPT 模板里的已有素材。</li>
+                            <li><strong>整理结构：</strong>提炼指标、问题、建议和版式结构。</li>
+                            <li><strong>生成产物：</strong>一次输出复盘文档、汇报页和待确认项。</li>
+                            <li><strong>右侧复核：</strong>在产物面板里先预览，再决定是否给校长或老师看。</li>
+                        </ul>
                     </div>
-                </div>
-                <div class="output-card">
-                    <div class="output-label">版本3：问答互动</div>
-                    <div class="output-content">
-                        ❓ 孩子这学期数学成绩起伏大，到底该补习还是先找问题？<br><br>
-                        我们建议先做一次<span style="color: #F97316;">学习情况诊断</span>，再判断适不适合进寒假班。<br><br>
-                        评论区留言“诊断”，我把试听安排发给你。
+                    <div class="workshop-note">
+                        <h4>🎁 学员要带走什么</h4>
+                        <div class="mini-tag-row">
+                            <span class="mini-tag">会写“对象 + 素材 + 输出物”指令</span>
+                            <span class="mini-tag">知道文件类任务要一次给齐素材</span>
+                            <span class="mini-tag">知道先预览再发，不直接群发</span>
+                        </div>
+                    </div>
+                    <div class="workshop-note">
+                        <h4>✅ 预期交付物</h4>
+                        <p>一页校区周摘要、一份复盘文档、一页汇报 PPT，以及所有需要老师二次确认的地方都被明确标出来。</p>
                     </div>
                 </div>
             </div>
         </div>
 
         <div class="speaker-script">
-            招生文案最适合的用法，是让 AI <strong>先起草多个版本</strong>，再由老师或运营统一口径、挑选版本、做最后润色，而不是直接发布。
+            这页演示的价值在于让学员看到：<strong>只要素材给得清楚，Buddy 不只是“帮你写一段话”，而是能把文档、PPT 这种真正占老师时间的交付物先做出来。</strong>
         </div>
 
-        <div class="interaction-badge homework">课后作业 1：把这条指令里的“对象、课程、目标、边界”替换成你自己的版本，写出一条可用指令。</div>
+        <div class="interaction-badge homework">Workshop 带走动作 1：找你机构一张本周真实数据表，加一份会议纪要或活动方案，课后跑一次“摘要 + 文档 + PPT”三件套。</div>
         <div class="page-num">09 / 19</div>
     </section>
 
-    <!-- ==================== SLIDE 8: Workshop 场景2 微信客服 ==================== -->
+    <!-- ==================== SLIDE 8: Workshop 场景2 搜索与网页调研 ==================== -->
     <section class="slide slide-workshop">
         <div class="timing-badge">⏱️ Workshop 40-50分钟 | 情绪：惊叹</div>
         <div class="suspense-tag">💬 场景二</div>
 
         <span class="section-tag">🎯 Workshop 实操</span>
-        <h2 class="slide-title">场景二：家长咨询辅助回复</h2>
+        <h2 class="slide-title">场景二：公开课调研 + 网页留档</h2>
 
         <div class="workshop-demo">
-            <div class="workshop-step">
-                <div class="step-badge">💬 本次调用链</div>
-                <div class="user-input">
-                    FAQ / 标准问答能力 → 草拟回复 → 收集关键信息 → 命中高风险内容时转人工
-                </div>
-            </div>
-
-            <div class="chat-demo">
-                <div class="chat-left">
-                    <div class="chat-avatar">👤</div>
-                    <div class="chat-bubble customer">
-                        <div class="chat-time">14:32</div>
-                        你好，我想了解一下你们暑假班怎么安排？
-                    </div>
-                </div>
-                
-                <div class="ai-processing">
-                    <div class="process-icon">⚡</div>
-                    <div class="process-text">AI自动处理中...</div>
+            <div class="workshop-layout">
+                <div class="workshop-visuals">
+                    <figure class="workshop-shot">
+                        <img src="assets/screenshots/workbuddy-web-search.png" alt="WorkBuddy Web Search 检索结果截图">
+                        <figcaption><strong>第一步先搜：</strong>先把近 30 天、区域、主题这些边界说清，Buddy 会先给出一版可讨论的公开信息清单。</figcaption>
+                    </figure>
+                    <figure class="workshop-shot">
+                        <img src="assets/screenshots/workbuddy-agent-browser.png" alt="WorkBuddy Agent Browser 网页摘要截图">
+                        <figcaption><strong>第二步再读网页：</strong>遇到需要点开、展开、滚动的活动页，用 Browser 读完后做摘要并截图留档。</figcaption>
+                    </figure>
                 </div>
 
-                <div class="chat-right">
-                    <div class="chat-bubble ai">
-                        <div class="chat-time">14:32</div>
-                        您好，先和您确认一下孩子目前年级、基础情况以及想提升的方向。<br><br>
-                        我先把<span style="color: #F97316;">班型、上课时间和试听安排</span>整理给您，具体价格和优惠政策我也会备注给课程老师确认。<br><br>
-                        方便的话，先告诉我孩子现在几年级？
+                <div class="workshop-notes">
+                    <div class="workshop-note">
+                        <h4>💬 你只需要说</h4>
+                        <p>“请搜索我所在城市近 30 天的少儿编程、数学思维和英语公开课活动，筛出 5 条值得参考的案例。然后打开其中最有代表性的 3 个活动页，提炼它们的课程主题、价格表达、家长关心点和海报卖点，并截图留档。”</p>
                     </div>
-                    <div class="chat-avatar">🏠</div>
-                </div>
-
-                <div class="chat-left">
-                    <div class="chat-avatar">👤</div>
-                    <div class="chat-bubble customer">
-                        <div class="chat-time">14:33</div>
-                        可以先试听吗？
+                    <div class="workshop-note">
+                        <h4>⚙️ 本次调用链</h4>
+                        <ul>
+                            <li><strong>Web Search：</strong>先搜最近资料，不靠印象瞎讲。</li>
+                            <li><strong>筛选样本：</strong>按城市、时间、主题筛出最值得看的几条。</li>
+                            <li><strong>Agent Browser：</strong>真正把网页点开、滚动、展开后读完。</li>
+                            <li><strong>留档输出：</strong>整理摘要、截图和对比要点，方便课后复盘。</li>
+                        </ul>
                     </div>
-                </div>
-
-                <div class="chat-right">
-                    <div class="chat-bubble ai">
-                        <div class="chat-time">14:33</div>
-                        当然可以。<br><br>
-                        我先帮您登记试听需求，课程老师会根据孩子年级和时间给您安排最合适的班型。<br><br>
-                        试听名额、时间和校区安排以老师最终回复为准。
+                    <div class="workshop-note">
+                        <h4>🎯 这页最适合教培机构哪里用</h4>
+                        <div class="mini-tag-row">
+                            <span class="mini-tag">公开课选题调研</span>
+                            <span class="mini-tag">竞品海报拆解</span>
+                            <span class="mini-tag">活动页留档</span>
+                            <span class="mini-tag">招生卖点对比</span>
+                        </div>
                     </div>
-                    <div class="chat-avatar">🏠</div>
+                    <div class="workshop-note">
+                        <h4>✅ 预期交付物</h4>
+                        <p>一份“值得参考的公开课案例清单”，每条带课程主题、卖点摘要、截图留档和你自己的备注空间。</p>
+                    </div>
                 </div>
             </div>
         </div>
 
         <div class="speaker-script">
-            家长咨询场景里，AI 最适合先做的是<strong>首轮接待、信息归类和标准问题草拟回复</strong>。涉及价格、名额、结果判断和个性化建议时，必须转人工确认。
+            这页要让学员建立一个新认知：<strong>调研不只是“搜一下”就结束了。</strong>真正有价值的是“先搜到候选，再把关键网页读完、截图、留档”，这样你回头开会时才拿得出依据。
         </div>
 
-        <div class="interaction-badge live">直播判断题：如果家长继续追问价格、优惠或升学结果，这里应该继续让 AI 回，还是必须转人工？</div>
+        <div class="interaction-badge live">直播互动：如果今天就做一次竞品调研，你最想先比哪一项？公开课主题、海报卖点、价格表达，还是家长常见问题？请直接选一个最想看的。</div>
         <div class="page-num">10 / 19</div>
     </section>
 
@@ -2738,66 +3046,57 @@
         <div class="suspense-tag">📊 场景三</div>
 
         <span class="section-tag">🎯 Workshop 实操</span>
-        <h2 class="slide-title">场景三：校区数据复盘自动化</h2>
+        <h2 class="slide-title">场景三：试听数据分析并自动出图</h2>
 
         <div class="workshop-demo">
-            <div class="workshop-step">
-                <div class="step-badge">📊 你只需要说</div>
-                <div class="user-input">
-                    "分析这份本周试听数据，统计各班型报名人数、试听到课率和转化率，找出最值得跟进的班级"
-                </div>
-            </div>
-
-            <div class="workshop-arrow">本次调用链：读表 → 自动统计与排序 → 生成图表 → 提炼复盘结论</div>
-
-            <div class="workshop-arrow">⬇️ AI自动处理 ⬇️</div>
-
-            <div class="data-output">
-                <div class="data-stats">
-                    <div class="stat-card">
-                        <div class="stat-number">156</div>
-                        <div class="stat-label">总试听线索</div>
-                    </div>
-                    <div class="stat-card highlight">
-                        <div class="stat-number">89</div>
-                        <div class="stat-label">有效到课</div>
-                    </div>
-                    <div class="stat-card">
-                        <div class="stat-number">57%</div>
-                        <div class="stat-label">转化率</div>
-                    </div>
+            <div class="workshop-layout">
+                <div class="workshop-visuals">
+                    <figure class="workshop-shot">
+                        <img src="assets/screenshots/workbuddy-practice-data.png" alt="WorkBuddy 数据分析可视化截图">
+                        <figcaption><strong>官方实操截图：</strong>读取表格后，不只是给结论，还能直接出图，让数据复盘更像一份正式汇报。</figcaption>
+                    </figure>
+                    <figure class="workshop-shot">
+                        <img src="assets/screenshots/workbuddy-right-sidebar.png" alt="WorkBuddy 右侧产物与预览截图">
+                        <figcaption><strong>复核位置：</strong>图表、报告和产物会落到右侧面板，方便老师逐个检查后再对外使用。</figcaption>
+                    </figure>
                 </div>
 
-                <div class="data-chart">
-                        <div class="chart-title">📈 各班型转化表现</div>
-                    <div class="chart-bar">
-                        <div class="bar-label">数学培优班</div>
-                        <div class="bar-track"><div class="bar-fill" style="width: 85%;">42人</div></div>
+                <div class="workshop-notes">
+                    <div class="workshop-note">
+                        <h4>📊 你只需要说</h4>
+                        <p>“请读取这份试听数据表，按校区和班型统计咨询量、到课率、转化率和续班意向，分别生成柱状图、趋势图和一段复盘结论。请特别指出到课率最低的两个环节，并给出下周优先处理建议。”</p>
                     </div>
-                    <div class="chart-bar">
-                        <div class="bar-label">英语强化班</div>
-                        <div class="bar-track"><div class="bar-fill" style="width: 65%;">31人</div></div>
+                    <div class="workshop-note">
+                        <h4>⚙️ 本次调用链</h4>
+                        <ul>
+                            <li><strong>读表：</strong>先识别字段、清洗空值、统一统计口径。</li>
+                            <li><strong>自动出图：</strong>按校区、班型、时间维度生成图表。</li>
+                            <li><strong>提炼结论：</strong>指出问题、解释风险、给出下一步动作建议。</li>
+                            <li><strong>产物复核：</strong>老师只需要重点检查口径和异常值。</li>
+                        </ul>
                     </div>
-                    <div class="chart-bar">
-                        <div class="bar-label">语文阅读班</div>
-                        <div class="bar-track"><div class="bar-fill" style="width: 45%;">22人</div></div>
+                    <div class="workshop-note">
+                        <h4>🎁 学员最容易马上复制</h4>
+                        <div class="mini-tag-row">
+                            <span class="mini-tag">试听到课率复盘</span>
+                            <span class="mini-tag">续班率月报</span>
+                            <span class="mini-tag">公开课到场分析</span>
+                            <span class="mini-tag">班型表现对比</span>
+                        </div>
                     </div>
-                </div>
-
-                <div class="data-insight">
-                    <div class="insight-icon">💡</div>
-                    <div class="insight-text">
-                        <strong>AI洞察：</strong>数学培优试听到课率最高，建议加大公开课投放；英语强化咨询量高但到课偏低，优先检查邀约提醒和试听前沟通话术。
+                    <div class="workshop-note">
+                        <h4>✅ 预期交付物</h4>
+                        <p>一组图表、一段复盘总结，以及一份明确写着“下周先追哪两个问题”的可执行建议。</p>
                     </div>
                 </div>
             </div>
         </div>
 
         <div class="speaker-script">
-            在数据复盘场景里，AI 的价值是先快速给出一版<strong>可检查的报表和洞察草稿</strong>，帮助校区更快看见问题，再由人来决定后续动作。
+            数据分析这页最容易让学员产生“我下周就能试”的感觉。因为它的输入很清楚，就是表格；输出也很清楚，就是图表和结论。<strong>只要口径可检查，这类任务通常最适合 AI 先打底。</strong>
         </div>
 
-        <div class="interaction-badge homework">课后作业 2：找出一张本周可用的数据表，完成一次“试听到课率 / 转化率 / 续班率”的 AI 复盘。</div>
+        <div class="interaction-badge homework">Workshop 带走动作 2：找出一张本周可用的试听或续班数据表，完成一次“出图 + 结论 + 下周动作”的 AI 复盘。</div>
         <div class="page-num">11 / 19</div>
     </section>
 
@@ -3172,6 +3471,12 @@
                 </div>
             </div>
 
+            <div class="harvest-strip">
+                <div class="harvest-pill">今晚已经拿到 1 个<br><strong>优先试跑的真实场景</strong></div>
+                <div class="harvest-pill">今晚已经拿到 1 条<br><strong>能直接复制的最小指令</strong></div>
+                <div class="harvest-pill">今晚已经拿到 1 张<br><strong>机构可用的审核边界表</strong></div>
+            </div>
+
             <div class="action-box">
                 <p>🚀 今天回去，先用 AI 完成一个低风险、高重复的任务</p>
             </div>
@@ -3181,7 +3486,7 @@
             本课最重要的收获，不是认识了多少新词，而是已经明确了落地顺序：先从重复事务中释放老师和运营的时间，再把精力还给教学质量和家长沟通。
         </div>
 
-        <div class="interaction-badge live">课末互动：请在评论区说出你回去准备先试的第一个场景，以及你打算保留的那个审核点。</div>
+        <div class="interaction-badge live">课末互动：请在评论区写下你准备先试的第一个场景，再补一句“这一步我准备保留哪个审核点”。</div>
         <div class="page-num">17 / 19</div>
     </section>
 
@@ -3192,7 +3497,7 @@
 
         <div class="cta-container">
             <div class="cta-emoji">🚀</div>
-            <h2 class="cta-title">线上课后，你可以马上开始什么？</h2>
+            <h2 class="cta-title">从线上听懂，到线下跑通</h2>
 
             <div class="cta-items">
                 <div class="cta-item">
@@ -3215,16 +3520,16 @@
 
             <div class="conversion-box">
                 <h3>如果你想继续进到线下实操课</h3>
-                <p>线下课不再停留在“看懂案例”，而是会把你机构的真实任务现场跑通。适合已经明确想落地、但需要人陪着一起搭第一套流程的学员。</p>
+                <p>线下课不再停留在“看懂案例”，而是会把你机构的真实任务现场跑通。更适合已经被今天直播打动、但担心“回去还是搭不起来”的学员。</p>
                 <div class="conversion-list">
-                    <div class="conversion-item">带着你自己的招生文案、FAQ 或数据表来，现场改成可直接用的版本。</div>
-                    <div class="conversion-item">把 1 个真实任务拆成完整工作流：AI 起稿、人工审核、最终交付。</div>
-                    <div class="conversion-item">现场做出属于你机构的模板库、审核清单和第一套使用规范。</div>
+                    <div class="conversion-item">带着你自己的招生文案、FAQ 或数据表来，现场改成校区能直接用的版本。</div>
+                    <div class="conversion-item">把 1 个真实任务拆成完整工作流：AI 起稿、人工审核、最终交付，当场跑通第一版。</div>
+                    <div class="conversion-item">现场做出属于你机构的模板库、审核清单和第一套使用规范，不再回去从零摸索。</div>
                 </div>
             </div>
 
             <div class="cta-footer">
-                <p>想继续参加线下实操课的同学，可以课后登记意向，我会把适合带来的资料清单发给你。</p>
+                <p>想继续参加线下实操课的同学，可以课后登记意向。我会先把“适合带来的资料清单”和“最值得现场跑通的任务类型”发给你，方便你判断自己适不适合来。</p>
             </div>
         </div>
 
