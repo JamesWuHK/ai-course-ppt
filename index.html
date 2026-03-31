@@ -2522,6 +2522,69 @@
             color: #FED7AA;
         }
 
+        .roadmap-strip {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 18px;
+            margin: 26px auto 0;
+            max-width: 980px;
+            width: 100%;
+        }
+
+        .roadmap-stage {
+            position: relative;
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 22px;
+            padding: 20px 20px 18px;
+            text-align: left;
+            box-shadow: 0 14px 34px rgba(15, 23, 42, 0.24);
+        }
+
+        .roadmap-stage::after {
+            content: "→";
+            position: absolute;
+            right: -15px;
+            top: 50%;
+            transform: translateY(-50%);
+            font-size: 24px;
+            color: rgba(251, 146, 60, 0.9);
+            font-weight: 800;
+        }
+
+        .roadmap-stage:last-child::after {
+            display: none;
+        }
+
+        .roadmap-tag {
+            display: inline-flex;
+            align-items: center;
+            background: rgba(249, 115, 22, 0.12);
+            border: 1px solid rgba(249, 115, 22, 0.22);
+            color: #FED7AA;
+            border-radius: 999px;
+            padding: 6px 11px;
+            font-size: 11px;
+            font-weight: 700;
+            margin-bottom: 12px;
+        }
+
+        .roadmap-stage h4 {
+            font-size: 20px;
+            color: #F8FAFC;
+            margin-bottom: 8px;
+        }
+
+        .roadmap-stage p {
+            font-size: 14px;
+            line-height: 1.75;
+            color: #CBD5E1;
+        }
+
+        .roadmap-stage strong {
+            color: #F8FAFC;
+        }
+
         /* Page Number */
         .page-num {
             position: absolute;
@@ -2588,6 +2651,7 @@
             .concept-cards, .cases-grid, .skill-categories, .function-grid, .tool-map { grid-template-columns: repeat(2, 1fr); }
             .rtgf-grid, .demo-steps { grid-template-columns: repeat(2, 1fr); }
             .wb-features-grid, .official-proof-strip, .prepared-demos-grid, .capability-grid { grid-template-columns: repeat(2, 1fr); }
+            .roadmap-strip { grid-template-columns: 1fr; }
             .prepared-demo-card, .workshop-layout, .experiment-layout { grid-template-columns: 1fr; }
         }
 
@@ -2597,7 +2661,8 @@
             .pain-points-grid, .bad-good-wrapper, .function-grid, .tool-map { grid-template-columns: 1fr; }
             .emotion-bar, .suspense-tag { display: none; }
             .harvest-strip, .conversion-list { grid-template-columns: 1fr; }
-            .wb-features-grid, .official-proof-strip, .prepared-demos-grid, .activity-cards, .demo-tasks, .ai-output, .data-stats, .experiment-mini-grid, .capability-grid { grid-template-columns: 1fr; }
+            .wb-features-grid, .official-proof-strip, .prepared-demos-grid, .activity-cards, .demo-tasks, .ai-output, .data-stats, .experiment-mini-grid, .capability-grid, .roadmap-strip { grid-template-columns: 1fr; }
+            .roadmap-stage::after { display: none; }
         }
 
         @media print {
@@ -3765,6 +3830,24 @@
 
             <div class="promise-box" style="max-width: 980px; margin: 28px auto 0;">
                 <p>线下不会重复讲入门概念，而是直接进入更高阶的实战能力：怎么把 AI 从“会聊天”升级到“会协作、会执行、会沉淀资产”。</p>
+            </div>
+
+            <div class="roadmap-strip">
+                <div class="roadmap-stage">
+                    <div class="roadmap-tag">今天直播课</div>
+                    <h4>先学会起步</h4>
+                    <p>先知道<strong>哪些任务适合先做</strong>、指令怎么写、哪些地方必须人工审核，保证回去就能跑出第一版。</p>
+                </div>
+                <div class="roadmap-stage">
+                    <div class="roadmap-tag">线下进阶课</div>
+                    <h4>再学会协作</h4>
+                    <p>继续把 AI 从单点工具升级成<strong>数字员工 + Agent 工作流</strong>，让多个动作开始协同往前跑。</p>
+                </div>
+                <div class="roadmap-stage">
+                    <div class="roadmap-tag">最终效果</div>
+                    <h4>做成机构能力</h4>
+                    <p>最后沉淀成<strong>模板、SOP、知识库和任务链</strong>，让老板自己能用，团队以后也能稳定复用。</p>
+                </div>
             </div>
 
             <div class="conversion-box">
