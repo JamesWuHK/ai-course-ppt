@@ -706,6 +706,57 @@
             color: #CBD5E1;
         }
 
+        .experiment-op-card {
+            background: rgba(15, 23, 42, 0.78);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            border-radius: 20px;
+            padding: 18px 18px 16px;
+            box-shadow: 0 14px 34px rgba(15, 23, 42, 0.2);
+        }
+
+        .experiment-op-card h5 {
+            font-size: 13px;
+            color: #FED7AA;
+            margin-bottom: 10px;
+            letter-spacing: 0.3px;
+        }
+
+        .experiment-op-list {
+            display: grid;
+            gap: 10px;
+        }
+
+        .experiment-op-step {
+            display: grid;
+            grid-template-columns: 24px 1fr;
+            gap: 10px;
+            align-items: start;
+        }
+
+        .experiment-op-num {
+            width: 24px;
+            height: 24px;
+            border-radius: 999px;
+            background: linear-gradient(135deg, rgba(249, 115, 22, 0.95), rgba(251, 146, 60, 0.9));
+            color: #fff;
+            font-size: 12px;
+            font-weight: 800;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-top: 1px;
+        }
+
+        .experiment-op-step p {
+            font-size: 13px;
+            line-height: 1.7;
+            color: #CBD5E1;
+        }
+
+        .experiment-op-step strong {
+            color: #F8FAFC;
+        }
+
         .experiment-prompt-box {
             margin-top: 14px;
             background: rgba(15, 23, 42, 0.88);
@@ -2878,13 +2929,35 @@
                 </div>
 
                 <div class="experiment-mini-grid">
-                    <div class="experiment-mini-note">
-                        <h5>做对标准</h5>
-                        <p>一句指令里先写清：写给谁、要做什么、语气或边界。少一项，结果通常就会发飘。</p>
+                    <div class="experiment-op-card">
+                        <h5>照着截图操作</h5>
+                        <div class="experiment-op-list">
+                            <div class="experiment-op-step">
+                                <div class="experiment-op-num">1</div>
+                                <p><strong>先找底部输入框</strong>，别急着研究别的按钮，今天只用最基础的对话入口。</p>
+                            </div>
+                            <div class="experiment-op-step">
+                                <div class="experiment-op-num">2</div>
+                                <p><strong>把一句真实任务输进去</strong>，先别追求完美，先让它给你第一版。</p>
+                            </div>
+                            <div class="experiment-op-step">
+                                <div class="experiment-op-num">3</div>
+                                <p><strong>盯回答区</strong>，看看对象、事情、时间是否齐全，不齐就继续补一句。</p>
+                            </div>
+                        </div>
                     </div>
-                    <div class="experiment-mini-note">
-                        <h5>常见错误</h5>
-                        <p>只说“帮我写个通知”太空。AI 不是不会写，而是在替你猜对象、场景和口吻。</p>
+                    <div class="experiment-op-card">
+                        <h5>看到什么算学会</h5>
+                        <div class="experiment-op-list">
+                            <div class="experiment-op-step">
+                                <div class="experiment-op-num">✓</div>
+                                <p><strong>成功标志</strong>：它已经给出一版像样的通知草稿，而不是答非所问。</p>
+                            </div>
+                            <div class="experiment-op-step">
+                                <div class="experiment-op-num">!</div>
+                                <p><strong>卡住先查</strong>：是不是没说清写给谁、做什么、什么口气。</p>
+                            </div>
+                        </div>
                     </div>
                 </div>
 
@@ -2958,13 +3031,35 @@
                 </div>
 
                 <div class="experiment-mini-grid">
-                    <div class="experiment-mini-note">
-                        <h5>追问四件套</h5>
-                        <p>追不准的时候，优先补 4 样：对象、场景、限制、输出。多数结果都会明显变好。</p>
+                    <div class="experiment-op-card">
+                        <h5>照着截图操作</h5>
+                        <div class="experiment-op-list">
+                            <div class="experiment-op-step">
+                                <div class="experiment-op-num">1</div>
+                                <p><strong>不要新开会话</strong>，沿用刚才那条对话继续追问。</p>
+                            </div>
+                            <div class="experiment-op-step">
+                                <div class="experiment-op-num">2</div>
+                                <p><strong>第 1 轮改对象和口吻</strong>，让它更贴近你真实受众。</p>
+                            </div>
+                            <div class="experiment-op-step">
+                                <div class="experiment-op-num">3</div>
+                                <p><strong>第 2、3 轮再补限制和输出</strong>，看它能不能顺着上下文继续改。</p>
+                            </div>
+                        </div>
                     </div>
-                    <div class="experiment-mini-note">
-                        <h5>做对标准</h5>
-                        <p>如果你连续 3 轮后，内容明显更贴业务、更像能直接改用，这就是大模型能力在起作用。</p>
+                    <div class="experiment-op-card">
+                        <h5>看到什么算学会</h5>
+                        <div class="experiment-op-list">
+                            <div class="experiment-op-step">
+                                <div class="experiment-op-num">✓</div>
+                                <p><strong>成功标志</strong>：每追问一轮，结果都更贴业务，而不是前后断掉重来。</p>
+                            </div>
+                            <div class="experiment-op-step">
+                                <div class="experiment-op-num">!</div>
+                                <p><strong>追问四件套</strong>：对象、场景、限制、输出。追不准时先补这 4 样。</p>
+                            </div>
+                        </div>
                     </div>
                 </div>
 
@@ -3004,7 +3099,7 @@
         <div class="suspense-tag">🏫 行业判断</div>
 
         <span class="section-tag">🧪 当堂小实验 3</span>
-        <h2 class="slide-title">换豆包上手：什么叫多模态？什么叫 AIGC？</h2>
+        <h2 class="slide-title">换豆包上手：什么叫多模态？什么叫 AIGC（AI 生成内容）？</h2>
 
         <div class="experiment-layout">
             <div class="experiment-visual-stack">
@@ -3059,13 +3154,39 @@
                 </div>
 
                 <div class="experiment-mini-grid">
-                    <div class="experiment-mini-note">
-                        <h5>判断题 1</h5>
-                        <p>AI 看了你的海报后，告诉你“标题不够清楚、报名路径太深”，这是多模态，不是 AIGC。</p>
+                    <div class="experiment-op-card">
+                        <h5>照着豆包截图操作</h5>
+                        <div class="experiment-op-list">
+                            <div class="experiment-op-step">
+                                <div class="experiment-op-num">1</div>
+                                <p><strong>先点上传入口</strong>，把现成海报或课程表扔进去。</p>
+                            </div>
+                            <div class="experiment-op-step">
+                                <div class="experiment-op-num">2</div>
+                                <p><strong>再补一句追问</strong>，不要只发图不说话，比如“最该先改哪 3 处”。</p>
+                            </div>
+                            <div class="experiment-op-step">
+                                <div class="experiment-op-num">3</div>
+                                <p><strong>看回答区</strong>，如果它是在点评你现有素材，这就是多模态。</p>
+                            </div>
+                        </div>
                     </div>
-                    <div class="experiment-mini-note">
-                        <h5>判断题 2</h5>
-                        <p>AI 根据一句话直接给你生成一张公开课海报图，这才是 AIGC。核心是“生成了新内容”。</p>
+                    <div class="experiment-op-card">
+                        <h5>照着即梦截图操作</h5>
+                        <div class="experiment-op-list">
+                            <div class="experiment-op-step">
+                                <div class="experiment-op-num">1</div>
+                                <p><strong>找到生成入口</strong>，输入一句你想要的画面描述。</p>
+                            </div>
+                            <div class="experiment-op-step">
+                                <div class="experiment-op-num">2</div>
+                                <p><strong>点生成</strong>，等待它给出新的图片或视频结果。</p>
+                            </div>
+                            <div class="experiment-op-step">
+                                <div class="experiment-op-num">3</div>
+                                <p><strong>判断成功标志</strong>：它是新生成内容，不是在点评你原图，这就属于 AIGC。</p>
+                            </div>
+                        </div>
                     </div>
                 </div>
 
@@ -3090,34 +3211,56 @@
         <div class="suspense-tag">🛠️ 今天的主角</div>
 
         <span class="section-tag">🧪 当堂小实验 4</span>
-        <h2 class="slide-title">再往上抬一层：什么是 Agent？什么是“龙虾”？</h2>
+        <h2 class="slide-title">再往上抬一层：什么是 Agent（会自己拆步骤、调工具的 AI 助手）？什么是“龙虾”？</h2>
 
         <div class="experiment-layout">
             <div class="experiment-visual-stack">
                 <div class="experiment-product-card">
                     <div class="experiment-product-copy">
                         <span class="experiment-shot-tag">产品截图 · WorkBuddy 官方文档</span>
-                        <h3>先认 WorkBuddy：它不是只聊天，而是一个能挂技能和产出文件的 Agent 工作台</h3>
+                        <h3>先认 WorkBuddy：它不是只聊天，而是一个能挂内置能力、还能做出文件结果的 AI 工作台</h3>
                         <p>这一页先认 3 个信号：有技能、有步骤、有交付物。</p>
                     </div>
                     <img src="assets/screenshots/workbuddy-product-guide.png" alt="WorkBuddy 官方文档截图">
                     <div class="experiment-shot-points">
                         <span>看技能入口</span>
                         <span>看任务步骤</span>
-                        <span>看结果产物</span>
+                        <span>看做出来的结果</span>
                     </div>
                 </div>
             </div>
 
             <div class="experiment-task-stack">
                 <div class="experiment-mini-grid">
-                    <div class="experiment-mini-note">
-                        <h5>一眼判断是不是 Agent</h5>
-                        <p>看 3 件事：会不会自己拆步骤、会不会调用工具、会不会交付文件或结果，而不只是回一句话。</p>
+                    <div class="experiment-op-card">
+                        <h5>照着截图操作</h5>
+                        <div class="experiment-op-list">
+                            <div class="experiment-op-step">
+                                <div class="experiment-op-num">1</div>
+                                <p><strong>先看技能入口</strong>，确认它不是纯聊天框，而是能挂能力的工作台。</p>
+                            </div>
+                            <div class="experiment-op-step">
+                                <div class="experiment-op-num">2</div>
+                                <p><strong>再看任务步骤区</strong>，观察它会不会自己拆成几步往前做。</p>
+                            </div>
+                            <div class="experiment-op-step">
+                                <div class="experiment-op-num">3</div>
+                                <p><strong>最后看结果区</strong>，有没有文件、表格、提纲这类做出来的东西。</p>
+                            </div>
+                        </div>
                     </div>
-                    <div class="experiment-mini-note">
-                        <h5>“养龙虾”到底在养什么</h5>
-                        <p>不是养一个聊天机器人，而是把某类固定任务，慢慢养成它能稳定接住的一条工作流。</p>
+                    <div class="experiment-op-card">
+                        <h5>看到什么算学会</h5>
+                        <div class="experiment-op-list">
+                            <div class="experiment-op-step">
+                                <div class="experiment-op-num">✓</div>
+                                <p><strong>成功标志</strong>：它开始拆步骤、调工具、交付结果，而不是只讲道理。</p>
+                            </div>
+                            <div class="experiment-op-step">
+                                <div class="experiment-op-num">!</div>
+                                <p><strong>“养龙虾”大白话</strong>：就是把这种流程慢慢养熟，变成以后能反复复用的工作流。</p>
+                            </div>
+                        </div>
                     </div>
                 </div>
 
@@ -3126,23 +3269,23 @@
                     <h4>给 Buddy 一个“要交付物”的任务</h4>
                     <ul>
                         <li>示例任务：把本周试听、到课和转化数据整理成复盘表，再给出 1 页汇报 PPT 提纲。</li>
-                        <li>别只看结果，要看它有没有自己拆步骤、调用工具、产出文件或结构化结果。</li>
-                        <li>验收标准：如果它只是回一段建议，不算 Agent 发力；如果它开始真正推进任务，才算。</li>
+                        <li>别只看结果，要看它有没有自己拆步骤、调用工具、做出文件或结构化结果。</li>
+                        <li>验收标准：如果它只是回一段建议，不算 Agent 真上手；如果它开始真正把事往前推，才算。</li>
                     </ul>
                 </div>
 
                 <div class="experiment-concept-band">
                     <h4>本页带走 2 个概念</h4>
-                    <p>Agent = 会拆任务、调工具、交付结果。“养龙虾” = 把这类能力真正养进你的固定工作流。</p>
+                    <p>Agent = 会拆任务、调工具、把事情一步步往前做的 AI 助手。“养龙虾” = 把这类能力真正养进你的固定做事流程。</p>
                 </div>
             </div>
         </div>
 
         <div class="speaker-script">
-            到这里就能把“龙虾”这个词顺手解释掉了。它不是一门神秘黑话，本质上就是：<strong>不只让 AI 给你内容，而是真的开始把 Agent 养进你的流程，让它继续帮你做事。</strong>
+            到这里就能把“龙虾”这个词顺手解释掉了。它不是一门神秘黑话，本质上就是：<strong>不只让 AI 给你内容，而是真的开始把这种 AI 助手养进你的流程，让它继续帮你做事。</strong>
         </div>
 
-        <div class="interaction-badge live">补全一句话：AIGC 是先帮我生成，Agent 是开始帮我 ______。</div>
+        <div class="interaction-badge live">补全一句话：AIGC 是先帮我生成，Agent 是开始帮我一步步把事 ______。</div>
         <div class="page-num">06 / 19</div>
     </section>
 
@@ -3152,16 +3295,16 @@
         <div class="suspense-tag">💪 它能做什么</div>
 
         <span class="section-tag">🧪 当堂小实验 5</span>
-        <h2 class="slide-title">再揭开一层：什么是 Computer Use，为什么 WorkBuddy 值得演？</h2>
+        <h2 class="slide-title">再揭开一层：什么是 Computer Use（让 AI 动电脑），为什么 WorkBuddy 值得演？</h2>
 
         <div class="experiment-layout">
             <div class="experiment-visual-stack">
                 <div class="experiment-mini-grid">
                     <div class="experiment-product-card">
                         <div class="experiment-product-copy">
-                            <span class="experiment-shot-tag">产品截图 · Skills</span>
-                            <h3>先看技能市场</h3>
-                            <p>Browser、Web Search、Office 这些能力都可以被真正调用。</p>
+                            <span class="experiment-shot-tag">产品截图 · Skills（内置能力列表）</span>
+                            <h3>先看内置能力列表</h3>
+                            <p>Browser、Web Search、Office 这些能力，简单说就是 AI 可以调用的“手和脚”。</p>
                         </div>
                         <img src="assets/screenshots/workbuddy-skills-market.png" alt="WorkBuddy 技能市场截图">
                         <div class="experiment-shot-points">
@@ -3172,13 +3315,13 @@
 
                     <div class="experiment-product-card">
                         <div class="experiment-product-copy">
-                            <span class="experiment-shot-tag">产品截图 · 产物区</span>
-                            <h3>再看右侧产物面板</h3>
-                            <p>文件、预览、改动都能看见，流程更容易复核。</p>
+                            <span class="experiment-shot-tag">产品截图 · 结果区</span>
+                            <h3>再看右侧结果面板</h3>
+                            <p>文件、预览、改动都能看见。大白话就是：它做完的东西都放这里，方便你检查。</p>
                         </div>
                         <img src="assets/screenshots/workbuddy-right-sidebar.png" alt="WorkBuddy 右侧产物区截图">
                         <div class="experiment-shot-points">
-                            <span>看文件产物</span>
+                            <span>看文件结果</span>
                             <span>看预览结果</span>
                         </div>
                     </div>
@@ -3195,33 +3338,55 @@
                         <li>重点观察：它是不是已经真的去点网页、整理文件、产出结果，而不只是告诉你“建议怎么做”。</li>
                     </ul>
                     <div class="experiment-prompt-box">
-                        这一步最适合解释 Computer Use：AI 开始接管网页、文档、文件这些“电脑上的动作”。
+                        这一步最适合解释 Computer Use：大白话就是，AI 开始帮你动电脑，去点网页、读文档、整理文件。
                     </div>
                 </div>
 
                 <div class="experiment-mini-grid">
-                    <div class="experiment-mini-note">
-                        <h5>什么时候值得上 Computer Use</h5>
-                        <p>任务里如果包含“打开网页、点开详情、滚动查看、整理文件、导出产物”这类动作，就值得上。</p>
+                    <div class="experiment-op-card">
+                        <h5>照着截图操作</h5>
+                        <div class="experiment-op-list">
+                            <div class="experiment-op-step">
+                                <div class="experiment-op-num">1</div>
+                                <p><strong>先开内置能力</strong>，把 Browser、Web Search、Office 这类“手和脚”准备好。</p>
+                            </div>
+                            <div class="experiment-op-step">
+                                <div class="experiment-op-num">2</div>
+                                <p><strong>下一个跨网页和文件的任务</strong>，别只问一句文案问题。</p>
+                            </div>
+                            <div class="experiment-op-step">
+                                <div class="experiment-op-num">3</div>
+                                <p><strong>盯右侧结果区</strong>，看它是不是已经真的打开网页、截图、整理文件。</p>
+                            </div>
+                        </div>
                     </div>
-                    <div class="experiment-mini-note">
-                        <h5>什么时候没必要硬上</h5>
-                        <p>如果只是改一句文案、问一个概念，直接文本对话更快。Computer Use 适合多步骤、多界面任务。</p>
+                    <div class="experiment-op-card">
+                        <h5>什么时候值得上</h5>
+                        <div class="experiment-op-list">
+                            <div class="experiment-op-step">
+                                <div class="experiment-op-num">✓</div>
+                                <p><strong>适合</strong>：要打开网页、点开详情、滚动查看、整理文件、导出结果文件。</p>
+                            </div>
+                            <div class="experiment-op-step">
+                                <div class="experiment-op-num">!</div>
+                                <p><strong>不必硬上</strong>：如果只是改一句文案、问一个概念，直接文本对话更快。</p>
+                            </div>
+                        </div>
                     </div>
                 </div>
 
                 <div class="experiment-concept-band">
                     <h4>本页只带走 1 个概念</h4>
-                    <p>Computer Use = AI 不只回答你，而是真的去操作网页、文件和界面，适合跨步骤任务。</p>
+                    <p>Computer Use = 让 AI 不只动嘴，而是真的动电脑，去操作网页、文件和界面，适合跨步骤任务。</p>
                 </div>
             </div>
         </div>
 
         <div class="speaker-script">
-            最后一个词要在这里带出来：<strong>Computer Use</strong>。学员不需要背技术定义，只要看懂一件事就够了：当 AI 开始真的去动电脑、动文件、动网页，它就不只是“会生成”，而是在“会使用电脑继续做事”。
+            最后一个词要在这里带出来：<strong>Computer Use</strong>。学员不需要背技术定义，只要看懂一件事就够了：当 AI 开始真的去动电脑、动文件、动网页，它就不只是“会生成”，而是在“会替你做电脑上的动作”。
         </div>
 
-        <div class="interaction-badge live">试着把 6 个词串起来：AI、大模型、多模态、AIGC、Agent、Computer Use。你最想先试哪一层？</div>
+        <div class="interaction-badge live">试着把 6 个词串起来：AI、大模型、多模态、AIGC、Agent、Computer Use（让 AI 动电脑）。你最想先试哪一层？</div>
         <div class="page-num">07 / 19</div>
     </section>
 
@@ -3230,7 +3395,7 @@
         <div class="timing-badge">⏱️ 演示 25-30分钟 | 情绪：第一波高潮</div>
         <div class="suspense-tag">🎬 现场震撼演示</div>
 
-        <h2 class="workshop-title">Workshop：按“素材 - 口令 - 调用链 - 验收”选 1 条马上试</h2>
+        <h2 class="workshop-title">Workshop：按“素材 - 口令 - 后台怎么一步步做 - 验收”选 1 条马上试</h2>
         <p class="workshop-subtitle">不是只看炫技，而是照着任务单做一遍。这样你回去时，知道自己该备什么素材、怎么下指令、最后验什么。</p>
 
         <div class="activity-cards">
@@ -3246,8 +3411,8 @@
             </div>
             <div class="activity-card">
                 <div class="activity-number">3</div>
-                <h3 class="activity-title">看调用链</h3>
-                <p class="activity-desc">看懂后台到底调了哪些 Skill，为什么这样调</p>
+                <h3 class="activity-title">看后台步骤</h3>
+                <p class="activity-desc">看懂后台到底调了哪些内置能力，为什么这样调</p>
             </div>
             <div class="activity-card">
                 <div class="activity-number">4</div>
@@ -3266,7 +3431,7 @@
                     <h3>本周经营复盘：文档 + PPT 一次出齐</h3>
                     <p>很适合作为第一条实操预案。它最容易让你感觉到“不是写一段字，而是真的把文件做出来了”。</p>
                     <div class="prepared-demo-command">你只需要说：把本周试听数据表、教研纪要和周汇报模板整理成 1 页摘要、1 份复盘文档和 1 页汇报 PPT。</div>
-                    <div class="prepared-demo-chain"><strong>调用链：</strong>读文件 → 提炼结构 → 生成 Word / PPT / Excel 产物 → 右侧预览复核</div>
+                    <div class="prepared-demo-chain"><strong>后台步骤：</strong>读文件 → 提炼结构 → 生成 Word / PPT / Excel 文件 → 右侧预览复核</div>
                 </div>
             </div>
             <div class="prepared-demo-card">
@@ -3278,7 +3443,7 @@
                     <h3>公开课调研：先搜，再筛，再归纳</h3>
                     <p>这一类特别适合亲力亲为的小老板，因为最需要的是更快拿到公开信息，而不是自己手动翻十几个网页。</p>
                     <div class="prepared-demo-command">你只需要说：搜最近 30 天本地教培机构公开课主题，筛出最值得参考的 5 条，并解释为什么值得看。</div>
-                    <div class="prepared-demo-chain"><strong>调用链：</strong>联网检索 → 按时间过滤 → AI 摘要归纳 → 得到可讨论的候选清单</div>
+                    <div class="prepared-demo-chain"><strong>后台步骤：</strong>联网检索 → 按时间过滤 → AI 摘要归纳 → 得到可讨论的候选清单</div>
                 </div>
             </div>
             <div class="prepared-demo-card">
@@ -3286,11 +3451,11 @@
                     <img src="assets/screenshots/workbuddy-agent-browser.png" alt="WorkBuddy Agent Browser 演示截图">
                 </div>
                 <div class="prepared-demo-content">
-                    <span class="prepared-demo-label">预案 C | Agent Browser</span>
+                    <span class="prepared-demo-label">预案 C | Agent Browser（会点网页的浏览能力）</span>
                     <h3>网页留档：把需要点开和滚动的页面真正读完</h3>
                     <p>这条适合接在搜索后面，因为有些网页不是搜到就算了，还要点开、展开、截图，才算完成任务。</p>
                     <div class="prepared-demo-command">你只需要说：打开这几家机构的活动页，读完需要展开的内容，整理摘要并为关键页面截图留档。</div>
-                    <div class="prepared-demo-chain"><strong>调用链：</strong>打开网页 → 点击 / 滚动 / 展开 → 提取信息 → 输出摘要与截图文件</div>
+                    <div class="prepared-demo-chain"><strong>后台步骤：</strong>打开网页 → 点击 / 滚动 / 展开 → 提取信息 → 输出摘要与截图文件</div>
                 </div>
             </div>
             <div class="prepared-demo-card">
@@ -3299,16 +3464,16 @@
                 </div>
                 <div class="prepared-demo-content">
                     <span class="prepared-demo-label">预案 D | 技能市场</span>
-                    <h3>先选 Skill，再谈流程</h3>
+                    <h3>先选内置能力，再谈流程</h3>
                     <p>这一页不是炫功能，而是降低上手门槛。你会知道不用自己从零造系统，很多能力已经可以直接启用。</p>
-                    <div class="prepared-demo-command">你只需要说：今天这节课只保留办公文档、Web Search 和 Agent Browser 三类 Skill，其他先不展开。</div>
-                    <div class="prepared-demo-chain"><strong>调用链：</strong>明确任务 → 选择合适 Skill → 降低误调用 → 让演示更稳定</div>
+                    <div class="prepared-demo-command">你只需要说：今天这节课只保留办公文档、Web Search 和 Agent Browser 这三类内置能力，其他先不展开。</div>
+                    <div class="prepared-demo-chain"><strong>后台步骤：</strong>明确任务 → 选择合适内置能力 → 降低误调用 → 让演示更稳定</div>
                 </div>
             </div>
         </div>
 
         <div class="speaker-script">
-            这一页要传递给学员的不是“看我临场发挥多厉害”，而是：<strong>真正靠谱的 AI 直播课，应该把演示口令、截图、调用链和预期产物提前准备好。</strong>这样学员才知道自己回去也能照着复现。
+            这一页要传递给学员的不是“看我临场发挥多厉害”，而是：<strong>真正靠谱的 AI 直播课，应该把演示口令、截图、后台怎么一步步做，以及预期结果提前准备好。</strong>这样学员才知道自己回去也能照着复现。
         </div>
 
         <div class="interaction-badge live">这 4 条预案里，你最想先跑哪条？A 周复盘文档/PPT，B 公开课调研，C 网页留档，D 技能市场。</div>
@@ -3332,7 +3497,7 @@
                     </figure>
                     <figure class="workshop-shot">
                         <img src="assets/screenshots/workbuddy-office-suite.png" alt="WorkBuddy 生成文档和 PPT 产物的截图">
-                        <figcaption><strong>预期效果：</strong>右侧直接出现 Word / PPT / Excel 产物，可以先预览，再决定是否拿去直接用。</figcaption>
+                        <figcaption><strong>预期效果：</strong>右侧直接出现 Word / PPT / Excel 文件，可以先预览，再决定是否拿去直接用。</figcaption>
                     </figure>
                 </div>
 
@@ -3342,21 +3507,21 @@
                         <p>“我上传了本周试听数据表、家长会纪要和周汇报模板。请整理成 1 页经营摘要、1 份周复盘文档、1 页汇报 PPT。重点写试听人数、到课率、转化率、主要问题和下周动作；不确定的数据请标成【待确认】。”</p>
                     </div>
                     <div class="workshop-note">
-                        <h4>⚙️ 本次调用链</h4>
+                        <h4>🧭 照图操作</h4>
                         <ul>
-                            <li><strong>读文件：</strong>先读 Excel、Word、PPT 模板里的已有素材。</li>
-                            <li><strong>整理结构：</strong>提炼指标、问题、建议和版式结构。</li>
-                            <li><strong>生成产物：</strong>一次输出复盘文档、汇报页和待确认项。</li>
-                            <li><strong>右侧复核：</strong>在产物面板里先预览，再决定是否直接投入使用。</li>
+                            <li><strong>先看左图：</strong>把数据表、纪要、模板一次传齐。</li>
+                            <li><strong>再抄口令：</strong>把输出物写清楚，明确要摘要、文档和 PPT。</li>
+                            <li><strong>最后看右图：</strong>右侧是否出现文档、PPT 等结果文件，没出来就不算完成。</li>
                         </ul>
                     </div>
                     <div class="workshop-note">
-                        <h4>🎁 你要带走什么</h4>
-                        <div class="mini-tag-row">
-                            <span class="mini-tag">会写“对象 + 素材 + 输出物”指令</span>
-                            <span class="mini-tag">知道文件类任务要一次给齐素材</span>
-                            <span class="mini-tag">知道先预览再发，不直接群发</span>
-                        </div>
+                        <h4>⚙️ 后台怎么一步步做</h4>
+                        <ul>
+                            <li><strong>读文件：</strong>先读 Excel、Word、PPT 模板里的已有素材。</li>
+                            <li><strong>整理结构：</strong>提炼指标、问题、建议和版式结构。</li>
+                            <li><strong>生成结果：</strong>一次输出复盘文档、汇报页和待确认项。</li>
+                            <li><strong>右侧复核：</strong>在产物面板里先预览，再决定是否直接投入使用。</li>
+                        </ul>
                     </div>
                     <div class="workshop-note">
                         <h4>✅ 预期交付物</h4>
@@ -3401,22 +3566,21 @@
                         <p>“请搜索我所在城市近 30 天的少儿编程、数学思维和英语公开课活动，筛出 5 条值得参考的案例。然后打开其中最有代表性的 3 个活动页，提炼它们的课程主题、价格表达、家长关心点和海报卖点，并截图留档。”</p>
                     </div>
                     <div class="workshop-note">
-                        <h4>⚙️ 本次调用链</h4>
+                        <h4>🧭 照图操作</h4>
                         <ul>
-                            <li><strong>Web Search：</strong>先搜最近资料，不靠印象瞎讲。</li>
-                            <li><strong>筛选样本：</strong>按城市、时间、主题筛出最值得看的几条。</li>
-                            <li><strong>Agent Browser：</strong>真正把网页点开、滚动、展开后读完。</li>
-                            <li><strong>留档输出：</strong>整理摘要、截图和对比要点，方便课后复盘。</li>
+                            <li><strong>先看左图：</strong>先让它搜，不要一上来就叫它读网页。</li>
+                            <li><strong>再看右图：</strong>进入 Browser 后，重点观察它有没有点开、滚动、截图。</li>
+                            <li><strong>验收标准：</strong>最后要同时有案例清单和截图留档，少一样都不算完整。</li>
                         </ul>
                     </div>
                     <div class="workshop-note">
-                        <h4>🎯 这页最适合教培机构哪里用</h4>
-                        <div class="mini-tag-row">
-                            <span class="mini-tag">公开课选题调研</span>
-                            <span class="mini-tag">竞品海报拆解</span>
-                            <span class="mini-tag">活动页留档</span>
-                            <span class="mini-tag">招生卖点对比</span>
-                        </div>
+                        <h4>⚙️ 后台怎么一步步做</h4>
+                        <ul>
+                            <li><strong>Web Search：</strong>先搜最近资料，不靠印象瞎讲。</li>
+                            <li><strong>筛选样本：</strong>按城市、时间、主题筛出最值得看的几条。</li>
+                            <li><strong>Agent Browser：</strong>真正把网页点开、滚动、展开后读完。大白话就是替你把网页翻完。</li>
+                            <li><strong>留档输出：</strong>整理摘要、截图和对比要点，方便课后复盘。</li>
+                        </ul>
                     </div>
                     <div class="workshop-note">
                         <h4>✅ 预期交付物</h4>
@@ -3451,7 +3615,7 @@
                     </figure>
                     <figure class="workshop-shot">
                         <img src="assets/screenshots/workbuddy-right-sidebar.png" alt="WorkBuddy 右侧产物与预览截图">
-                        <figcaption><strong>复核位置：</strong>图表、报告和产物会落到右侧面板，方便逐个检查后再对外使用。</figcaption>
+                        <figcaption><strong>复核位置：</strong>图表、报告和结果文件会落到右侧面板，方便逐个检查后再对外使用。</figcaption>
                     </figure>
                 </div>
 
@@ -3461,22 +3625,21 @@
                         <p>“请读取这份试听数据表，按班型和渠道统计咨询量、到课率、转化率和续班意向，分别生成柱状图、趋势图和一段复盘结论。请特别指出到课率最低的两个环节，并给出下周优先处理建议。”</p>
                     </div>
                     <div class="workshop-note">
-                        <h4>⚙️ 本次调用链</h4>
+                        <h4>🧭 照图操作</h4>
+                        <ul>
+                            <li><strong>先看左图：</strong>确认它已经读进表格，而不是只在空聊数据分析。</li>
+                            <li><strong>再看右图：</strong>图表和报告有没有落到结果区，能不能预览。</li>
+                            <li><strong>验收标准：</strong>既要有图，也要有一句清楚的结论和下周动作建议。</li>
+                        </ul>
+                    </div>
+                    <div class="workshop-note">
+                        <h4>⚙️ 后台怎么一步步做</h4>
                         <ul>
                             <li><strong>读表：</strong>先识别字段、清洗空值、统一统计口径。</li>
                             <li><strong>自动出图：</strong>按班型、渠道、时间维度生成图表。</li>
                             <li><strong>提炼结论：</strong>指出问题、解释风险、给出下一步动作建议。</li>
-                            <li><strong>产物复核：</strong>重点检查口径和异常值。</li>
+                            <li><strong>结果复核：</strong>重点检查口径和异常值。</li>
                         </ul>
-                    </div>
-                    <div class="workshop-note">
-                        <h4>🎁 最容易马上复制</h4>
-                        <div class="mini-tag-row">
-                            <span class="mini-tag">试听到课率复盘</span>
-                            <span class="mini-tag">续班率月报</span>
-                            <span class="mini-tag">公开课到场分析</span>
-                            <span class="mini-tag">班型表现对比</span>
-                        </div>
                     </div>
                     <div class="workshop-note">
                         <h4>✅ 预期交付物</h4>
@@ -3914,12 +4077,12 @@
                 <div class="roadmap-stage">
                     <div class="roadmap-tag">线下进阶课</div>
                     <h4>再学会协作</h4>
-                    <p>继续把 AI 从单点工具升级成<strong>数字员工 + Agent 工作流</strong>，让多个动作开始协同往前跑。</p>
+                    <p>继续把 AI 从单点工具升级成<strong>数字员工 + Agent 工作流</strong>。大白话就是：让 AI 不只做一件小事，而是能按步骤接着往下做。</p>
                 </div>
                 <div class="roadmap-stage">
                     <div class="roadmap-tag">最终效果</div>
                     <h4>做成机构能力</h4>
-                    <p>最后沉淀成<strong>模板、SOP、知识库和任务链</strong>，让老板自己能用，团队以后也能稳定复用。</p>
+                    <p>最后沉淀成<strong>模板、SOP、知识库和任务链</strong>。大白话就是：模板、标准步骤单、自家资料库和固定流程都留得下来。</p>
                 </div>
             </div>
 
@@ -3948,7 +4111,7 @@
                             </div>
                         </div>
                         <p>继续往前学，怎么让 1 个人带着 AI 同时跑文案、整理、分析、跟进，把小机构先做出“不靠堆人也能转”的底盘。</p>
-                        <div class="capability-output">预告产出：单人工作流地图、每日例行动作板、老板专用任务面板</div>
+                        <div class="capability-output">预告产出：单人做事流程图、每日例行动作板、老板专用任务面板</div>
                     </div>
 
                     <div class="capability-card">
@@ -3956,11 +4119,11 @@
                             <div class="capability-icon">🧠</div>
                             <div>
                                 <h4>Agent 串联执行</h4>
-                                <div class="capability-sub">从一问一答升级成多步任务推进</div>
+                                <div class="capability-sub">大白话：从一问一答升级成一条任务接着一条任务往前做</div>
                             </div>
                         </div>
-                        <p>继续往前学，怎么让 Agent 连起来做搜索、写作、表格、海报、周报，不再停留在“帮我写一句”，而是往交付物走。</p>
-                        <div class="capability-output">预告产出：多步任务链示意、Agent 工作流样板、交付物检查表</div>
+                        <p>继续往前学，怎么让这种 AI 助手连起来做搜索、写作、表格、海报、周报，不再停留在“帮我写一句”，而是往结果文件走。</p>
+                        <div class="capability-output">预告产出：多步任务示意图、Agent 做事流程样板、结果检查表</div>
                     </div>
 
                     <div class="capability-card">
@@ -3971,8 +4134,8 @@
                                 <div class="capability-sub">把一次试跑沉淀成长期可复用标准件</div>
                             </div>
                         </div>
-                        <p>继续往前学，怎么把提示词、知识库、SOP、检查表沉淀下来，让老师和前台以后也能按同一套口径稳定复用。</p>
-                        <div class="capability-output">预告产出：机构提示词库、门店知识库框架、SOP 与检查表模板</div>
+                        <p>继续往前学，怎么把提示词、知识库、SOP、检查表沉淀下来。大白话就是：把自家资料、标准步骤和检查规则都留成固定资产。</p>
+                        <div class="capability-output">预告产出：机构提示词库、门店资料库框架、标准步骤单与检查表模板</div>
                     </div>
                 </div>
             </div>
@@ -3983,7 +4146,7 @@
         </div>
 
         <div class="speaker-script">
-            真正有效的 AI 落地，不靠口号，而靠把一个个真实任务接入日常工作流。先试一个场景，再逐步扩展，通常比一次性铺开更稳。
+            真正有效的 AI 落地，不靠口号，而靠把一个个真实任务接入日常工作流。大白话就是：先把一件事跑通，再一件件接上去，通常比一口气全铺开更稳。
         </div>
 
         <div class="page-num">18 / 19</div>
