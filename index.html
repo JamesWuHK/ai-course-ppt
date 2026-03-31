@@ -539,6 +539,184 @@
             color: #FED7AA;
         }
 
+        .experiment-layout {
+            display: grid;
+            grid-template-columns: 1.08fr 0.92fr;
+            gap: 24px;
+            width: 100%;
+            max-width: 1180px;
+            align-items: start;
+        }
+
+        .experiment-visual-stack,
+        .experiment-task-stack {
+            display: grid;
+            gap: 16px;
+        }
+
+        .experiment-product-card,
+        .experiment-task-card,
+        .experiment-concept-band,
+        .experiment-mini-note {
+            background: rgba(255, 255, 255, 0.04);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            border-radius: 24px;
+            box-shadow: 0 18px 42px rgba(15, 23, 42, 0.22);
+        }
+
+        .experiment-product-copy {
+            padding: 20px 22px 0;
+        }
+
+        .experiment-shot-tag,
+        .experiment-task-label {
+            display: inline-flex;
+            align-items: center;
+            align-self: flex-start;
+            background: rgba(249, 115, 22, 0.12);
+            border: 1px solid rgba(249, 115, 22, 0.22);
+            color: #FED7AA;
+            border-radius: 999px;
+            padding: 7px 12px;
+            font-size: 11px;
+            font-weight: 700;
+            letter-spacing: 0.4px;
+        }
+
+        .experiment-product-copy h3 {
+            font-size: 22px;
+            color: #F8FAFC;
+            margin-top: 14px;
+            margin-bottom: 10px;
+        }
+
+        .experiment-product-copy p {
+            font-size: 14px;
+            line-height: 1.8;
+            color: #CBD5E1;
+        }
+
+        .experiment-product-card img {
+            width: calc(100% - 32px);
+            margin: 18px 16px 0;
+            border-radius: 18px;
+            display: block;
+            object-fit: cover;
+            aspect-ratio: 16 / 10;
+            background: rgba(2, 6, 23, 0.9);
+        }
+
+        .experiment-shot-points {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            padding: 16px 20px 22px;
+        }
+
+        .experiment-shot-points span {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            background: rgba(15, 23, 42, 0.72);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            border-radius: 999px;
+            padding: 8px 12px;
+            font-size: 12px;
+            color: #CBD5E1;
+        }
+
+        .experiment-task-card {
+            padding: 20px 22px;
+        }
+
+        .experiment-task-card h4 {
+            font-size: 21px;
+            color: #F8FAFC;
+            margin-top: 14px;
+            margin-bottom: 12px;
+        }
+
+        .experiment-task-card p {
+            font-size: 14px;
+            line-height: 1.8;
+            color: #CBD5E1;
+        }
+
+        .experiment-task-card ul {
+            list-style: none;
+            display: grid;
+            gap: 10px;
+        }
+
+        .experiment-task-card li {
+            position: relative;
+            padding-left: 18px;
+            font-size: 14px;
+            line-height: 1.75;
+            color: #CBD5E1;
+        }
+
+        .experiment-task-card li::before {
+            content: "•";
+            position: absolute;
+            left: 0;
+            top: 0;
+            color: var(--accent);
+            font-weight: 700;
+        }
+
+        .experiment-mini-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 16px;
+        }
+
+        .experiment-mini-note {
+            padding: 18px 18px 16px;
+        }
+
+        .experiment-mini-note h5 {
+            font-size: 13px;
+            color: #FED7AA;
+            margin-bottom: 8px;
+            letter-spacing: 0.3px;
+        }
+
+        .experiment-mini-note p {
+            font-size: 13px;
+            line-height: 1.7;
+            color: #CBD5E1;
+        }
+
+        .experiment-prompt-box {
+            margin-top: 14px;
+            background: rgba(15, 23, 42, 0.88);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            border-radius: 16px;
+            padding: 14px 16px;
+            font-size: 13px;
+            line-height: 1.8;
+            color: #FED7AA;
+        }
+
+        .experiment-concept-band {
+            padding: 18px 20px;
+            background: linear-gradient(135deg, rgba(249, 115, 22, 0.14), rgba(15, 23, 42, 0.55));
+            border-color: rgba(249, 115, 22, 0.18);
+        }
+
+        .experiment-concept-band h4 {
+            font-size: 14px;
+            color: #FED7AA;
+            margin-bottom: 8px;
+        }
+
+        .experiment-concept-band p {
+            font-size: 15px;
+            line-height: 1.8;
+            color: #F8FAFC;
+        }
+
         /* Slide 4: AI vs Agent */
         .slide-4 {
             background: linear-gradient(135deg, #1E293B 0%, #0F172A 100%);
@@ -2360,7 +2538,7 @@
             .concept-cards, .cases-grid, .skill-categories, .function-grid, .tool-map { grid-template-columns: repeat(2, 1fr); }
             .rtgf-grid, .demo-steps { grid-template-columns: repeat(2, 1fr); }
             .wb-features-grid, .official-proof-strip, .prepared-demos-grid { grid-template-columns: repeat(2, 1fr); }
-            .prepared-demo-card, .workshop-layout { grid-template-columns: 1fr; }
+            .prepared-demo-card, .workshop-layout, .experiment-layout { grid-template-columns: 1fr; }
         }
 
         @media (max-width: 768px) {
@@ -2369,7 +2547,7 @@
             .pain-points-grid, .bad-good-wrapper, .function-grid, .tool-map { grid-template-columns: 1fr; }
             .emotion-bar, .suspense-tag { display: none; }
             .harvest-strip, .conversion-list { grid-template-columns: 1fr; }
-            .wb-features-grid, .official-proof-strip, .prepared-demos-grid, .activity-cards, .demo-tasks, .ai-output, .data-stats { grid-template-columns: 1fr; }
+            .wb-features-grid, .official-proof-strip, .prepared-demos-grid, .activity-cards, .demo-tasks, .ai-output, .data-stats, .experiment-mini-grid { grid-template-columns: 1fr; }
         }
 
         @media print {
@@ -2521,44 +2699,52 @@
         <span class="section-tag">🧪 当堂小实验 1</span>
         <h2 class="slide-title">先从 DeepSeek 开始：什么是 AI？</h2>
 
-        <div class="concept-cards">
-            <div class="concept-card">
-                <div class="concept-icon">🧠</div>
-                <h3 class="concept-title">先做 1 次文本对话</h3>
-                <p class="concept-desc">让学员当堂输入一句最简单的真实需求，例如“帮我写一条家长群通知”，先感受 AI 最基础的交互方式就是像和人说话一样下指令。</p>
+        <div class="experiment-layout">
+            <div class="experiment-visual-stack">
+                <div class="experiment-product-card">
+                    <div class="experiment-product-copy">
+                        <span class="experiment-shot-tag">产品截图 · DeepSeek 官网</span>
+                        <h3>先认产品：它最适合带学员做第一轮文本对话</h3>
+                        <p>这页只让学员认 3 个位置：输入框、发送按钮、回答区。先把“和 AI 说一句人话，它会先给我一版”这个感觉做出来。</p>
+                    </div>
+                    <img src="assets/screenshots/deepseek-home.png" alt="DeepSeek 官网截图">
+                    <div class="experiment-shot-points">
+                        <span>先看：输入框</span>
+                        <span>再看：回答区</span>
+                        <span>这页不追求复杂功能</span>
+                    </div>
+                </div>
             </div>
-            <div class="concept-card">
-                <div class="concept-icon">⏰</div>
-                <h3 class="concept-title">先只看懂一个概念</h3>
-                <p class="concept-desc">这一页不要讲太多，先让学员明白：AI 最简单的样子，就是能听懂你说的话，并给你一版可修改的回答或草稿。</p>
-            </div>
-            <div class="concept-card">
-                <div class="concept-icon">💬</div>
-                <h3 class="concept-title">当堂收获</h3>
-                <p class="concept-desc">学员只要在这一页得到“原来我一句话就能让 AI 先做出第一版”的感觉，后面再往大模型、AIGC 和 Agent 走就自然了。</p>
-            </div>
-        </div>
 
-        <div class="ai-products">
-            <div class="ai-product">
-                <div class="ai-product-name">DeepSeek</div>
-                <div class="ai-product-desc">最适合做第一轮文本实验</div>
-            </div>
-            <div class="ai-product">
-                <div class="ai-product-name">实验口令</div>
-                <div class="ai-product-desc">“帮我写一条周五家长群通知”</div>
-            </div>
-            <div class="ai-product">
-                <div class="ai-product-name">第 1 次追问</div>
-                <div class="ai-product-desc">“语气更温和，再短一点”</div>
-            </div>
-            <div class="ai-product">
-                <div class="ai-product-name">第 2 次追问</div>
-                <div class="ai-product-desc">“加上时间地点和提醒”</div>
-            </div>
-            <div class="ai-product">
-                <div class="ai-product-name">这页只记住</div>
-                <div class="ai-product-desc">AI = 先和你对话，先给你第一版</div>
+            <div class="experiment-task-stack">
+                <div class="experiment-task-card">
+                    <span class="experiment-task-label">当堂实操题</span>
+                    <h4>用一句真实需求，让 AI 先出第一版</h4>
+                    <ul>
+                        <li>请大家直接打开 DeepSeek，不要先背提示词模板，先写今天真的会用到的一句话。</li>
+                        <li>推荐起手句：帮我写一条周五家长群通知，提醒 19:00 有公开课直播，语气温和。</li>
+                        <li>如果第一版太长，马上追问一句：再短一点，适合直接发群里。</li>
+                    </ul>
+                    <div class="experiment-prompt-box">
+                        直播带做口令：先拿到第一版，再改一轮，学员立刻会有“原来 AI 先替我起稿”的体感。
+                    </div>
+                </div>
+
+                <div class="experiment-mini-grid">
+                    <div class="experiment-mini-note">
+                        <h5>直播提问</h5>
+                        <p>如果刚才结果不满意，你下一句最自然会怎么补充？是改语气、改长度，还是补信息？</p>
+                    </div>
+                    <div class="experiment-mini-note">
+                        <h5>学员收获</h5>
+                        <p>离开这一页，学员至少会亲手完成 1 次文本对话，而不是只听定义。</p>
+                    </div>
+                </div>
+
+                <div class="experiment-concept-band">
+                    <h4>本页只带走 1 个概念</h4>
+                    <p>AI = 能听懂你的话，并先给你一版可以继续修改的结果。</p>
+                </div>
             </div>
         </div>
 
@@ -2566,7 +2752,7 @@
             第一页实验只做一件事：让大家亲手感受到“AI 会听懂我的话，并且先给我一版结果”。先有这个体感，后面的新概念才会长在体验上。
         </div>
 
-        <div class="interaction-badge live">现在跟做：请大家打开 DeepSeek，输入一句和你机构有关的真实任务，先拿到第一版文字结果。</div>
+        <div class="interaction-badge live">现在跟做：请大家打开 DeepSeek，输入一句和你机构有关的真实任务，先拿到第一版文字结果，然后再追问 1 轮。</div>
         <div class="page-num">03 / 19</div>
     </section>
 
@@ -2578,22 +2764,53 @@
         <span class="section-tag">🧪 当堂小实验 2</span>
         <h2 class="slide-title">再往前一步：什么是大模型？</h2>
 
-        <div class="function-grid">
-            <div class="function-card">
-                <h3>不只会聊天</h3>
-                <p>大模型不是一个“问答机器人”的新名字，而是一类能够理解语言、生成内容、连续追问修改的能力底座。</p>
+        <div class="experiment-layout">
+            <div class="experiment-visual-stack">
+                <div class="experiment-product-card">
+                    <div class="experiment-product-copy">
+                        <span class="experiment-shot-tag">产品截图 · 继续用 DeepSeek</span>
+                        <h3>同一个界面，继续追问 3 轮，就能把“大模型”讲活</h3>
+                        <p>不要突然切软件。就用刚才那条对话继续改，让学员看到它为什么不是一次性回答，而是能连续理解、连续修改。</p>
+                    </div>
+                    <img src="assets/screenshots/deepseek-home.png" alt="DeepSeek 官网截图">
+                    <div class="experiment-shot-points">
+                        <span>沿用上一条对话</span>
+                        <span>连续追问</span>
+                        <span>观察结果越来越贴合</span>
+                    </div>
+                </div>
             </div>
-            <div class="function-card">
-                <h3>会连续改</h3>
-                <p>刚才在 DeepSeek 上做的那次“继续追问、继续改写”，本质上就是大模型能力在发挥作用，不是一次性回答完就结束。</p>
-            </div>
-            <div class="function-card">
-                <h3>会跨任务迁移</h3>
-                <p>同样的理解和生成能力，可以从写家长通知，迁移到写招生文案、整理纪要、总结试听反馈等更多任务。</p>
-            </div>
-            <div class="function-card">
-                <h3>这页只露出一个新词</h3>
-                <p><strong>大模型</strong> = 支撑刚才那些“理解你、生成内容、继续修改”的底层能力。学员先记住这句话就够了。</p>
+
+            <div class="experiment-task-stack">
+                <div class="experiment-task-card">
+                    <span class="experiment-task-label">当堂实操题</span>
+                    <h4>同一条需求，连续改 3 轮</h4>
+                    <ul>
+                        <li>第一轮保留刚才的通知结果，不开新会话，直接继续追问。</li>
+                        <li>第二句建议：改成更像班主任发的口吻，再亲切一点。</li>
+                        <li>第三句建议：补上时间、地点、报名方式，并给我一个更正式版本。</li>
+                        <li>请学员观察：为什么越追问，结果越贴近真实场景？</li>
+                    </ul>
+                    <div class="experiment-prompt-box">
+                        课堂点拨：不是因为它“更会聊天”而已，而是背后那套理解、生成、连续修改的能力在工作。
+                    </div>
+                </div>
+
+                <div class="experiment-mini-grid">
+                    <div class="experiment-mini-note">
+                        <h5>直播提问</h5>
+                        <p>为什么刚才这个实验不只是聊天，而是在用“大模型”？请大家用自己的话说一句。</p>
+                    </div>
+                    <div class="experiment-mini-note">
+                        <h5>迁移提醒</h5>
+                        <p>同样的方法还能迁移到招生文案、试听反馈、会议纪要，不是只会写通知。</p>
+                    </div>
+                </div>
+
+                <div class="experiment-concept-band">
+                    <h4>本页只带走 1 个概念</h4>
+                    <p>大模型 = 支撑“理解你、生成内容、连续修改”的底层能力。</p>
+                </div>
             </div>
         </div>
 
@@ -2613,36 +2830,62 @@
         <span class="section-tag">🧪 当堂小实验 3</span>
         <h2 class="slide-title">换豆包上手：什么叫多模态？什么叫 AIGC？</h2>
 
-        <div class="tool-map">
-            <div class="tool-card">
-                <h3>豆包多模态</h3>
-                <p>让学员上传一张海报、截图、课程表或教室照片，再追问一次“帮我改得更适合家长看”，当堂感受 AI 不只是打字。</p>
-                <p class="tool-tip">关键词：图片、文字、语音可以一起参与。</p>
+        <div class="experiment-layout">
+            <div class="experiment-visual-stack">
+                <div class="experiment-mini-grid">
+                    <div class="experiment-product-card">
+                        <div class="experiment-product-copy">
+                            <span class="experiment-shot-tag">产品截图 · 豆包</span>
+                            <h3>先认豆包</h3>
+                            <p>这页用它做“看图 + 追问”的多模态体验。</p>
+                        </div>
+                        <img src="assets/screenshots/doubao-home.png" alt="豆包官网截图">
+                        <div class="experiment-shot-points">
+                            <span>上传图片</span>
+                            <span>补一句追问</span>
+                        </div>
+                    </div>
+
+                    <div class="experiment-product-card">
+                        <div class="experiment-product-copy">
+                            <span class="experiment-shot-tag">产品截图 · 即梦</span>
+                            <h3>再认即梦</h3>
+                            <p>这页顺手让学员看见 AI 直接生成视觉内容的入口。</p>
+                        </div>
+                        <img src="assets/screenshots/jimeng-home.png" alt="即梦官网截图">
+                        <div class="experiment-shot-points">
+                            <span>生成图片</span>
+                            <span>延展到视频</span>
+                        </div>
+                    </div>
+                </div>
             </div>
-            <div class="tool-card">
-                <h3>多模态</h3>
-                <p>多模态不是新软件名，而是“同一个模型能同时理解文字、图片、语音等多种输入”。豆包很适合拿来做这一轮体验。</p>
-                <p class="tool-tip">学员只要会上传一张图，就能理解这个概念。</p>
-            </div>
-            <div class="tool-card">
-                <h3>AIGC 图片</h3>
-                <p>接着再告诉学员：如果 AI 开始帮你<strong>生成</strong>海报图、插图、封面图，这就进入了 AIGC 的范围。</p>
-                <p class="tool-tip">AIGC = AI Generated Content。</p>
-            </div>
-            <div class="tool-card">
-                <h3>AIGC 音乐</h3>
-                <p>生成 15 到 30 秒宣传 BGM 或儿歌 demo，就能让学员看到：内容不只可以写出来，也可以被“做出来”。</p>
-                <p class="tool-tip">先看样片，不追求专业成品。</p>
-            </div>
-            <div class="tool-card">
-                <h3>AIGC 视频</h3>
-                <p>再用一张现成图片生成 3 到 5 秒动态片段，学员就会自然明白：文案、图片、音乐、视频都属于 AIGC 的内容生产范畴。</p>
-                <p class="tool-tip">这一页要的是“打开视野”。</p>
-            </div>
-            <div class="tool-card">
-                <h3>这页带出的两个词</h3>
-                <p><strong>多模态</strong> = AI 不只看文字。<br><strong>AIGC</strong> = AI 开始帮你生成各种内容。</p>
-                <p class="tool-tip">这两个词一定要长在实验上讲。</p>
+
+            <div class="experiment-task-stack">
+                <div class="experiment-task-card">
+                    <span class="experiment-task-label">当堂实操题 A</span>
+                    <h4>先做“看图 + 追问”，理解多模态</h4>
+                    <ul>
+                        <li>请大家在豆包里上传一张现成素材，可以是海报、课程表、教室照片或聊天截图。</li>
+                        <li>追问一句：请帮我看这张图，哪里不够适合发给家长？请给我 3 条修改建议。</li>
+                        <li>这一轮重点不是生成，而是让学员感受到 AI 不只看文字，也能理解图片。</li>
+                    </ul>
+                </div>
+
+                <div class="experiment-task-card">
+                    <span class="experiment-task-label">当堂实操题 B</span>
+                    <h4>再看“生成图片/视频”，理解 AIGC</h4>
+                    <ul>
+                        <li>用即梦或同类 AIGC 工具现场看一轮海报图、课程封面图或短视频片段生成。</li>
+                        <li>提醒学员区分：上一轮是 AI 在“看懂”，这一轮是 AI 在“生成”。</li>
+                        <li>课堂提问：你刚才哪一步体验到的是多模态，哪一步已经进入 AIGC？</li>
+                    </ul>
+                </div>
+
+                <div class="experiment-concept-band">
+                    <h4>本页带走 2 个概念</h4>
+                    <p>多模态 = 同一个模型能同时理解文字、图片、语音等输入。AIGC = AI 开始生成文字、图片、音乐、视频等内容。</p>
+                </div>
             </div>
         </div>
 
@@ -2659,67 +2902,51 @@
         <div class="timing-badge">⏱️ 工具 22-25分钟 | 情绪：期待</div>
         <div class="suspense-tag">🛠️ 今天的主角</div>
 
-        <span class="section-tag">🧪 概念升级</span>
+        <span class="section-tag">🧪 当堂小实验 4</span>
         <h2 class="slide-title">再往上抬一层：什么是 Agent？什么是“龙虾”？</h2>
 
-        <div class="comparison-wrapper">
-            <div class="comparison-grid">
-                <div class="comparison-col ai-col">
-                    <div class="col-header">
-                        <div class="col-icon">🤖</div>
-                        <div>
-                            <h3 class="col-title">前面 3 个实验</h3>
-                            <p class="col-subtitle">核心是先生成内容</p>
-                        </div>
+        <div class="experiment-layout">
+            <div class="experiment-visual-stack">
+                <div class="experiment-product-card">
+                    <div class="experiment-product-copy">
+                        <span class="experiment-shot-tag">产品截图 · WorkBuddy 官方文档</span>
+                        <h3>先认 WorkBuddy：它不是只聊天，而是一个能挂技能和产出文件的 Agent 工作台</h3>
+                        <p>这一页让学员先认出 3 个信号：有技能、有步骤、有交付物。看到这三个，Agent 和前面的 AIGC 区别就立起来了。</p>
                     </div>
-                    <ul class="feature-list">
-                        <li class="feature-item">
-                            <span class="feature-check">💬</span>
-                            <span>文本对话、多模态理解、AIGC 生成，重点都在“先给你内容”</span>
-                        </li>
-                        <li class="feature-item">
-                            <span class="feature-check">📝</span>
-                            <span>更像一个<strong>内容助手</strong>，先把第一版做出来</span>
-                        </li>
-                        <li class="feature-item">
-                            <span class="feature-check">👀</span>
-                            <span>你通常还得自己复制、发送、整理、归档，流程并没有自动往前走</span>
-                        </li>
-                    </ul>
-                    <div class="example-box">
-                        <h4>举个例子</h4>
-                        <p>你说：“帮我写 3 条寒假班招生文案” → 它先把文案给你，但后面的动作还得你继续做</p>
+                    <img src="assets/screenshots/workbuddy-product-guide.png" alt="WorkBuddy 官方文档截图">
+                    <div class="experiment-shot-points">
+                        <span>看技能入口</span>
+                        <span>看任务步骤</span>
+                        <span>看结果产物</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="experiment-task-stack">
+                <div class="experiment-mini-grid">
+                    <div class="experiment-mini-note">
+                        <h5>前面 3 个实验</h5>
+                        <p>重点是先生成文本、看图理解、生成图片或视频，本质更像内容助手。</p>
+                    </div>
+                    <div class="experiment-mini-note">
+                        <h5>这一页的升级</h5>
+                        <p>给它一个跨工具任务，观察它会不会自己拆步骤、调工具、继续把事情往前做。</p>
                     </div>
                 </div>
 
-                <div class="vs-center">VS</div>
-
-                <div class="comparison-col agent-col">
-                    <div class="col-header">
-                        <div class="col-icon">🚀</div>
-                        <div>
-                            <h3 class="col-title">Agent / 养龙虾</h3>
-                            <p class="col-subtitle">开始调用工具继续做事</p>
-                        </div>
-                    </div>
-                    <ul class="feature-list">
-                        <li class="feature-item">
-                            <span class="feature-check">⚙️</span>
-                            <span>不只是生成内容，还会继续调用文档、表格、文件、浏览器等工具</span>
-                        </li>
-                        <li class="feature-item">
-                            <span class="feature-check">🧩</span>
-                            <span>更像一个<strong>执行助手</strong>，会把任务拆成步骤一路推进</span>
-                        </li>
-                        <li class="feature-item">
-                            <span class="feature-check">✅</span>
-                            <span>圈内常说的“养龙虾”，本质上就是开始把这种 Agent 真正养进自己的工作流里</span>
-                        </li>
+                <div class="experiment-task-card">
+                    <span class="experiment-task-label">当堂实操题</span>
+                    <h4>给 Buddy 一个“要交付物”的任务</h4>
+                    <ul>
+                        <li>示例任务：把本周试听、到课和转化数据整理成复盘表，并生成 1 页汇报 PPT 提纲。</li>
+                        <li>请学员不要只看最后答案，要盯住它有没有自己拆步骤、调用文档或表格能力。</li>
+                        <li>直播追问：这一步和前面 AIGC 最大差别是什么，是“会生成”，还是“会继续执行”？</li>
                     </ul>
-                    <div class="example-box">
-                        <h4>举个例子</h4>
-                        <p>你说：“把本周试听、到课和转化数据整理成复盘表并生成总结” → Agent读取数据、整理表格、生成结论，还能继续产出文件</p>
-                    </div>
+                </div>
+
+                <div class="experiment-concept-band">
+                    <h4>本页带走 2 个概念</h4>
+                    <p>Agent = 会调用工具继续做事的执行助手。“养龙虾” = 把这样的 Agent 真正养进自己的工作流里。</p>
                 </div>
             </div>
         </div>
@@ -2737,97 +2964,68 @@
         <div class="timing-badge">⏱️ 工具 25-28分钟 | 情绪：期待</div>
         <div class="suspense-tag">💪 它能做什么</div>
 
-        <span class="section-tag">🧪 最后一层概念</span>
+        <span class="section-tag">🧪 当堂小实验 5</span>
         <h2 class="slide-title">再揭开一层：什么是 Computer Use，为什么 WorkBuddy 值得演？</h2>
 
-        <div class="wb-features-grid">
-            <div class="wb-feature-card">
-                <div class="wb-feature-icon">🧰</div>
-                <h4>技能市场</h4>
-                <p>先启用对的 Skill，再做对的任务。<br>这一页要让学员看到 Buddy 不是只有一个聊天框，而是一整套可调用能力。</p>
-                <div class="wb-feature-example">
-                    "先把今天要演示的办公文档、搜索、浏览器这几类 Skill 打开"
-                </div>
-            </div>
-            <div class="wb-feature-card">
-                <div class="wb-feature-icon">📄</div>
-                <h4>Computer Use 的入口感</h4>
-                <p>当 AI 开始真的去点文档、读表格、改文件、切窗口，本质上就在接近“Computer Use”的体验了。</p>
-                <div class="wb-feature-example">
-                    “打开这份数据表、读完后生成复盘文档，再继续做一页 PPT”
-                </div>
-            </div>
-            <div class="wb-feature-card">
-                <div class="wb-feature-icon">📄</div>
-                <h4>办公文档四件套</h4>
-                <p>PDF / Word / PPT / Excel 都能直接读、改、生成。<br>很适合做教培机构周报、课后总结和活动汇报。</p>
-                <div class="wb-feature-example">
-                    "把试听数据表、会议纪要和模板，整理成复盘文档和一页 PPT"
-                </div>
-            </div>
-            <div class="wb-feature-card">
-                <div class="wb-feature-icon">📊</div>
-                <h4>数据分析并可视化</h4>
-                <p>官方实践页明确展示了“读表 → 出图 → 给结论”的完整过程。<br>对试听、到课、转化这些数据最有用。</p>
-                <div class="wb-feature-example">
-                    "按班型和校区统计试听到课率，做图并写出复盘结论"
-                </div>
-            </div>
-            <div class="wb-feature-card">
-                <div class="wb-feature-icon">🔎</div>
-                <h4>Web Search</h4>
-                <p>不是只搜一堆链接，而是可以先搜资料，再交给 AI 归纳。<br>很适合做公开课选题、竞品观察和热点追踪。</p>
-                <div class="wb-feature-example">
-                    "搜最近 30 天周边机构公开课主题，筛出最值得看的 5 条"
-                </div>
-            </div>
-            <div class="wb-feature-card">
-                <div class="wb-feature-icon">🖱️</div>
-                <h4>Agent Browser</h4>
-                <p>当网页需要点击、展开、滚动、截图时，Browser 这类 Skill 才真正接得住。<br>这就是学员最好理解的 Computer Use 场景之一。</p>
-                <div class="wb-feature-example">
-                    "打开这几家机构的活动页，读完后整理摘要并截图留档"
-                </div>
-            </div>
-            <div class="wb-feature-card">
-                <div class="wb-feature-icon">🗂️</div>
-                <h4>右侧产物与预览</h4>
-                <p>结果不是只出在聊天区里。<br>产物、文件、变更、预览都能在右侧面板里复核，这一点对教学和机构使用都很关键。</p>
-                <div class="wb-feature-example">
-                    "生成完 PPT 后，直接在右侧看产物、预览文件、检查改动"
-                </div>
-            </div>
-        </div>
+        <div class="experiment-layout">
+            <div class="experiment-visual-stack">
+                <div class="experiment-mini-grid">
+                    <div class="experiment-product-card">
+                        <div class="experiment-product-copy">
+                            <span class="experiment-shot-tag">产品截图 · Skills</span>
+                            <h3>先看技能市场</h3>
+                            <p>Browser、Web Search、Office 这些能力不是嘴上说有，而是可以被真正调用。</p>
+                        </div>
+                        <img src="assets/screenshots/workbuddy-skills-market.png" alt="WorkBuddy 技能市场截图">
+                        <div class="experiment-shot-points">
+                            <span>先开技能</span>
+                            <span>再下任务</span>
+                        </div>
+                    </div>
 
-        <div class="official-proof-strip">
-            <div class="official-proof-card">
-                <div class="official-proof-thumb">
-                    <span class="official-proof-tag">官方截图 1</span>
-                    <img src="assets/screenshots/workbuddy-skills-market.png" alt="WorkBuddy 技能市场截图">
-                </div>
-                <div class="official-proof-body">
-                    <h4>技能市场不是摆设</h4>
-                    <p>这一张图最适合用来告诉学员：Buddy 里已经有很多现成 Skill，不同任务要先匹配不同能力，而不是拿一个万能提示词硬顶。</p>
-                </div>
-            </div>
-            <div class="official-proof-card">
-                <div class="official-proof-thumb">
-                    <span class="official-proof-tag">官方截图 2</span>
-                    <img src="assets/screenshots/workbuddy-office-suite.png" alt="WorkBuddy 办公文档四件套截图">
-                </div>
-                <div class="official-proof-body">
-                    <h4>文档、PPT、表格是能直接产出的</h4>
-                    <p>这一张图能把“会聊天”和“真能交付文件”分开。学员看见产物列表和预览区，才会真正理解 Agent 和单纯对话的区别。</p>
+                    <div class="experiment-product-card">
+                        <div class="experiment-product-copy">
+                            <span class="experiment-shot-tag">产品截图 · 产物区</span>
+                            <h3>再看右侧产物面板</h3>
+                            <p>文件、预览、改动都能被学员看见，这很适合直播教学。</p>
+                        </div>
+                        <img src="assets/screenshots/workbuddy-right-sidebar.png" alt="WorkBuddy 右侧产物区截图">
+                        <div class="experiment-shot-points">
+                            <span>看文件产物</span>
+                            <span>看预览结果</span>
+                        </div>
+                    </div>
                 </div>
             </div>
-            <div class="official-proof-card">
-                <div class="official-proof-thumb">
-                    <span class="official-proof-tag">官方截图 3</span>
-                    <img src="assets/screenshots/workbuddy-right-sidebar.png" alt="WorkBuddy 右侧边栏截图">
+
+            <div class="experiment-task-stack">
+                <div class="experiment-task-card">
+                    <span class="experiment-task-label">当堂实操题</span>
+                    <h4>让 AI 真正“动网页、动文件、动电脑”</h4>
+                    <ul>
+                        <li>先启用 Browser、Web Search、Office 这几类技能，再给它一个跨网页和文件的任务。</li>
+                        <li>示例任务：搜 3 个同城公开课页面，摘要并截图留档，再整理成 1 页对比表。</li>
+                        <li>请学员重点观察：它是不是只在回答区里说话，还是已经真的去点网页、整理文件、产出结果。</li>
+                    </ul>
+                    <div class="experiment-prompt-box">
+                        这一步最适合解释 Computer Use：AI 开始接管鼠标、网页、文档、文件这些“电脑上的动作”。
+                    </div>
                 </div>
-                <div class="official-proof-body">
-                    <h4>产物可以复核，改动可以回看</h4>
-                    <p>对教培机构来说，这比“生成得快”更重要。因为最后发给家长和老师的内容，一定要能看得见、查得到、改得动。</p>
+
+                <div class="experiment-mini-grid">
+                    <div class="experiment-mini-note">
+                        <h5>为什么 WorkBuddy 值得演</h5>
+                        <p>技能入口、步骤推进、结果产物都可视化，学员能清楚看见 Agent 到底做了什么。</p>
+                    </div>
+                    <div class="experiment-mini-note">
+                        <h5>直播提问</h5>
+                        <p>你刚才看到的哪一步最像“AI 在替你动电脑”？是搜网页、改文件，还是生成产物？</p>
+                    </div>
+                </div>
+
+                <div class="experiment-concept-band">
+                    <h4>本页只带走 1 个概念</h4>
+                    <p>Computer Use = AI 不只回答你，而是开始真的去操作网页、文件和电脑界面，把任务推进到可交付。</p>
                 </div>
             </div>
         </div>
