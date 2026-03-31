@@ -101,7 +101,20 @@
 
         /* Interaction Badge */
         .interaction-badge {
-            display: none;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            margin: 26px auto 0;
+            background: rgba(249, 115, 22, 0.12);
+            border: 1px solid rgba(249, 115, 22, 0.28);
+            color: #FED7AA;
+            padding: 14px 22px;
+            border-radius: 14px;
+            font-size: 14px;
+            font-weight: 600;
+            max-width: 760px;
+            text-align: center;
         }
 
         /* Slide 1: Opening Hook */
@@ -247,6 +260,25 @@
         .promise-highlight {
             color: var(--accent);
             font-weight: 700;
+        }
+
+        .harvest-strip {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 16px;
+            max-width: 900px;
+            margin-top: 24px;
+        }
+
+        .harvest-pill {
+            background: rgba(255, 255, 255, 0.06);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 16px;
+            padding: 18px 16px;
+            text-align: center;
+            font-size: 14px;
+            line-height: 1.6;
+            color: #E2E8F0;
         }
 
         /* Slide 2: Icebreaker */
@@ -1757,6 +1789,13 @@
             text-align: center;
         }
 
+        .summary-lead {
+            font-size: 22px;
+            color: #E2E8F0;
+            margin-bottom: 28px;
+            line-height: 1.7;
+        }
+
         .summary-quote {
             font-size: 38px;
             font-weight: 700;
@@ -1894,6 +1933,45 @@
             font-weight: 800;
         }
 
+        .conversion-box {
+            margin-top: 34px;
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(255, 255, 255, 0.12);
+            border-radius: 24px;
+            padding: 28px 30px;
+            max-width: 920px;
+            text-align: left;
+        }
+
+        .conversion-box h3 {
+            font-size: 24px;
+            margin-bottom: 14px;
+            color: #F8FAFC;
+        }
+
+        .conversion-box p {
+            font-size: 16px;
+            line-height: 1.8;
+            color: #CBD5E1;
+        }
+
+        .conversion-list {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 16px;
+            margin-top: 20px;
+        }
+
+        .conversion-item {
+            background: rgba(249, 115, 22, 0.08);
+            border: 1px solid rgba(249, 115, 22, 0.2);
+            border-radius: 16px;
+            padding: 18px;
+            font-size: 14px;
+            line-height: 1.7;
+            color: #FED7AA;
+        }
+
         /* Page Number */
         .page-num {
             position: absolute;
@@ -1965,7 +2043,7 @@
             .main-title { font-size: 42px; }
             .slide-title { font-size: 36px; }
             .pain-points-grid, .bad-good-wrapper { grid-template-columns: 1fr; }
-            .emotion-bar, .suspense-tag, .interaction-badge { display: none; }
+            .emotion-bar, .suspense-tag { display: none; }
         }
 
         @media print {
@@ -2054,6 +2132,12 @@
             <p>今天结束的时候，你会带着<span class="promise-highlight">一套适合教培机构先落地的 AI 清单</span>离开，而且每一步都能回去试。</p>
         </div>
 
+        <div class="harvest-strip">
+            <div class="harvest-pill">带走 1 个<br><strong>优先落地任务清单</strong></div>
+            <div class="harvest-pill">带走 1 个<br><strong>可直接复用的指令模板</strong></div>
+            <div class="harvest-pill">带走 1 套<br><strong>人工复核边界</strong></div>
+        </div>
+
         <div class="scroll-hint">
             <div class="scroll-arrow"></div>
             <span>向下滚动</span>
@@ -2091,14 +2175,14 @@
                 </div>
             </div>
 
-            <p class="poll-instruction">在评论区打数字或文字告诉我 👇</p>
+            <p class="poll-instruction">直播互动：请在评论区打数字或关键词，选出你机构最想先优化的一项 👇</p>
         </div>
 
         <div class="speaker-script">
             课前自查的目的，是先找到机构里最耗时的重复工作。通常值得优先尝试 AI 的，是回复家长、写通知文案、做反馈和整理数据这几类任务。
         </div>
 
-        <div class="interaction-badge">🎯 互动环节：收集学员痛点</div>
+        <div class="interaction-badge">直播互动题：如果你只能先解决 1 个问题，你会选“咨询、文案、反馈、数据”里的哪一个？</div>
         <div class="page-num">02 / 19</div>
     </section>
 
@@ -2240,7 +2324,7 @@
             可以把 AI 理解为“更擅长理解和起草”，把执行型 AI 理解为“更擅长调用工具继续推进任务”。真正值得落地的，是机构里那些<strong>重复、规则清晰、能复核</strong>的事务。
         </div>
 
-        <div class="interaction-badge">🤔 思考：你机构里哪些事情最标准化？</div>
+        <div class="interaction-badge">直播提问：你机构里有没有一种工作，是老师换谁来做，流程都差不多的？那通常就是 AI 最值得先接的地方。</div>
         <div class="page-num">04 / 19</div>
     </section>
 
@@ -2340,7 +2424,7 @@
             这一页想说明的不是某个产品本身，而是一种工作方式：如果一个工具既能理解需求，又能处理文档、表格和文件，它就更适合拿来做招生、通知和复盘等教培执行任务。
         </div>
 
-        <div class="interaction-badge">🤔 你平时用AI主要用来做什么？</div>
+        <div class="interaction-badge">直播提问：你现在用 AI，更偏向“问问题”，还是已经开始“交任务”了？</div>
         <div class="page-num">06 / 19</div>
     </section>
 
@@ -2407,7 +2491,7 @@
             重点不是“一个按钮包打天下”，而是先把老师和运营最耗时、最标准化的动作抽出来，再看哪些环节适合交给 AI 提速。
         </div>
 
-        <div class="interaction-badge">🙋 哪个功能你最想学？</div>
+        <div class="interaction-badge">直播互动：如果今天只能深挖 1 个能力，你最想继续看“文案、咨询、数据、海报、文件处理”里的哪一个？</div>
         <div class="page-num">07 / 19</div>
     </section>
 
@@ -2416,29 +2500,29 @@
         <div class="timing-badge">⏱️ 演示 25-30分钟 | 情绪：第一波高潮</div>
         <div class="suspense-tag">🎬 现场震撼演示</div>
 
-        <h2 class="workshop-title">你来说，我来做</h2>
-        <p class="workshop-subtitle">说出你最头疼的教培任务，我现场用执行型 AI 拆给你看。</p>
+        <h2 class="workshop-title">直播 Workshop：你出题，我们一起拆</h2>
+        <p class="workshop-subtitle">从一个真实教培任务出发，现场拆成“AI 先做什么，人再确认什么”。</p>
 
         <div class="activity-cards">
             <div class="activity-card">
                 <div class="activity-number">1</div>
-                <h3 class="activity-title">说出困扰</h3>
-                <p class="activity-desc">告诉讲师你最头疼的重复工作是什么</p>
+                <h3 class="activity-title">你来出题</h3>
+                <p class="activity-desc">从你机构真实任务里挑 1 个场景</p>
             </div>
             <div class="activity-card">
                 <div class="activity-number">2</div>
-                <h3 class="activity-title">现场演示</h3>
-                <p class="activity-desc">讲师用Agent现场帮你解决</p>
+                <h3 class="activity-title">一起拆解</h3>
+                <p class="activity-desc">看它能被拆成哪些步骤和审核点</p>
             </div>
             <div class="activity-card">
                 <div class="activity-number">3</div>
-                <h3 class="activity-title">满意度打分</h3>
-                <p class="activity-desc">满意/一般/不满意</p>
+                <h3 class="activity-title">一起判断</h3>
+                <p class="activity-desc">判断哪些适合 AI，哪些必须人工</p>
             </div>
             <div class="activity-card">
                 <div class="activity-number">4</div>
-                <h3 class="activity-title">拿走方案</h3>
-                <p class="activity-desc">这个指令你回去就能用</p>
+                <h3 class="activity-title">带走模板</h3>
+                <p class="activity-desc">把这个场景改成你自己机构的版本</p>
             </div>
         </div>
 
@@ -2468,7 +2552,7 @@
             下面的三个场景不是为了展示“全自动”，而是为了看清楚：一个真实的教培任务，怎样被拆成多个步骤，以及哪些步骤适合由 AI 先完成。
         </div>
 
-        <div class="interaction-badge">🙋 现场点名互动</div>
+        <div class="interaction-badge">直播 Workshop：请在评论区发一个你机构的真实任务名称，比如“试听邀约”“家长群通知”“课后反馈”“周数据复盘”。</div>
         <div class="page-num">08 / 19</div>
     </section>
 
@@ -2522,7 +2606,7 @@
             招生文案最适合的用法，是让 AI <strong>先起草多个版本</strong>，再由老师或运营统一口径、挑选版本、做最后润色，而不是直接发布。
         </div>
 
-        <div class="interaction-badge">🙋 想试试？课后可以自己体验</div>
+        <div class="interaction-badge">跟做练习：把这条指令里的“对象、课程、目标、边界”替换成你自己的版本，看看你会怎么说。</div>
         <div class="page-num">09 / 19</div>
     </section>
 
@@ -2583,7 +2667,7 @@
             家长咨询场景里，AI 最适合先做的是<strong>首轮接待、信息归类和标准问题草拟回复</strong>。涉及价格、名额、结果判断和个性化建议时，必须转人工确认。
         </div>
 
-        <div class="interaction-badge">💡 先用它接住标准问题，再把关键问题交给老师</div>
+        <div class="interaction-badge">判断题：如果家长继续追问价格、优惠或升学结果，这里应该继续让 AI 回，还是必须转人工？</div>
         <div class="page-num">10 / 19</div>
     </section>
 
@@ -2650,7 +2734,7 @@
             在数据复盘场景里，AI 的价值是先快速给出一版<strong>可检查的报表和洞察草稿</strong>，帮助校区更快看见问题，再由人来决定后续动作。
         </div>
 
-        <div class="interaction-badge">🎯 课后你可以用自己数据试试</div>
+        <div class="interaction-badge">跟做练习：想一想你手里有没有一张表，可以在本周就拿来做一次“试听到课率 / 转化率 / 续班率”的 AI 复盘。</div>
         <div class="page-num">11 / 19</div>
     </section>
 
@@ -2745,7 +2829,7 @@
             本页案例使用的是<strong>示意口径</strong>，重点不在于某个增长数字，而在于看懂任务拆法：当家长咨询、学习跟进、课后反馈被标准化后，人力就能重新回到高价值沟通上。
         </div>
 
-        <div class="interaction-badge">🤔 思考：你的机构有哪些重复性工作？</div>
+        <div class="interaction-badge">直播互动：看完这 3 个案例后，你最想先复制的是“咨询接待”“学习跟进”还是“课后反馈”？</div>
         <div class="page-num">12 / 19</div>
     </section>
 
@@ -2817,7 +2901,7 @@
             适合先交给 AI 的任务通常同时满足三个条件：<strong>重复率高、规则相对明确、结果容易检查</strong>。起步时，优先从这类任务里挑一个最稳的切口。
         </div>
 
-        <div class="interaction-badge">🙋 先圈出你机构里最标准化的一个任务</div>
+        <div class="interaction-badge">现在请你做个决定：如果本周只试 1 个任务，你最愿意先把哪一类交给 AI 打底？</div>
         <div class="page-num">13 / 19</div>
     </section>
 
@@ -2863,7 +2947,7 @@
             这一页最重要的结论是：只要涉及<span style="color: #F97316;">学员隐私、家长承诺、价格政策、学习判断</span>，AI 只能协助提速，最终判断必须由人负责。
         </div>
 
-        <div class="interaction-badge">💡 记住：快可以交给 AI，决定必须留给人</div>
+        <div class="interaction-badge">直播判断题：在你机构里，哪些内容一旦说错，影响最大？把那一类全部划进“必须人工复核”。</div>
         <div class="page-num">14 / 19</div>
     </section>
 
@@ -2922,7 +3006,7 @@
             大多数教培场景并不需要复杂提示词。先记住一个最小模板：<strong>对象、任务、约束、输出格式</strong>，就足以覆盖大部分起稿、整理和分析类任务。
         </div>
 
-        <div class="interaction-badge">🎯 思考：你能用这个方式做什么？</div>
+        <div class="interaction-badge">跟做练习：现在就用“对象 + 任务 + 约束 + 输出”，在评论区发出你自己的第一条指令草稿。</div>
         <div class="page-num">15 / 19</div>
     </section>
 
@@ -3002,6 +3086,7 @@
         <span class="section-tag">✅ 课程总结</span>
 
         <div class="summary-container">
+            <p class="summary-lead">这节直播课结束时，你应该能明确说清楚三件事：<strong>先做什么、怎么下指令、哪里必须人工把关。</strong></p>
             <p class="summary-quote">
                 "先找高频、低风险、可复核的任务<br>再让 AI 帮你提速"
             </p>
@@ -3033,7 +3118,7 @@
             本课最重要的收获，不是认识了多少新词，而是已经明确了落地顺序：先从重复事务中释放老师和运营的时间，再把精力还给教学质量和家长沟通。
         </div>
 
-        <div class="interaction-badge">🎯 课末反馈：每人说一个回去想试的场景</div>
+        <div class="interaction-badge">课末互动：请在评论区说出你回去准备先试的第一个场景，以及你打算保留的那个审核点。</div>
         <div class="page-num">17 / 19</div>
     </section>
 
@@ -3044,12 +3129,12 @@
 
         <div class="cta-container">
             <div class="cta-emoji">🚀</div>
-            <h2 class="cta-title">今日行动</h2>
+            <h2 class="cta-title">线上课后，你可以马上开始什么？</h2>
 
             <div class="cta-items">
                 <div class="cta-item">
                     <div class="cta-item-icon">✓</div>
-                    <span>本周内，每天用Agent完成<strong>至少1个</strong>任务</span>
+                    <span>本周内，先选 1 个<strong>高频、低风险</strong>的任务试起来</span>
                 </div>
                 <div class="cta-item">
                     <div class="cta-item-icon">✓</div>
@@ -3061,12 +3146,22 @@
                 </div>
                 <div class="cta-item">
                     <div class="cta-item-icon">✓</div>
-                    <span>在学员群<strong>分享你的第一个 AI 成果</strong>，顺便说说哪里还要人工改</span>
+                    <span>在学员群<strong>分享你的第一个 AI 成果</strong>，顺便说清哪里还需要人工改</span>
+                </div>
+            </div>
+
+            <div class="conversion-box">
+                <h3>如果你想继续进到线下实操课</h3>
+                <p>线下课不再停留在“看懂案例”，而是会把你机构的真实任务现场跑通。适合已经明确想落地、但需要人陪着一起搭第一套流程的学员。</p>
+                <div class="conversion-list">
+                    <div class="conversion-item">带着你自己的招生文案、FAQ 或数据表来，现场改成可直接用的版本。</div>
+                    <div class="conversion-item">把 1 个真实任务拆成完整工作流：AI 起稿、人工审核、最终交付。</div>
+                    <div class="conversion-item">现场做出属于你机构的模板库、审核清单和第一套使用规范。</div>
                 </div>
             </div>
 
             <div class="cta-footer">
-                <p>🎁 答对问题的同学，私信我领神秘礼物</p>
+                <p>想继续参加线下实操课的同学，可以课后登记意向，我会把适合带来的资料清单发给你。</p>
             </div>
         </div>
 
