@@ -79,24 +79,11 @@
 
         /* Speaker Script */
         .speaker-script {
-            background: rgba(255, 255, 255, 0.05);
-            border: 1px solid rgba(255, 255, 255, 0.1);
-            border-left: 4px solid var(--accent);
-            padding: 20px 28px;
-            border-radius: 0 16px 16px 0;
-            max-width: 900px;
-            margin: 30px auto;
-            font-size: 15px;
-            line-height: 1.8;
-            color: #E2E8F0;
+            display: none;
         }
 
         .speaker-script::before {
-            content: '本页要点';
-            font-weight: 700;
-            color: #F8FAFC;
-            display: block;
-            margin-bottom: 8px;
+            content: '';
         }
 
         /* Interaction Badge */
@@ -2610,7 +2597,7 @@
 
         <div class="big-question">?</div>
 
-        <div class="hook-badge">🎯 专为教培机构校长、运营与老师设计</div>
+        <div class="hook-badge">🎯 专为教培机构校长与管理者设计</div>
         <h1 class="main-title">教培机构 AI 入门实战课</h1>
         <p class="pain-vector">招生、家校沟通、续班和复盘，哪些最适合先交给 AI？</p>
 
@@ -2680,14 +2667,14 @@
                 </div>
             </div>
 
-            <p class="poll-instruction">直播互动：请在评论区打数字或关键词，选出你机构最想先优化的一项 👇</p>
+            <p class="poll-instruction">先选一项：你最想优先优化哪类重复工作？👇</p>
         </div>
 
         <div class="speaker-script">
             课前自查的目的，是先找到机构里最耗时的重复工作。通常值得优先尝试 AI 的，是回复家长、写通知文案、做反馈和整理数据这几类任务。
         </div>
 
-        <div class="interaction-badge live">直播互动题：请在评论区直接打出你今天最想先解决的 1 个问题。四个关键词里只能选一个：咨询、文案、反馈、数据。</div>
+        <div class="interaction-badge live">先定一个目标：咨询、文案、反馈、数据，今天只选 1 项最想解决的。</div>
         <div class="page-num">02 / 19</div>
     </section>
 
@@ -2704,8 +2691,8 @@
                 <div class="experiment-product-card">
                     <div class="experiment-product-copy">
                         <span class="experiment-shot-tag">产品截图 · DeepSeek 官网</span>
-                        <h3>先认产品：它最适合带学员做第一轮文本对话</h3>
-                        <p>这页只让学员认 3 个位置：输入框、发送按钮、回答区。先把“和 AI 说一句人话，它会先给我一版”这个感觉做出来。</p>
+                        <h3>先认产品：它很适合做第一轮文本对话</h3>
+                        <p>这页只需要认 3 个位置：输入框、发送按钮、回答区。先把“和 AI 说一句人话，它会先给我一版”这个感觉做出来。</p>
                     </div>
                     <img src="assets/screenshots/deepseek-home.png" alt="DeepSeek 官网截图">
                     <div class="experiment-shot-points">
@@ -2721,23 +2708,23 @@
                     <span class="experiment-task-label">当堂实操题</span>
                     <h4>用一句真实需求，让 AI 先出第一版</h4>
                     <ul>
-                        <li>请大家直接打开 DeepSeek，不要先背提示词模板，先写今天真的会用到的一句话。</li>
+                        <li>直接打开 DeepSeek，不用先背提示词模板，先写一句你今天真会用到的话。</li>
                         <li>推荐起手句：帮我写一条周五家长群通知，提醒 19:00 有公开课直播，语气温和。</li>
                         <li>如果第一版太长，马上追问一句：再短一点，适合直接发群里。</li>
                     </ul>
                     <div class="experiment-prompt-box">
-                        直播带做口令：先拿到第一版，再改一轮，学员立刻会有“原来 AI 先替我起稿”的体感。
+                        先拿到第一版，再改一轮。做到这里，你会很直观地感受到：AI 可以先替你起稿。
                     </div>
                 </div>
 
                 <div class="experiment-mini-grid">
                     <div class="experiment-mini-note">
-                        <h5>直播提问</h5>
+                        <h5>想一想</h5>
                         <p>如果刚才结果不满意，你下一句最自然会怎么补充？是改语气、改长度，还是补信息？</p>
                     </div>
                     <div class="experiment-mini-note">
-                        <h5>学员收获</h5>
-                        <p>离开这一页，学员至少会亲手完成 1 次文本对话，而不是只听定义。</p>
+                        <h5>你会带走</h5>
+                        <p>到这里，你已经亲手完成了 1 次文本对话，不是只听了一个概念词。</p>
                     </div>
                 </div>
 
@@ -2752,7 +2739,7 @@
             第一页实验只做一件事：让大家亲手感受到“AI 会听懂我的话，并且先给我一版结果”。先有这个体感，后面的新概念才会长在体验上。
         </div>
 
-        <div class="interaction-badge live">现在跟做：请大家打开 DeepSeek，输入一句和你机构有关的真实任务，先拿到第一版文字结果，然后再追问 1 轮。</div>
+        <div class="interaction-badge live">现在试试：输入一句和你机构有关的真实任务，先拿到第一版结果，再追问 1 轮。</div>
         <div class="page-num">03 / 19</div>
     </section>
 
@@ -2770,7 +2757,7 @@
                     <div class="experiment-product-copy">
                         <span class="experiment-shot-tag">产品截图 · 继续用 DeepSeek</span>
                         <h3>同一个界面，继续追问 3 轮，就能把“大模型”讲活</h3>
-                        <p>不要突然切软件。就用刚才那条对话继续改，让学员看到它为什么不是一次性回答，而是能连续理解、连续修改。</p>
+                        <p>不要突然切软件。就用刚才那条对话继续改，你会更容易看懂它为什么不是一次性回答，而是能连续理解、连续修改。</p>
                     </div>
                     <img src="assets/screenshots/deepseek-home.png" alt="DeepSeek 官网截图">
                     <div class="experiment-shot-points">
@@ -2789,17 +2776,17 @@
                         <li>第一轮保留刚才的通知结果，不开新会话，直接继续追问。</li>
                         <li>第二句建议：改成更像班主任发的口吻，再亲切一点。</li>
                         <li>第三句建议：补上时间、地点、报名方式，并给我一个更正式版本。</li>
-                        <li>请学员观察：为什么越追问，结果越贴近真实场景？</li>
+                        <li>观察一下：为什么越追问，结果越贴近真实场景？</li>
                     </ul>
                     <div class="experiment-prompt-box">
-                        课堂点拨：不是因为它“更会聊天”而已，而是背后那套理解、生成、连续修改的能力在工作。
+                        关键不是它“更会聊天”，而是背后那套理解、生成、连续修改的能力在工作。
                     </div>
                 </div>
 
                 <div class="experiment-mini-grid">
                     <div class="experiment-mini-note">
-                        <h5>直播提问</h5>
-                        <p>为什么刚才这个实验不只是聊天，而是在用“大模型”？请大家用自己的话说一句。</p>
+                        <h5>想一想</h5>
+                        <p>为什么刚才这个实验不只是聊天，而是在用“大模型”？试着用自己的话说一句。</p>
                     </div>
                     <div class="experiment-mini-note">
                         <h5>迁移提醒</h5>
@@ -2818,7 +2805,7 @@
             这一页的作用，是把刚才的体验轻轻命名一下。学员不需要背定义，只要知道：DeepSeek、豆包这些背后，其实都站着“大模型”。
         </div>
 
-        <div class="interaction-badge live">直播提问：走到这里，请大家用自己的话回答一句：“为什么刚才那个文本实验不只是聊天，而是在用大模型？”</div>
+        <div class="interaction-badge live">用自己的话说一句：为什么刚才那个实验不只是聊天，而是在用大模型？</div>
         <div class="page-num">04 / 19</div>
     </section>
 
@@ -2850,7 +2837,7 @@
                         <div class="experiment-product-copy">
                             <span class="experiment-shot-tag">产品截图 · 即梦</span>
                             <h3>再认即梦</h3>
-                            <p>这页顺手让学员看见 AI 直接生成视觉内容的入口。</p>
+                            <p>这页顺手让你看见 AI 直接生成视觉内容的入口。</p>
                         </div>
                         <img src="assets/screenshots/jimeng-home.png" alt="即梦官网截图">
                         <div class="experiment-shot-points">
@@ -2866,9 +2853,9 @@
                     <span class="experiment-task-label">当堂实操题 A</span>
                     <h4>先做“看图 + 追问”，理解多模态</h4>
                     <ul>
-                        <li>请大家在豆包里上传一张现成素材，可以是海报、课程表、教室照片或聊天截图。</li>
+                        <li>在豆包里上传一张现成素材，可以是海报、课程表、教室照片或聊天截图。</li>
                         <li>追问一句：请帮我看这张图，哪里不够适合发给家长？请给我 3 条修改建议。</li>
-                        <li>这一轮重点不是生成，而是让学员感受到 AI 不只看文字，也能理解图片。</li>
+                        <li>这一轮重点不是生成，而是让你感受到 AI 不只看文字，也能理解图片。</li>
                     </ul>
                 </div>
 
@@ -2877,8 +2864,8 @@
                     <h4>再看“生成图片/视频”，理解 AIGC</h4>
                     <ul>
                         <li>用即梦或同类 AIGC 工具现场看一轮海报图、课程封面图或短视频片段生成。</li>
-                        <li>提醒学员区分：上一轮是 AI 在“看懂”，这一轮是 AI 在“生成”。</li>
-                        <li>课堂提问：你刚才哪一步体验到的是多模态，哪一步已经进入 AIGC？</li>
+                        <li>注意区分：上一轮是 AI 在“看懂”，这一轮是 AI 在“生成”。</li>
+                        <li>想一想：你刚才哪一步体验到的是多模态，哪一步已经进入 AIGC？</li>
                     </ul>
                 </div>
 
@@ -2893,7 +2880,7 @@
             这一页的顺序很重要：先让学员体验豆包“看图 + 改写”，再顺手告诉他们这叫多模态；再往外扩一格，说当 AI 开始生成图、音乐、视频时，这一整类就叫 AIGC。
         </div>
 
-        <div class="interaction-badge live">现在跟做：请大家在豆包里上传一张现成素材并追问一次；然后回答一个问题，你刚才体验到的是“多模态”，还是已经进入了“AIGC”？</div>
+        <div class="interaction-badge live">现在试试：上传一张现成素材并追问一次，再判断这一步更接近“多模态”还是已经进入“AIGC”。</div>
         <div class="page-num">05 / 19</div>
     </section>
 
@@ -2911,7 +2898,7 @@
                     <div class="experiment-product-copy">
                         <span class="experiment-shot-tag">产品截图 · WorkBuddy 官方文档</span>
                         <h3>先认 WorkBuddy：它不是只聊天，而是一个能挂技能和产出文件的 Agent 工作台</h3>
-                        <p>这一页让学员先认出 3 个信号：有技能、有步骤、有交付物。看到这三个，Agent 和前面的 AIGC 区别就立起来了。</p>
+                        <p>这一页先认 3 个信号：有技能、有步骤、有交付物。看到这三个，Agent 和前面的 AIGC 区别就立起来了。</p>
                     </div>
                     <img src="assets/screenshots/workbuddy-product-guide.png" alt="WorkBuddy 官方文档截图">
                     <div class="experiment-shot-points">
@@ -2929,7 +2916,7 @@
                         <p>重点是先生成文本、看图理解、生成图片或视频，本质更像内容助手。</p>
                     </div>
                     <div class="experiment-mini-note">
-                        <h5>这一页的升级</h5>
+                        <h5>这一层的升级</h5>
                         <p>给它一个跨工具任务，观察它会不会自己拆步骤、调工具、继续把事情往前做。</p>
                     </div>
                 </div>
@@ -2939,8 +2926,8 @@
                     <h4>给 Buddy 一个“要交付物”的任务</h4>
                     <ul>
                         <li>示例任务：把本周试听、到课和转化数据整理成复盘表，并生成 1 页汇报 PPT 提纲。</li>
-                        <li>请学员不要只看最后答案，要盯住它有没有自己拆步骤、调用文档或表格能力。</li>
-                        <li>直播追问：这一步和前面 AIGC 最大差别是什么，是“会生成”，还是“会继续执行”？</li>
+                        <li>不要只看最后答案，要盯住它有没有自己拆步骤、调用文档或表格能力。</li>
+                        <li>想一想：这一步和前面 AIGC 最大差别是什么，是“会生成”，还是“会继续执行”？</li>
                     </ul>
                 </div>
 
@@ -2955,7 +2942,7 @@
             到这里就能把“龙虾”这个词顺手解释掉了。它不是一门神秘黑话，本质上就是：<strong>不只让 AI 给你内容，而是真的开始把 Agent 养进你的流程，让它继续帮你做事。</strong>
         </div>
 
-        <div class="interaction-badge live">直播提问：走到这里，请大家用自己的话补全一句话。“AIGC 是先帮我生成内容，Agent 是开始帮我 ______。”</div>
+        <div class="interaction-badge live">补全一句话：AIGC 是先帮我生成内容，Agent 是开始帮我 ______。</div>
         <div class="page-num">06 / 19</div>
     </section>
 
@@ -2987,7 +2974,7 @@
                         <div class="experiment-product-copy">
                             <span class="experiment-shot-tag">产品截图 · 产物区</span>
                             <h3>再看右侧产物面板</h3>
-                            <p>文件、预览、改动都能被学员看见，这很适合直播教学。</p>
+                            <p>文件、预览、改动都能看见，这也意味着流程更容易复核。</p>
                         </div>
                         <img src="assets/screenshots/workbuddy-right-sidebar.png" alt="WorkBuddy 右侧产物区截图">
                         <div class="experiment-shot-points">
@@ -3005,7 +2992,7 @@
                     <ul>
                         <li>先启用 Browser、Web Search、Office 这几类技能，再给它一个跨网页和文件的任务。</li>
                         <li>示例任务：搜 3 个同城公开课页面，摘要并截图留档，再整理成 1 页对比表。</li>
-                        <li>请学员重点观察：它是不是只在回答区里说话，还是已经真的去点网页、整理文件、产出结果。</li>
+                        <li>重点观察：它是不是只在回答区里说话，还是已经真的去点网页、整理文件、产出结果。</li>
                     </ul>
                     <div class="experiment-prompt-box">
                         这一步最适合解释 Computer Use：AI 开始接管鼠标、网页、文档、文件这些“电脑上的动作”。
@@ -3015,10 +3002,10 @@
                 <div class="experiment-mini-grid">
                     <div class="experiment-mini-note">
                         <h5>为什么 WorkBuddy 值得演</h5>
-                        <p>技能入口、步骤推进、结果产物都可视化，学员能清楚看见 Agent 到底做了什么。</p>
+                        <p>技能入口、步骤推进、结果产物都可视化，你能清楚看见 Agent 到底做了什么。</p>
                     </div>
                     <div class="experiment-mini-note">
-                        <h5>直播提问</h5>
+                        <h5>想一想</h5>
                         <p>你刚才看到的哪一步最像“AI 在替你动电脑”？是搜网页、改文件，还是生成产物？</p>
                     </div>
                 </div>
@@ -3034,7 +3021,7 @@
             最后一个词要在这里带出来：<strong>Computer Use</strong>。学员不需要背技术定义，只要看懂一件事就够了：当 AI 开始真的去动电脑、动文件、动网页，它就不只是“会生成”，而是在“会使用电脑继续做事”。
         </div>
 
-        <div class="interaction-badge live">直播互动：看到这里，请大家试着把 6 个词串起来说一遍。AI、大模型、多模态、AIGC、Agent、Computer Use，你现在最想回去先试哪一层？</div>
+        <div class="interaction-badge live">试着把 6 个词串起来说一遍：AI、大模型、多模态、AIGC、Agent、Computer Use。你最想先试哪一层？</div>
         <div class="page-num">07 / 19</div>
     </section>
 
@@ -3043,7 +3030,7 @@
         <div class="timing-badge">⏱️ 演示 25-30分钟 | 情绪：第一波高潮</div>
         <div class="suspense-tag">🎬 现场震撼演示</div>
 
-        <h2 class="workshop-title">直播 Workshop：你投票，我现场拆这 4 条预案</h2>
+        <h2 class="workshop-title">Workshop：从 4 条预案里，先挑 1 条最值得马上试的</h2>
         <p class="workshop-subtitle">不是只看结果，而是一起看清楚任务怎么拆、指令怎么写、产物怎么验。你回去才能真的自己跑一遍。</p>
 
         <div class="activity-cards">
@@ -3077,7 +3064,7 @@
                 <div class="prepared-demo-content">
                     <span class="prepared-demo-label">预案 A | 办公文档四件套</span>
                     <h3>校区周复盘：文档 + PPT 一次出齐</h3>
-                    <p>适合直播里第一个重锤演示。它最容易让学员感觉到“不是写一段字，而是真的把文件做出来了”。</p>
+                    <p>很适合作为第一条实操预案。它最容易让你感觉到“不是写一段字，而是真的把文件做出来了”。</p>
                     <div class="prepared-demo-command">你只需要说：把本周试听数据表、教研纪要和周汇报模板整理成 1 页摘要、1 份复盘文档和 1 页汇报 PPT。</div>
                     <div class="prepared-demo-chain"><strong>调用链：</strong>读文件 → 提炼结构 → 生成 Word / PPT / Excel 产物 → 右侧预览复核</div>
                 </div>
@@ -3089,7 +3076,7 @@
                 <div class="prepared-demo-content">
                     <span class="prepared-demo-label">预案 B | Web Search</span>
                     <h3>公开课调研：先搜，再筛，再归纳</h3>
-                    <p>这页最适合讲给校长、运营和市场老师听，因为他们最需要快速收集公开信息，而不是手动翻十几个网页。</p>
+                    <p>这一类最适合校长、运营负责人和市场负责人，因为最需要的是更快拿到公开信息，而不是手动翻十几个网页。</p>
                     <div class="prepared-demo-command">你只需要说：搜最近 30 天本地教培机构公开课主题，筛出最值得参考的 5 条，并解释为什么值得看。</div>
                     <div class="prepared-demo-chain"><strong>调用链：</strong>联网检索 → 按时间过滤 → AI 摘要归纳 → 得到可讨论的候选清单</div>
                 </div>
@@ -3101,7 +3088,7 @@
                 <div class="prepared-demo-content">
                     <span class="prepared-demo-label">预案 C | Agent Browser</span>
                     <h3>网页留档：把需要点开和滚动的页面真正读完</h3>
-                    <p>这条最适合接在搜索后面，告诉学员有些网页不是搜到就算了，还要点开、展开、截图，才算完成任务。</p>
+                    <p>这条适合接在搜索后面，因为有些网页不是搜到就算了，还要点开、展开、截图，才算完成任务。</p>
                     <div class="prepared-demo-command">你只需要说：打开这几家机构的活动页，读完需要展开的内容，整理摘要并为关键页面截图留档。</div>
                     <div class="prepared-demo-chain"><strong>调用链：</strong>打开网页 → 点击 / 滚动 / 展开 → 提取信息 → 输出摘要与截图文件</div>
                 </div>
@@ -3112,8 +3099,8 @@
                 </div>
                 <div class="prepared-demo-content">
                     <span class="prepared-demo-label">预案 D | 技能市场</span>
-                    <h3>现场告诉学员：先选 Skill，再谈流程</h3>
-                    <p>这一页的作用不是炫功能，而是降低新手恐惧感。学员会知道不用自己从零造系统，很多能力已经可以直接启用。</p>
+                    <h3>先选 Skill，再谈流程</h3>
+                    <p>这一页不是炫功能，而是降低上手门槛。你会知道不用自己从零造系统，很多能力已经可以直接启用。</p>
                     <div class="prepared-demo-command">你只需要说：今天这节课只保留办公文档、Web Search 和 Agent Browser 三类 Skill，其他先不展开。</div>
                     <div class="prepared-demo-chain"><strong>调用链：</strong>明确任务 → 选择合适 Skill → 降低误调用 → 让演示更稳定</div>
                 </div>
@@ -3124,7 +3111,7 @@
             这一页要传递给学员的不是“看我临场发挥多厉害”，而是：<strong>真正靠谱的 AI 直播课，应该把演示口令、截图、调用链和预期产物提前准备好。</strong>这样学员才知道自己回去也能照着复现。
         </div>
 
-        <div class="interaction-badge live">直播互动：这 4 条预案里，你最想先看哪条？请直接在评论区刷 A/B/C/D。A 周复盘文档/PPT，B 公开课调研，C 网页留档，D 技能市场。</div>
+        <div class="interaction-badge live">这 4 条预案里，你最想先跑哪条？A 周复盘文档/PPT，B 公开课调研，C 网页留档，D 技能市场。</div>
         <div class="page-num">08 / 19</div>
     </section>
 
@@ -3145,7 +3132,7 @@
                     </figure>
                     <figure class="workshop-shot">
                         <img src="assets/screenshots/workbuddy-office-suite.png" alt="WorkBuddy 生成文档和 PPT 产物的截图">
-                        <figcaption><strong>预期效果：</strong>右侧直接出现 Word / PPT / Excel 产物，老师可以先预览，再决定是否发给团队。</figcaption>
+                        <figcaption><strong>预期效果：</strong>右侧直接出现 Word / PPT / Excel 产物，可以先预览，再决定是否发给团队。</figcaption>
                     </figure>
                 </div>
 
@@ -3160,11 +3147,11 @@
                             <li><strong>读文件：</strong>先读 Excel、Word、PPT 模板里的已有素材。</li>
                             <li><strong>整理结构：</strong>提炼指标、问题、建议和版式结构。</li>
                             <li><strong>生成产物：</strong>一次输出复盘文档、汇报页和待确认项。</li>
-                            <li><strong>右侧复核：</strong>在产物面板里先预览，再决定是否给校长或老师看。</li>
+                            <li><strong>右侧复核：</strong>在产物面板里先预览，再决定是否发给团队。</li>
                         </ul>
                     </div>
                     <div class="workshop-note">
-                        <h4>🎁 学员要带走什么</h4>
+                        <h4>🎁 你要带走什么</h4>
                         <div class="mini-tag-row">
                             <span class="mini-tag">会写“对象 + 素材 + 输出物”指令</span>
                             <span class="mini-tag">知道文件类任务要一次给齐素材</span>
@@ -3173,7 +3160,7 @@
                     </div>
                     <div class="workshop-note">
                         <h4>✅ 预期交付物</h4>
-                        <p>一页校区周摘要、一份复盘文档、一页汇报 PPT，以及所有需要老师二次确认的地方都被明确标出来。</p>
+                        <p>一页校区周摘要、一份复盘文档、一页汇报 PPT，以及所有需要二次确认的地方都被明确标出来。</p>
                     </div>
                 </div>
             </div>
@@ -3243,7 +3230,7 @@
             这页要让学员建立一个新认知：<strong>调研不只是“搜一下”就结束了。</strong>真正有价值的是“先搜到候选，再把关键网页读完、截图、留档”，这样你回头开会时才拿得出依据。
         </div>
 
-        <div class="interaction-badge live">直播互动：如果今天就做一次竞品调研，你最想先比哪一项？公开课主题、海报卖点、价格表达，还是家长常见问题？请直接选一个最想看的。</div>
+        <div class="interaction-badge live">如果今天就做一次竞品调研，你最想先比哪一项？公开课主题、海报卖点、价格表达，还是家长常见问题？</div>
         <div class="page-num">10 / 19</div>
     </section>
 
@@ -3264,7 +3251,7 @@
                     </figure>
                     <figure class="workshop-shot">
                         <img src="assets/screenshots/workbuddy-right-sidebar.png" alt="WorkBuddy 右侧产物与预览截图">
-                        <figcaption><strong>复核位置：</strong>图表、报告和产物会落到右侧面板，方便老师逐个检查后再对外使用。</figcaption>
+                        <figcaption><strong>复核位置：</strong>图表、报告和产物会落到右侧面板，方便逐个检查后再对外使用。</figcaption>
                     </figure>
                 </div>
 
@@ -3279,11 +3266,11 @@
                             <li><strong>读表：</strong>先识别字段、清洗空值、统一统计口径。</li>
                             <li><strong>自动出图：</strong>按校区、班型、时间维度生成图表。</li>
                             <li><strong>提炼结论：</strong>指出问题、解释风险、给出下一步动作建议。</li>
-                            <li><strong>产物复核：</strong>老师只需要重点检查口径和异常值。</li>
+                            <li><strong>产物复核：</strong>重点检查口径和异常值。</li>
                         </ul>
                     </div>
                     <div class="workshop-note">
-                        <h4>🎁 学员最容易马上复制</h4>
+                        <h4>🎁 最容易马上复制</h4>
                         <div class="mini-tag-row">
                             <span class="mini-tag">试听到课率复盘</span>
                             <span class="mini-tag">续班率月报</span>
@@ -3310,11 +3297,11 @@
     <!-- ==================== SLIDE 10: Case Studies 1 ==================== -->
     <section class="slide slide-7">
         <div class="timing-badge">⏱️ 案例 60-80分钟 | 情绪：学习深入</div>
-        <div class="suspense-tag">📊 课堂示意案例</div>
+        <div class="suspense-tag">📊 场景示意案例</div>
 
         <div class="cases-header">
             <h2>教培机构 AI 应用拆解</h2>
-            <p>以下为课堂示意案例，用来帮助你判断“什么任务值得先试”。</p>
+            <p>以下为场景示意案例，用来帮助你判断“什么任务值得先试”。</p>
         </div>
 
         <div class="case-studies">
@@ -3398,7 +3385,7 @@
             本页案例使用的是<strong>示意口径</strong>，重点不在于某个增长数字，而在于看懂任务拆法：当家长咨询、学习跟进、课后反馈被标准化后，人力就能重新回到高价值沟通上。
         </div>
 
-        <div class="interaction-badge live">直播互动：看完这 3 个案例后，你最想先复制的是“咨询接待”“学习跟进”还是“课后反馈”？</div>
+        <div class="interaction-badge live">看完这 3 个案例后，你最想先复制的是“咨询接待”“学习跟进”还是“课后反馈”？</div>
         <div class="page-num">12 / 19</div>
     </section>
 
@@ -3470,7 +3457,7 @@
             适合先交给 AI 的任务通常同时满足三个条件：<strong>重复率高、规则相对明确、结果容易检查</strong>。起步时，优先从这类任务里挑一个最稳的切口。
         </div>
 
-        <div class="interaction-badge live">直播决定题：如果本周只试 1 个任务，你最愿意先把哪一类交给 AI 打底？</div>
+        <div class="interaction-badge live">如果本周只试 1 个任务，你最愿意先把哪一类交给 AI 打底？</div>
         <div class="page-num">13 / 19</div>
     </section>
 
@@ -3516,7 +3503,7 @@
             这一页最重要的结论是：只要涉及<span style="color: #F97316;">学员隐私、家长承诺、价格政策、学习判断</span>，AI 只能协助提速，最终判断必须由人负责。
         </div>
 
-        <div class="interaction-badge live">直播判断题：在你机构里，哪些内容一旦说错，影响最大？把那一类全部划进“必须人工复核”。</div>
+        <div class="interaction-badge live">想清楚一件事：在你机构里，哪些内容一旦说错，影响最大？把那一类全部划进“必须人工复核”。</div>
         <div class="page-num">14 / 19</div>
     </section>
 
@@ -3526,7 +3513,7 @@
         <div class="suspense-tag">🔥 实际演示</div>
 
         <span class="section-tag">🛠️ 方法模板</span>
-        <h2 class="slide-title">给学员带走的最小指令模板</h2>
+        <h2 class="slide-title">带走就能用的最小指令模板</h2>
 
         <div class="demo-container">
             <div class="demo-header">
@@ -3538,7 +3525,7 @@
                 <div class="demo-step">
                     <div class="step-number">1</div>
                     <p class="step-task">1. 对象</p>
-                    <p class="step-result">你要面对谁：家长、老师、校长、顾问、学员</p>
+                    <p class="step-result">你要面对谁：家长、老师、校长、顾问、潜客</p>
                 </div>
                 <div class="demo-step">
                     <div class="step-number">2</div>
@@ -3693,7 +3680,7 @@
             本课最重要的收获，不是认识了多少新词，而是已经明确了落地顺序：先从重复事务中释放老师和运营的时间，再把精力还给教学质量和家长沟通。
         </div>
 
-        <div class="interaction-badge live">课末互动：请在评论区写下你准备先试的第一个场景，再补一句“这一步我准备保留哪个审核点”。</div>
+        <div class="interaction-badge live">课末留一个动作：写下你准备先试的第一个场景，再补一句“这一步我准备保留哪个审核点”。</div>
         <div class="page-num">17 / 19</div>
     </section>
 
@@ -3721,13 +3708,13 @@
                 </div>
                 <div class="cta-item">
                     <div class="cta-item-icon">✓</div>
-                    <span>在学员群<strong>分享你的第一个 AI 成果</strong>，顺便说清哪里还需要人工改</span>
+                    <span>在团队里<strong>复盘你的第一个 AI 成果</strong>，顺便说清哪里还需要人工改</span>
                 </div>
             </div>
 
             <div class="conversion-box">
                 <h3>如果你想继续进到线下实操课</h3>
-                <p>线下课不再停留在“看懂案例”，而是会把你机构的真实任务现场跑通。更适合已经被今天直播打动、但担心“回去还是搭不起来”的学员。</p>
+                <p>线下课不再停留在“看懂案例”，而是会把你机构的真实任务现场跑通。更适合已经被今天这节课打动、但担心“回去还是搭不起来”的校长和管理者。</p>
                 <div class="conversion-list">
                     <div class="conversion-item">带着你自己的招生文案、FAQ 或数据表来，现场改成校区能直接用的版本。</div>
                     <div class="conversion-item">把 1 个真实任务拆成完整工作流：AI 起稿、人工审核、最终交付，当场跑通第一版。</div>
@@ -3736,7 +3723,7 @@
             </div>
 
             <div class="cta-footer">
-                <p>想继续参加线下实操课的同学，可以课后登记意向。我会先把“适合带来的资料清单”和“最值得现场跑通的任务类型”发给你，方便你判断自己适不适合来。</p>
+                <p>如果你想继续参加线下实操课，可以课后登记意向。我们会先把“适合带来的资料清单”和“最值得现场跑通的任务类型”发给你，方便你判断自己适不适合来。</p>
             </div>
         </div>
 
