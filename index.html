@@ -658,8 +658,39 @@
             gap: 16px;
         }
 
+        .experiment-quick-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 14px;
+        }
+
         .experiment-mini-note {
             padding: 18px 18px 16px;
+        }
+
+        .experiment-quick-card {
+            background: rgba(15, 23, 42, 0.7);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            border-radius: 18px;
+            padding: 16px 16px 14px;
+            box-shadow: 0 14px 34px rgba(15, 23, 42, 0.2);
+        }
+
+        .experiment-quick-card h5 {
+            font-size: 13px;
+            color: #FED7AA;
+            margin-bottom: 8px;
+            letter-spacing: 0.3px;
+        }
+
+        .experiment-quick-card p {
+            font-size: 13px;
+            line-height: 1.7;
+            color: #CBD5E1;
+        }
+
+        .experiment-quick-card strong {
+            color: #F8FAFC;
         }
 
         .experiment-mini-note h5 {
@@ -2653,6 +2684,7 @@
             .wb-features-grid, .official-proof-strip, .prepared-demos-grid, .capability-grid { grid-template-columns: repeat(2, 1fr); }
             .roadmap-strip { grid-template-columns: 1fr; }
             .prepared-demo-card, .workshop-layout, .experiment-layout { grid-template-columns: 1fr; }
+            .experiment-quick-grid { grid-template-columns: 1fr; }
         }
 
         @media (max-width: 768px) {
@@ -2661,7 +2693,7 @@
             .pain-points-grid, .bad-good-wrapper, .function-grid, .tool-map { grid-template-columns: 1fr; }
             .emotion-bar, .suspense-tag { display: none; }
             .harvest-strip, .conversion-list { grid-template-columns: 1fr; }
-            .wb-features-grid, .official-proof-strip, .prepared-demos-grid, .activity-cards, .demo-tasks, .ai-output, .data-stats, .experiment-mini-grid, .capability-grid, .roadmap-strip { grid-template-columns: 1fr; }
+            .wb-features-grid, .official-proof-strip, .prepared-demos-grid, .activity-cards, .demo-tasks, .ai-output, .data-stats, .experiment-mini-grid, .experiment-quick-grid, .capability-grid, .roadmap-strip { grid-template-columns: 1fr; }
             .roadmap-stage::after { display: none; }
         }
 
@@ -2856,6 +2888,21 @@
                     </div>
                 </div>
 
+                <div class="experiment-quick-grid">
+                    <div class="experiment-quick-card">
+                        <h5>历史一笔带过</h5>
+                        <p><strong>1950 年</strong>，图灵提出一个有名的问题：如果机器聊天聊到让人分不清对面是不是人，算不算“会思考”？这就是后来常说的<strong>图灵测试</strong>。</p>
+                    </div>
+                    <div class="experiment-quick-card">
+                        <h5>老一代 AI</h5>
+                        <p>过去很多 AI 更像“规则表 + 人工经验”。工程师先告诉机器该看什么特征，再按规则判断，聪明但不够灵活。</p>
+                    </div>
+                    <div class="experiment-quick-card">
+                        <h5>今天的大模型</h5>
+                        <p>现在更像让模型先读海量数据，自己学模式。简单说，过去更像手写答案；现在更像先让它大量学习再现场作答。</p>
+                    </div>
+                </div>
+
                 <div class="experiment-concept-band">
                     <h4>本页只带走 1 个概念</h4>
                     <p>AI = 能理解你的输入并先给第一版，但最后怎么发、能不能发，仍然要你判断。</p>
@@ -2921,9 +2968,24 @@
                     </div>
                 </div>
 
+                <div class="experiment-quick-grid">
+                    <div class="experiment-quick-card">
+                        <h5>1. 特征提取</h5>
+                        <p>别被这个词吓到。大白话就是：先把文字、图片变成机器能算的数字信号，像把一句话拆成它能处理的“痕迹”和模式。</p>
+                    </div>
+                    <div class="experiment-quick-card">
+                        <h5>2. 学习</h5>
+                        <p>训练时，模型会看<strong>数千亿到万亿级 token</strong> 的语料。`token` 可以粗略理解成被模型切开的文本片段，不完全等于一个字。它就是在大量样本里学规律。</p>
+                    </div>
+                    <div class="experiment-quick-card">
+                        <h5>3. 推理</h5>
+                        <p>你现在发问题时，模型并不是临时再上学，而是在用已经学到的参数做<strong>推理</strong>和预测，算出下一句最可能怎么接、怎样更贴近你的要求。</p>
+                    </div>
+                </div>
+
                 <div class="experiment-concept-band">
                     <h4>本页只带走 1 个概念</h4>
-                    <p>大模型 = 能理解上下文、按约束生成、并在同一会话里持续迭代的底层能力。</p>
+                    <p>大模型 = 先经过海量数据学习，再在推理阶段按上下文和约束生成结果。它很强，但也不是永远对，所以照样要复核。</p>
                 </div>
             </div>
         </div>
