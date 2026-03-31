@@ -476,6 +476,69 @@
             color: var(--text-gray);
         }
 
+        .function-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 20px;
+            max-width: 1200px;
+        }
+
+        .function-card {
+            background: rgba(255, 255, 255, 0.04);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            border-radius: 22px;
+            padding: 28px 24px;
+            text-align: left;
+        }
+
+        .function-card h3 {
+            font-size: 20px;
+            margin-bottom: 12px;
+            color: #F8FAFC;
+        }
+
+        .function-card p {
+            font-size: 14px;
+            color: var(--text-gray);
+            line-height: 1.7;
+        }
+
+        .function-card strong {
+            color: #FED7AA;
+        }
+
+        .tool-map {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+            max-width: 1100px;
+        }
+
+        .tool-card {
+            background: rgba(255, 255, 255, 0.04);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            border-radius: 22px;
+            padding: 26px 24px;
+        }
+
+        .tool-card h3 {
+            font-size: 20px;
+            margin-bottom: 10px;
+            color: #F8FAFC;
+        }
+
+        .tool-card p {
+            font-size: 14px;
+            line-height: 1.8;
+            color: var(--text-gray);
+        }
+
+        .tool-card .tool-tip {
+            margin-top: 14px;
+            font-size: 13px;
+            color: #FED7AA;
+        }
+
         /* Slide 4: AI vs Agent */
         .slide-4 {
             background: linear-gradient(135deg, #1E293B 0%, #0F172A 100%);
@@ -833,7 +896,7 @@
             margin-bottom: 8px;
         }
 
-        /* Slide 5B: WorkBuddy */
+        /* Slide 5B: AI vs Agent */
         .slide-5b, .slide-5c {
             background: linear-gradient(180deg, #0F172A 0%, #1E293B 100%);
         }
@@ -934,7 +997,7 @@
             font-weight: 700;
         }
 
-        /* Slide 5C: WorkBuddy Features */
+        /* Slide 5C: Agent Common Capabilities */
         .wb-features-grid {
             display: grid;
             grid-template-columns: repeat(3, 1fr);
@@ -2047,15 +2110,16 @@
 
         /* Responsive */
         @media (max-width: 1200px) {
-            .concept-cards, .cases-grid, .skill-categories { grid-template-columns: repeat(2, 1fr); }
+            .concept-cards, .cases-grid, .skill-categories, .function-grid, .tool-map { grid-template-columns: repeat(2, 1fr); }
             .rtgf-grid, .demo-steps { grid-template-columns: repeat(2, 1fr); }
         }
 
         @media (max-width: 768px) {
             .main-title { font-size: 42px; }
             .slide-title { font-size: 36px; }
-            .pain-points-grid, .bad-good-wrapper { grid-template-columns: 1fr; }
+            .pain-points-grid, .bad-good-wrapper, .function-grid, .tool-map { grid-template-columns: 1fr; }
             .emotion-bar, .suspense-tag { display: none; }
+            .harvest-strip, .conversion-list { grid-template-columns: 1fr; }
         }
 
         @media print {
@@ -2204,63 +2268,147 @@
         <div class="suspense-tag">💡 快速补脑</div>
 
         <span class="section-tag">📚 基础概念</span>
-        <h2 class="slide-title">什么是AI？</h2>
+        <h2 class="slide-title">什么是 AI 和大模型？</h2>
 
         <div class="concept-cards">
             <div class="concept-card">
                 <div class="concept-icon">🧠</div>
-                <h3 class="concept-title">会读材料的助手</h3>
-                <p class="concept-desc">它擅长读懂资料、归纳重点、起草文字。你给它明确任务，它往往能很快做出第一版。</p>
+                <h3 class="concept-title">会理解语言</h3>
+                <p class="concept-desc">你像和人说话一样下指令，它能理解你的问题、要求和上下文，再给出回答或草稿。</p>
             </div>
             <div class="concept-card">
                 <div class="concept-icon">⏰</div>
-                <h3 class="concept-title">响应很快</h3>
-                <p class="concept-desc">它不需要等下班，适合先处理标准化任务。但边界、口径和复核，还是要你来定。</p>
+                <h3 class="concept-title">会生成内容</h3>
+                <p class="concept-desc">它可以根据你的要求生成文字、图片、音乐、视频等内容，所以也叫“大模型”。</p>
             </div>
             <div class="concept-card">
                 <div class="concept-icon">💬</div>
-                <h3 class="concept-title">会起草的协作者</h3>
-                <p class="concept-desc">它很适合帮你把思路变成初稿，比如招生文案、通知模板、家长回复和复盘纪要。</p>
+                <h3 class="concept-title">会给第一版</h3>
+                <p class="concept-desc">它最适合先帮你产出第一版内容，再由你挑选、修改、审核，而不是直接替你拍板。</p>
             </div>
         </div>
 
         <div class="ai-products">
             <div class="ai-product">
                 <div class="ai-product-name">豆包</div>
-                <div class="ai-product-desc">智能小助手</div>
+                <div class="ai-product-desc">聊天、问答、文案起草</div>
             </div>
             <div class="ai-product">
                 <div class="ai-product-name">Kimi</div>
-                <div class="ai-product-desc">文书助手</div>
+                <div class="ai-product-desc">长文阅读、总结整理</div>
             </div>
             <div class="ai-product">
                 <div class="ai-product-name">通义千问</div>
-                <div class="ai-product-desc">阿里版ChatGPT</div>
+                <div class="ai-product-desc">问答、办公、写作</div>
             </div>
             <div class="ai-product">
                 <div class="ai-product-name">文心一言</div>
-                <div class="ai-product-desc">百度版ChatGPT</div>
+                <div class="ai-product-desc">问答、写作、助手类</div>
             </div>
             <div class="ai-product">
-                <div class="ai-product-name">ChatGPT</div>
-                <div class="ai-product-desc">国外最火的AI</div>
+                <div class="ai-product-name">即梦</div>
+                <div class="ai-product-desc">图片、视频生成</div>
             </div>
         </div>
 
         <div class="speaker-script">
-            先把 AI 理解成一个<strong>能理解任务、起草内容、整理信息</strong>的助手即可。对初学者来说，不需要先掌握复杂术语，先会用它解决具体工作就足够。
+            对小白来说，先记住一句话就够了：<strong>大模型本质上是一个会听懂你要求、并且能生成内容的助手。</strong>先别急着学 Agent，先把它最基础的能力看明白。
         </div>
 
         <div class="page-num">03 / 19</div>
     </section>
 
-    <!-- ==================== SLIDE 4: AI vs Agent ==================== -->
+    <!-- ==================== SLIDE 4: Foundation Functions ==================== -->
     <section class="slide slide-4">
         <div class="timing-badge">⏱️ 核心 12-18分钟 | 情绪：兴奋期</div>
         <div class="suspense-tag">⚡ 关键区分</div>
 
-        <span class="section-tag">⚡ 核心区别</span>
-        <h2 class="slide-title">AI 和 Agent 有什么区别？</h2>
+        <span class="section-tag">⚙️ 基础功能</span>
+        <h2 class="slide-title">大模型最常见的基础功能</h2>
+
+        <div class="function-grid">
+            <div class="function-card">
+                <h3>出文案</h3>
+                <p>最常见的能力就是<strong>写文字</strong>。比如招生朋友圈、家长通知、课程介绍、短视频口播稿、活动标题。</p>
+            </div>
+            <div class="function-card">
+                <h3>出图片</h3>
+                <p>可以根据一句话生成海报图、封面图、插图，也可以把现有图片<strong>改风格、补背景、换构图</strong>。</p>
+            </div>
+            <div class="function-card">
+                <h3>出音乐</h3>
+                <p>可以按主题和氛围生成<strong>背景音乐、儿歌 demo、轻配乐</strong>，适合做宣传视频或课堂氛围素材。</p>
+            </div>
+            <div class="function-card">
+                <h3>出视频</h3>
+                <p>像即梦这类工具，可以做<strong>文生视频、图生视频、短片段演示</strong>，适合做宣传短视频或视觉样片。</p>
+            </div>
+        </div>
+
+        <div class="speaker-script">
+            这一步先不要想复杂。对小白来说，大模型最基础的能力就是四类：<strong>写文字、出图片、出音乐、出视频。</strong>先理解它会“产出内容”，后面再理解它怎么“调用工具做事”。
+        </div>
+
+        <div class="interaction-badge live">直播提问：如果只从“文案、图片、音乐、视频”里选一个最想先试的基础能力，你最想先上手哪一个？</div>
+        <div class="page-num">04 / 19</div>
+    </section>
+
+    <!-- ==================== SLIDE 5: Common Tools ==================== -->
+    <section class="slide slide-5">
+        <div class="timing-badge">⏱️ 判断 18-22分钟 | 情绪：代入</div>
+        <div class="suspense-tag">🏫 行业判断</div>
+
+        <span class="section-tag">🧭 工具地图</span>
+        <h2 class="slide-title">国内常见 AI 工具，先这样理解</h2>
+
+        <div class="tool-map">
+            <div class="tool-card">
+                <h3>豆包</h3>
+                <p>更适合小白先上手。常见用法是聊天问答、改文案、出活动标题、写通知、帮你把想法变成第一版。</p>
+                <p class="tool-tip">适合先用来练“怎么把需求说清楚”。</p>
+            </div>
+            <div class="tool-card">
+                <h3>Kimi / 通义 / 文心</h3>
+                <p>这类工具的共同点是：<strong>问答、总结、读资料、写内容</strong>。不同工具风格不同，但对小白来说先把它们当成“内容助手”就够了。</p>
+                <p class="tool-tip">适合先处理文档、方案、总结、资料阅读。</p>
+            </div>
+            <div class="tool-card">
+                <h3>即梦</h3>
+                <p>即梦常见的基础能力是<strong>出图和出视频</strong>。适合做宣传视觉、活动海报样图、短视频片段和创意演示。</p>
+                <p class="tool-tip">适合先做视觉内容，而不是流程自动化。</p>
+            </div>
+            <div class="tool-card">
+                <h3>音乐生成功能</h3>
+                <p>常见用法是按主题、节奏、情绪出 BGM、儿歌 demo、短音频片段，适合做宣传视频或课堂氛围素材。</p>
+                <p class="tool-tip">适合配内容，不适合一开始就追求专业成品。</p>
+            </div>
+            <div class="tool-card">
+                <h3>图片生成功能</h3>
+                <p>一句话生成图片、改图、换背景、延展比例、做海报主视觉，适合给运营和招生快速出样。</p>
+                <p class="tool-tip">先拿来做“第一版”，再人工细修最稳。</p>
+            </div>
+            <div class="tool-card">
+                <h3>视频生成功能</h3>
+                <p>可以做短片段、镜头样片、动态封面或口播配图视频。对于小白，先把它当成“宣传素材生成器”更容易上手。</p>
+                <p class="tool-tip">先做短视频素材，不要一开始就想做完整大片。</p>
+            </div>
+        </div>
+
+        <div class="speaker-script">
+            小白一开始最容易混淆的是“工具很多，不知道该从哪里开始”。先记住：<strong>聊天问答和文案类工具，主要帮你产出内容；即梦这类工具，主要帮你产出视觉；这些都还属于大模型的基础功能。</strong>
+        </div>
+
+        <div class="interaction-badge live">直播互动：你现在最熟悉的是哪一类工具？“聊天写文案”“出图”“出视频”“出音乐”，还是一个都没试过？</div>
+        <div class="page-num">05 / 19</div>
+    </section>
+
+    <!-- ==================== SLIDE 5B: AI vs Agent ==================== -->
+    <section class="slide slide-5b">
+        <div class="timing-badge">⏱️ 工具 22-25分钟 | 情绪：期待</div>
+        <div class="suspense-tag">🛠️ 今天的主角</div>
+
+        <span class="section-tag">⚡ 关键区别</span>
+        <h2 class="slide-title">什么时候是“大模型”，什么时候是“Agent”？</h2>
 
         <div class="comparison-wrapper">
             <div class="comparison-grid">
@@ -2268,31 +2416,27 @@
                     <div class="col-header">
                         <div class="col-icon">🤖</div>
                         <div>
-                            <h3 class="col-title">AI 人工智能</h3>
-                            <p class="col-subtitle">擅长理解与生成</p>
+                            <h3 class="col-title">大模型基础功能</h3>
+                            <p class="col-subtitle">先产出内容</p>
                         </div>
                     </div>
                     <ul class="feature-list">
                         <li class="feature-item">
-                            <span class="feature-check">👤</span>
-                            <span>像一个<strong>会分析、会起草的顾问</strong></span>
-                        </li>
-                        <li class="feature-item">
                             <span class="feature-check">💬</span>
-                            <span>回答问题、总结材料、写初稿、给建议</span>
+                            <span>聊天问答、写文案、做总结、出图片、出音乐、出视频</span>
                         </li>
                         <li class="feature-item">
-                            <span class="feature-check">📖</span>
-                            <span>你给它课程资料，它能先整理出家长说明和卖点提纲</span>
+                            <span class="feature-check">📝</span>
+                            <span>更像一个<strong>内容助手</strong>，帮你给出第一版</span>
                         </li>
                         <li class="feature-item">
-                            <span class="feature-check">🎯</span>
-                            <span>给你<strong>答案、草稿和建议</strong>，通常还需要你继续确认</span>
+                            <span class="feature-check">👀</span>
+                            <span>你通常需要自己再去复制、发送、整理、执行</span>
                         </li>
                     </ul>
                     <div class="example-box">
                         <h4>举个例子</h4>
-                        <p>你说："把这次公开课资料整理成招生文案提纲" → AI先给你一版可改的草稿</p>
+                        <p>你说：“帮我写 3 条寒假班招生文案” → 大模型给你 3 个版本</p>
                     </div>
                 </div>
 
@@ -2302,175 +2446,71 @@
                     <div class="col-header">
                         <div class="col-icon">🚀</div>
                         <div>
-                            <h3 class="col-title">Agent 智能代理</h3>
-                            <p class="col-subtitle">擅长调用工具去执行</p>
+                            <h3 class="col-title">Agent</h3>
+                            <p class="col-subtitle">继续调用工具做事</p>
                         </div>
                     </div>
                     <ul class="feature-list">
                         <li class="feature-item">
-                            <span class="feature-check">💼</span>
-                            <span>像一个<strong>会按流程办事的执行助手</strong></span>
-                        </li>
-                        <li class="feature-item">
                             <span class="feature-check">⚙️</span>
-                            <span>帮你执行任务、操作表格文档、整理文件、调用系统</span>
+                            <span>不只是生成内容，还会继续调用文档、表格、文件、浏览器等工具</span>
                         </li>
                         <li class="feature-item">
-                            <span class="feature-check">🚀</span>
-                            <span>你说"整理本周试听名单并生成跟进表"，它能按步骤完成第一版</span>
+                            <span class="feature-check">🧩</span>
+                            <span>更像一个<strong>执行助手</strong>，会把任务拆成步骤推进</span>
                         </li>
                         <li class="feature-item">
-                            <span class="feature-check">🔥</span>
-                            <span>能帮你<strong>推进任务</strong>，但高风险动作仍要人工确认</span>
+                            <span class="feature-check">✅</span>
+                            <span>适合整理数据、归档资料、跨工具协同，但高风险动作仍要人工确认</span>
                         </li>
                     </ul>
                     <div class="example-box">
                         <h4>举个例子</h4>
-                        <p>你说："把本周试听、到课和转化数据整理成校区复盘" → Agent读取数据、生成表格和总结</p>
+                        <p>你说：“把本周试听、到课和转化数据整理成复盘表并生成总结” → Agent读取数据、整理表格、生成结论</p>
                     </div>
                 </div>
             </div>
         </div>
 
         <div class="speaker-script">
-            可以把 AI 理解为“更擅长理解和起草”，把执行型 AI 理解为“更擅长调用工具继续推进任务”。真正值得落地的，是机构里那些<strong>重复、规则清晰、能复核</strong>的事务。
+            到这里就能看出差别了：<strong>大模型先负责“产出内容”，Agent 再负责“调用工具继续把任务往前做”。</strong>这两个不是对立关系，而是前后衔接关系。
         </div>
 
-        <div class="interaction-badge live">直播提问：你机构里有没有一种工作，是老师换谁来做，流程都差不多的？那通常就是 AI 最值得先接的地方。</div>
-        <div class="page-num">04 / 19</div>
-    </section>
-
-    <!-- ==================== SLIDE 5: 行业判断 ==================== -->
-    <section class="slide slide-5">
-        <div class="timing-badge">⏱️ 判断 18-22分钟 | 情绪：代入</div>
-        <div class="suspense-tag">🏫 行业判断</div>
-
-        <span class="section-tag">🏫 行业判断</span>
-        <h2 class="slide-title">为什么教培机构现在最适合开始用 AI？</h2>
-
-        <div class="lobster-container">
-            <div class="misunderstanding">
-                <h4>三类常见压力</h4>
-                <div class="wrong-items">
-                    <span class="wrong-item">家长咨询高度重复，但每次都要人工从头回复</span>
-                    <span class="wrong-item">老师大量时间被通知、反馈、表格和复盘占掉</span>
-                    <span class="wrong-item">招生、试听、续班数据分散，决策经常靠经验</span>
-                </div>
-            </div>
-
-            <div class="correct-understanding">
-                <h4>三类优先机会</h4>
-                <p class="correct-main">
-                    <span>先用 AI 处理高频、低风险、可复核的工作</span>
-                </p>
-                <p class="correct-desc">
-                    对教培机构来说，最先见效的通常不是“全自动运营”，而是三类任务：<strong>招生内容起稿、家长咨询辅助回复、校区数据整理复盘</strong>。这些任务标准化程度高，也比较容易设置人工审核点。
-                </p>
-
-                <div class="lobster-benefit">
-                    <div class="benefit-item">
-                        <div class="benefit-icon">⏰</div>
-                        <p class="benefit-text">先从高频任务开始</p>
-                    </div>
-                    <div class="benefit-item">
-                        <div class="benefit-icon">💰</div>
-                        <p class="benefit-text">先做低风险场景</p>
-                    </div>
-                    <div class="benefit-item">
-                        <div class="benefit-icon">🔥</div>
-                        <p class="benefit-text">先保留人工复核</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <div class="speaker-script">
-            教培机构的优势在于，许多工作流程天然具有标准化特征。只要先区分清楚“适合 AI 打底的任务”和“必须人工把关的任务”，就很容易在早期看到成效。
-        </div>
-
-        <div class="page-num">05 / 19</div>
-    </section>
-
-    <!-- ==================== SLIDE 5B: WorkBuddy 简介 ==================== -->
-    <section class="slide slide-5b">
-        <div class="timing-badge">⏱️ 工具 22-25分钟 | 情绪：期待</div>
-        <div class="suspense-tag">🛠️ 今天的主角</div>
-
-        <span class="section-tag">🛠️ 工具介绍</span>
-        <h2 class="slide-title">今天课堂里的演示工具：WorkBuddy</h2>
-
-        <div class="wb-intro">
-            <div class="wb-intro-main">
-                <div class="wb-logo">
-                    <div class="wb-logo-icon">🤖</div>
-                    <div class="wb-logo-text">WorkBuddy</div>
-                    <div class="wb-logo-sub">腾讯 · 全场景职场AI智能体</div>
-                </div>
-                <p class="wb-intro-desc">
-                    一句话说清楚：<strong>WorkBuddy 是一类执行型 AI 工具的代表。</strong><br>
-                    今天我们借它来演示：当 AI 不只是聊天，而是能调用文档、表格、文件和系统时，教培任务可以怎么被加速。
-                </p>
-            </div>
-        </div>
-
-        <div class="wb-vs-traditional">
-            <div class="wb-vs-left">
-                <h4>🤖 对话型 AI（如豆包、Kimi）</h4>
-                <ul>
-                    <li>擅长答疑、总结、起草</li>
-                    <li>适合先产出第一版内容</li>
-                    <li>通常还要你自己去落地执行</li>
-                </ul>
-            </div>
-            <div class="wb-vs-right">
-                <h4>🚀 执行型 AI</h4>
-                <ul>
-                    <li>会把任务拆成步骤继续推进</li>
-                    <li>能操作文件、表格、文档等工具</li>
-                    <li>更容易交付<strong>可复核的结果</strong>（文档/报表/表格）</li>
-                </ul>
-            </div>
-        </div>
-
-        <div class="speaker-script">
-            这一页想说明的不是某个产品本身，而是一种工作方式：如果一个工具既能理解需求，又能处理文档、表格和文件，它就更适合拿来做招生、通知和复盘等教培执行任务。
-        </div>
-
-        <div class="interaction-badge live">直播提问：你现在用 AI，更偏向“问问题”，还是已经开始“交任务”了？</div>
+        <div class="interaction-badge live">直播提问：你平时最常见的使用方式，更像“让 AI 先给我一版”，还是“让 AI 帮我继续把事情做完”？</div>
         <div class="page-num">06 / 19</div>
     </section>
 
-    <!-- ==================== SLIDE 5C: WorkBuddy 功能 ==================== -->
+    <!-- ==================== SLIDE 5C: Agent Common Capabilities ==================== -->
     <section class="slide slide-5c">
         <div class="timing-badge">⏱️ 工具 25-28分钟 | 情绪：期待</div>
         <div class="suspense-tag">💪 它能做什么</div>
 
-        <span class="section-tag">🛠️ WorkBuddy 功能</span>
-        <h2 class="slide-title">WorkBuddy 能帮你做什么？</h2>
+        <span class="section-tag">🛠️ Agent 能力</span>
+        <h2 class="slide-title">Agent 常见能调用的功能案例</h2>
 
         <div class="wb-features-grid">
             <div class="wb-feature-card">
                 <div class="wb-feature-icon">📝</div>
-                <h4>文档起稿</h4>
-                <p>招生文案、家长通知、课后反馈框架<br>先出第一版，再人工润色定稿</p>
+                <h4>文档与表格</h4>
+                <p>读取表格、生成文档、写纪要、做复盘<br>更像把多个办公动作连起来</p>
                 <div class="wb-feature-example">
-                    "帮我起草一份公开课后的家长通知"
+                    "把这周试听数据整理成校区复盘表"
                 </div>
             </div>
             <div class="wb-feature-card">
                 <div class="wb-feature-icon">📊</div>
                 <h4>数据分析</h4>
-                <p>试听、到课、续班、转化数据汇总分析<br>先出报表，再辅助复盘</p>
+                <p>自动统计、排序、画图、提炼结论<br>适合做周报、月报和问题发现</p>
                 <div class="wb-feature-example">
                     "分析这份试听数据，找出转化掉队的班级"
                 </div>
             </div>
             <div class="wb-feature-card">
                 <div class="wb-feature-icon">🎨</div>
-                <h4>PPT/海报制作</h4>
-                <p>公开课页、校区介绍、招生海报<br>先搭框架和文案，再细修视觉</p>
+                <h4>内容联动</h4>
+                <p>先写文案，再配图，再整理成一页宣传内容<br>把多个基础能力串起来</p>
                 <div class="wb-feature-example">
-                    "帮我做一页寒假班招生说明 PPT"
+                    "帮我做一页寒假班招生说明并配主视觉"
                 </div>
             </div>
             <div class="wb-feature-card">
@@ -2483,16 +2523,16 @@
             </div>
             <div class="wb-feature-card">
                 <div class="wb-feature-icon">💬</div>
-                <h4>家校沟通辅助</h4>
-                <p>先草拟回复、整理 FAQ、生成群发通知<br>涉及承诺和价格时人工确认</p>
+                <h4>跨应用通知</h4>
+                <p>整理信息后再去发消息、写通知、同步群内容<br>适合标准化沟通链路</p>
                 <div class="wb-feature-example">
-                    "帮我起草家长关于课时安排的回复"
+                    "把这份公开课安排整理后发成家长群通知"
                 </div>
             </div>
             <div class="wb-feature-card">
                 <div class="wb-feature-icon">🔍</div>
-                <h4>深度调研</h4>
-                <p>竞品课程、校区活动、价格带研究<br>先做信息收集，再辅助你判断</p>
+                <h4>搜集与归纳</h4>
+                <p>先搜公开信息，再整理竞品、活动、价格带<br>适合做前期调研</p>
                 <div class="wb-feature-example">
                     "帮我整理周边 3 家机构的公开课定价"
                 </div>
@@ -2500,10 +2540,10 @@
         </div>
 
         <div class="speaker-script">
-            重点不是“一个按钮包打天下”，而是先把老师和运营最耗时、最标准化的动作抽出来，再看哪些环节适合交给 AI 提速。
+            所以当你看到 Agent 时，不要把它理解成“更聪明的聊天工具”，而是理解成：<strong>它会把大模型的基础能力，再加上工具调用，串成一个更完整的工作过程。</strong>
         </div>
 
-        <div class="interaction-badge live">直播互动：如果今天只能深挖 1 个能力，你最想继续看“文案、咨询、数据、海报、文件处理”里的哪一个？</div>
+        <div class="interaction-badge live">直播互动：如果今天只能深挖 1 个 Agent 能力，你最想继续看“数据复盘、通知联动、文件处理、竞品搜集”里的哪一个？</div>
         <div class="page-num">07 / 19</div>
     </section>
 
