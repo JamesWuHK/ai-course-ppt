@@ -1603,6 +1603,10 @@
             box-shadow: 0 18px 40px rgba(15, 23, 42, 0.32);
         }
 
+        .origin-story-summary {
+            grid-column: 1 / -1;
+        }
+
         .origin-data-thumb {
             padding: 22px 22px 18px;
             background:
@@ -3351,29 +3355,11 @@
                 <div class="experiment-quick-grid">
                     <div class="experiment-quick-card">
                         <h5>1. 特征提取</h5>
-                        <p>这个词听起来专业，简单说，就是先把文字、图片变成机器能计算的数字信号，像把一句话拆成它能处理的“痕迹”和模式。
-                            <span class="hover-illustration" tabindex="0">
-                                <span class="hover-trigger" aria-label="查看特征提取示意图" title="查看特征提取示意图"></span>
-                                <span class="hover-popover">
-                                    <img src="assets/illustrations/feature-extraction-hover.svg" alt="特征提取示意图：把文字和图片转换成机器可计算的特征块">
-                                    <span class="hover-popover-title">特征提取可以先这么理解</span>
-                                    <span class="hover-popover-copy">左边是原始文字和图片，中间是机器能处理的数字块，右边是整理后的关键信号。不是机器“听懂了人话”，而是先把内容转成它能算的形式。</span>
-                                </span>
-                            </span>
-                        </p>
+                        <p>这个词听起来专业，简单说，就是先把文字、图片变成机器能计算的信号。你可以把它理解成：先把“人话”和“画面”翻译成机器能处理的格式，它后面才有办法学习和判断。</p>
                     </div>
                     <div class="experiment-quick-card">
                         <h5>2. 学习</h5>
-                        <p>训练时，模型会看<strong>数千亿到万亿级 token</strong> 的语料。`token` 你可以先把它当成被模型切开的文本片段，它不完全等于一个字。模型就是在大量样本里学规律。
-                            <span class="hover-illustration" tabindex="0">
-                                <span class="hover-trigger" aria-label="查看 token 示意图" title="查看 token 示意图"></span>
-                                <span class="hover-popover">
-                                    <img src="assets/illustrations/token-hover.svg" alt="token 示意图：一句完整文本被切成多个小片段">
-                                    <span class="hover-popover-title">token 不是“一个字”这么简单</span>
-                                    <span class="hover-popover-copy">你可以先把它看成模型切出来的小片段。有时候一个字是一个 token，有时候一个词、一段符号，甚至半个词也可能算一个 token。</span>
-                                </span>
-                            </span>
-                        </p>
+                        <p>训练时，模型会看<strong>数千亿到万亿级 token</strong> 的语料。`token` 你先把它理解成模型切出来的“小块”就行，它不完全等于一个字，有时是一个词，有时是半个词。模型就是在海量样本里反复找规律。</p>
                     </div>
                     <div class="experiment-quick-card">
                         <h5>3. 推理</h5>
@@ -3497,25 +3483,7 @@
 
                 <div class="experiment-concept-band">
                     <h4>这页先记住 2 件事</h4>
-                    <p>多模态 = 不只看文字，还能理解图片/语音。
-                        <span class="hover-illustration" tabindex="0">
-                            <span class="hover-trigger" aria-label="查看多模态示意图" title="查看多模态示意图"></span>
-                            <span class="hover-popover">
-                                <img src="assets/illustrations/multimodal-hover.svg" alt="多模态示意图：文字、图片和语音同时进入模型理解">
-                                <span class="hover-popover-title">多模态不是多开几个窗口</span>
-                                <span class="hover-popover-copy">意思是模型能同时接住不同类型的输入，比如文字、图片、语音，再一起理解，不是只能盯着一段文字看。</span>
-                            </span>
-                        </span>
-                        AIGC = 已经开始替你生成新的内容成品。
-                        <span class="hover-illustration popover-right" tabindex="0">
-                            <span class="hover-trigger" aria-label="查看 AIGC 示意图" title="查看 AIGC 示意图"></span>
-                            <span class="hover-popover">
-                                <img src="assets/illustrations/aigc-hover.svg" alt="AIGC 示意图：从原始素材和提示词生成新的海报与文档">
-                                <span class="hover-popover-title">AIGC 的重点是“新生成”</span>
-                                <span class="hover-popover-copy">左边是你给它的素材或提示词，中间是模型处理，右边是新做出来的海报、图片、视频或文档。它不是只点评原材料，而是开始产出新的内容。</span>
-                            </span>
-                        </span>
-                    </p>
+                    <p>多模态 = 不只看文字，还能理解图片、语音这些不同类型的信息。比如你上传一张招生海报，再问它“这张图里最容易让家长看不懂的地方是哪”，这就是多模态。AIGC = 它已经开始帮你生成新的内容成品。比如你让它直接做一张春招海报、一张配图，或者一段短视频，这才叫 AIGC。</p>
                 </div>
             </div>
         </div>
@@ -3599,16 +3567,7 @@
 
                 <div class="experiment-concept-band">
                     <h4>这页先记住 2 件事</h4>
-                    <p>Agent = 会拆任务、调工具、把事情一件件往前做的 AI 助手。
-                        <span class="hover-illustration" tabindex="0">
-                            <span class="hover-trigger" aria-label="查看 Agent 做事流程图" title="查看 Agent 做事流程图"></span>
-                            <span class="hover-popover">
-                                <img src="assets/illustrations/agent-flow-hover.svg" alt="Agent 流程示意图：接任务、拆步骤、调用工具、输出结果">
-                                <span class="hover-popover-title">Agent 更像一个做事流程</span>
-                                <span class="hover-popover-copy">先接任务，再拆成几步，接着去调工具，最后交付结果。区别不在“回复更长”，而在它会不会主动把任务往下推进。</span>
-                            </span>
-                        </span>
-                        “养龙虾” = 把你常做的操作沉淀成 OpenClaw 里的 skill，下次就不用从头再教一遍。
+                    <p>Agent = 会拆任务、调工具、把事情一件件往前做的 AI 助手。比如你让它整理试听数据、做复盘、再给出汇报提纲，它不是只回一句建议，而是会把事情继续往下推进。“养龙虾” = 把你常做的操作沉淀成 OpenClaw 里的 skill，下次就不用从头再教一遍。
                         <span class="hover-illustration popover-right" tabindex="0">
                             <span class="hover-trigger" aria-label="查看示意图" title="查看示意图"></span>
                             <span class="hover-popover">
@@ -3651,11 +3610,22 @@
                 </div>
             </div>
 
-            <div class="origin-data-card">
+            <div class="official-proof-card">
+                <div class="official-proof-thumb">
+                    <img src="assets/screenshots/openclaw-github.png" alt="OpenClaw GitHub 仓库页面截图">
+                    <span class="official-proof-tag">GitHub 仓库截图</span>
+                </div>
+                <div class="official-proof-body">
+                    <h4>它为什么一下子震动全球技术圈？先看真实社区热度</h4>
+                    <p>这一页最值得看的不是“感觉很火”，而是 GitHub 页面上已经能直接看到：star、fork、watching 都很高，说明不是少数人在围观，而是很多团队已经在认真研究、复现和上手改。</p>
+                </div>
+            </div>
+
+            <div class="origin-data-card origin-story-summary">
                 <div class="origin-data-thumb">
                     <span class="origin-data-kicker">官方 GitHub + 官方 lore</span>
-                    <h3>这波爆起来，不只是改名，而是社区一下子被点燃了</h3>
-                    <p>截至 2026 年 4 月 2 日，OpenClaw GitHub 页面显示约 <strong>34.5 万 stars</strong>、<strong>6.87 万 forks</strong>、<strong>1700+ watching</strong>。官方 lore 还提到：改名公告在 <strong>90 分钟内拿到 20 万+</strong> 浏览。</p>
+                    <h3>这波爆起来，不只是改名，而是“故事 + 能力 + 社区行动”同时发生了</h3>
+                    <p>截至 2026 年 4 月 2 日，OpenClaw GitHub 页面显示约 <strong>34.5 万 stars</strong>、<strong>6.87 万 forks</strong>、<strong>1700+ watching</strong>。官方 lore 还提到：改名公告在 <strong>90 分钟内拿到 20 万+</strong> 浏览。换句话说，它不是单纯靠营销火，而是很多人真在讨论、真在试、真在把它接进自己的工作流。</p>
                     <div class="origin-metric-grid">
                         <div class="origin-metric">
                             <strong>3 小时</strong>
