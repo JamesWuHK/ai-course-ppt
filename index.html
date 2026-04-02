@@ -1469,6 +1469,109 @@
             display: block;
         }
 
+        .workflow-thumb {
+            position: relative;
+            background: radial-gradient(circle at 70% 30%, rgba(96, 212, 255, 0.16), transparent 24%), rgba(2, 6, 23, 0.92);
+        }
+
+        .workflow-thumb img {
+            width: 100%;
+            aspect-ratio: 16 / 10;
+            object-fit: cover;
+            display: block;
+        }
+
+        .workflow-hub {
+            position: absolute;
+            right: 128px;
+            top: 50%;
+            width: 14px;
+            height: 14px;
+            border-radius: 50%;
+            transform: translateY(-50%);
+            background: #60D4FF;
+            box-shadow: 0 0 0 10px rgba(96, 212, 255, 0.12), 0 0 26px rgba(96, 212, 255, 0.52);
+        }
+
+        .workflow-rail {
+            position: absolute;
+            right: 14px;
+            top: 50%;
+            transform: translateY(-50%);
+            display: grid;
+            gap: 12px;
+        }
+
+        .workflow-node {
+            position: relative;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 10px;
+            min-width: 112px;
+            padding: 9px 12px 9px 10px;
+            border-radius: 999px;
+            border: 1px solid rgba(255, 255, 255, 0.14);
+            background: rgba(15, 23, 42, 0.86);
+            color: #F8FAFC;
+            font-size: 12px;
+            font-weight: 700;
+            box-shadow: 0 10px 28px rgba(2, 6, 23, 0.34);
+        }
+
+        .workflow-node::before {
+            content: "";
+            position: absolute;
+            left: -44px;
+            top: 50%;
+            width: 36px;
+            height: 2px;
+            transform: translateY(-50%);
+            background: linear-gradient(90deg, rgba(96, 212, 255, 0.72), rgba(96, 212, 255, 0.18));
+        }
+
+        .workflow-node::after {
+            content: "";
+            position: absolute;
+            left: -52px;
+            top: 50%;
+            width: 8px;
+            height: 8px;
+            border-radius: 50%;
+            transform: translateY(-50%);
+            background: rgba(96, 212, 255, 0.95);
+            box-shadow: 0 0 12px rgba(96, 212, 255, 0.45);
+        }
+
+        .workflow-node-badge {
+            width: 24px;
+            height: 24px;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 50%;
+            font-size: 11px;
+            font-weight: 800;
+            color: #F8FAFC;
+            flex: 0 0 auto;
+        }
+
+        .workflow-node.weixin .workflow-node-badge {
+            background: linear-gradient(135deg, #38C172, #16A34A);
+        }
+
+        .workflow-node.feishu .workflow-node-badge {
+            background: linear-gradient(135deg, #3B82F6, #06B6D4);
+        }
+
+        .workflow-node.dingtalk .workflow-node-badge {
+            background: linear-gradient(135deg, #2563EB, #60A5FA);
+        }
+
+        .workflow-node.more .workflow-node-badge {
+            background: linear-gradient(135deg, #64748B, #94A3B8);
+        }
+
         .official-proof-tag {
             position: absolute;
             top: 12px;
@@ -3709,13 +3812,32 @@
             </div>
 
             <div class="official-proof-card">
-                <div class="official-proof-thumb">
-                    <img src="assets/screenshots/openclaw-github.png" alt="OpenClaw GitHub 仓库页面截图">
-                    <span class="official-proof-tag">GitHub 仓库截图</span>
+                <div class="official-proof-thumb workflow-thumb">
+                    <img src="assets/generated/openclaw-operator-flux.png" alt="一只红色与机械融合的龙虾正在操控电脑">
+                    <span class="official-proof-tag">工作场景示意</span>
+                    <span class="workflow-hub" aria-hidden="true"></span>
+                    <div class="workflow-rail" aria-hidden="true">
+                        <div class="workflow-node weixin">
+                            <span class="workflow-node-badge">微</span>
+                            <span>微信</span>
+                        </div>
+                        <div class="workflow-node feishu">
+                            <span class="workflow-node-badge">飞</span>
+                            <span>飞书</span>
+                        </div>
+                        <div class="workflow-node dingtalk">
+                            <span class="workflow-node-badge">钉</span>
+                            <span>钉钉</span>
+                        </div>
+                        <div class="workflow-node more">
+                            <span class="workflow-node-badge">+</span>
+                            <span>更多入口</span>
+                        </div>
+                    </div>
                 </div>
                 <div class="official-proof-body">
-                    <h4>它为什么一下子震动全球技术圈？先看真实社区热度</h4>
-                    <p>这一页最值得看的不是“感觉很火”，而是 GitHub 页面上已经能直接看到：star、fork、watching 都很高，说明不是少数人在围观，而是很多团队已经在认真研究、复现和上手改。</p>
+                    <h4>更值得想象的，不是仓库截图，而是它真的开始接住真实工作入口</h4>
+                    <p>你可以先把它理解成这样一只“会动电脑的龙虾”：一边盯着屏幕操作，一边把微信、飞书、钉钉这些入口接进来。这样学员更容易一下看懂，为什么大家会开始讨论“数字员工”这件事。</p>
                 </div>
             </div>
 
