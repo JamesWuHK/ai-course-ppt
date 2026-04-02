@@ -693,6 +693,121 @@
             color: #F8FAFC;
         }
 
+        .hover-illustration {
+            position: relative;
+            display: inline-flex;
+            align-items: center;
+            vertical-align: middle;
+            margin-left: 8px;
+        }
+
+        .hover-illustration.popover-right .hover-popover {
+            left: auto;
+            right: 0;
+            transform: translateY(10px);
+        }
+
+        .hover-trigger {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            padding: 5px 10px;
+            border-radius: 999px;
+            border: 1px solid rgba(251, 146, 60, 0.32);
+            background: rgba(249, 115, 22, 0.14);
+            color: #FED7AA;
+            font-size: 11px;
+            font-weight: 700;
+            letter-spacing: 0.02em;
+            cursor: pointer;
+            user-select: none;
+            transition: transform 0.2s ease, background 0.2s ease, border-color 0.2s ease;
+        }
+
+        .hover-trigger::before {
+            content: "i";
+            width: 16px;
+            height: 16px;
+            border-radius: 50%;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            background: rgba(255, 255, 255, 0.12);
+            color: #fff;
+            font-size: 11px;
+            font-weight: 800;
+        }
+
+        .hover-illustration:hover .hover-trigger,
+        .hover-illustration:focus-within .hover-trigger {
+            transform: translateY(-1px);
+            background: rgba(249, 115, 22, 0.22);
+            border-color: rgba(251, 146, 60, 0.5);
+        }
+
+        .hover-popover {
+            position: absolute;
+            left: 0;
+            bottom: calc(100% + 14px);
+            width: 320px;
+            padding: 14px;
+            border-radius: 20px;
+            background: rgba(15, 23, 42, 0.98);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            box-shadow: 0 24px 60px rgba(2, 6, 23, 0.42);
+            opacity: 0;
+            pointer-events: none;
+            transform: translateY(10px);
+            transition: opacity 0.22s ease, transform 0.22s ease;
+            z-index: 20;
+        }
+
+        .hover-popover::after {
+            content: '';
+            position: absolute;
+            left: 28px;
+            top: 100%;
+            width: 14px;
+            height: 14px;
+            background: rgba(15, 23, 42, 0.98);
+            border-right: 1px solid rgba(255, 255, 255, 0.1);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+            transform: rotate(45deg) translateY(-8px);
+        }
+
+        .hover-illustration.popover-right .hover-popover::after {
+            left: auto;
+            right: 28px;
+        }
+
+        .hover-illustration:hover .hover-popover,
+        .hover-illustration:focus-within .hover-popover {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .hover-popover img {
+            width: 100%;
+            display: block;
+            border-radius: 14px;
+            margin-bottom: 10px;
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            background: rgba(255, 255, 255, 0.02);
+        }
+
+        .hover-popover-title {
+            font-size: 13px;
+            color: #F8FAFC;
+            margin-bottom: 6px;
+            font-weight: 700;
+        }
+
+        .hover-popover-copy {
+            font-size: 12px;
+            line-height: 1.65;
+            color: #CBD5E1;
+        }
+
         .experiment-mini-note h5 {
             font-size: 13px;
             color: #FED7AA;
@@ -784,6 +899,27 @@
             font-size: 15px;
             line-height: 1.8;
             color: #F8FAFC;
+        }
+
+        @media (max-width: 900px) {
+            .hover-illustration {
+                display: block;
+                margin-top: 10px;
+                margin-left: 0;
+            }
+
+            .hover-popover,
+            .hover-illustration.popover-right .hover-popover {
+                width: min(320px, calc(100vw - 64px));
+                left: 0;
+                right: auto;
+            }
+
+            .hover-popover::after,
+            .hover-illustration.popover-right .hover-popover::after {
+                left: 28px;
+                right: auto;
+            }
         }
 
         /* Slide 4: AI vs Agent */
@@ -2964,7 +3100,16 @@
                 <div class="experiment-quick-grid">
                     <div class="experiment-quick-card">
                         <h5>历史一笔带过</h5>
-                        <p><strong>1950 年</strong>，图灵提出一个有名的问题：如果机器聊天聊到让人分不清对面是不是人，算不算“会思考”？这就是后来常说的<strong>图灵测试</strong>。简单说，就是看机器能不能聊得像人。</p>
+                        <p><strong>1950 年</strong>，图灵提出一个有名的问题：如果机器聊天聊到让人分不清对面是不是人，算不算“会思考”？这就是后来常说的<strong>图灵测试</strong>。简单说，就是看机器能不能聊得像人。
+                            <span class="hover-illustration" tabindex="0">
+                                <span class="hover-trigger">悬停看图</span>
+                                <span class="hover-popover">
+                                    <img src="assets/illustrations/turing-test-hover.svg" alt="图灵测试示意图：人和机器人分别坐在隔开的电脑前，通过文字对话">
+                                    <span class="hover-popover-title">图灵测试可以先这样理解</span>
+                                    <span class="hover-popover-copy">左边是人，右边是机器人，中间隔开，双方只能通过文字交流。如果你聊了一阵还分不清对面是谁，这个测试就算它过关。</span>
+                                </span>
+                            </span>
+                        </p>
                     </div>
                     <div class="experiment-quick-card">
                         <h5>老一代 AI</h5>
@@ -3278,7 +3423,16 @@
 
                 <div class="experiment-concept-band">
                     <h4>这页先记住 2 件事</h4>
-                    <p>Agent = 会拆任务、调工具、把事情一件件往前做的 AI 助手。“养龙虾” = 把你常做的操作沉淀成 OpenClaw 里的 skill，下次就不用从头再教一遍。</p>
+                    <p>Agent = 会拆任务、调工具、把事情一件件往前做的 AI 助手。“养龙虾” = 把你常做的操作沉淀成 OpenClaw 里的 skill，下次就不用从头再教一遍。
+                        <span class="hover-illustration popover-right" tabindex="0">
+                            <span class="hover-trigger">悬停看图</span>
+                            <span class="hover-popover">
+                                <img src="assets/illustrations/lobster-skill-hover.svg" alt="养龙虾示意图：把重复操作拆成步骤，再封装成可复用的技能">
+                                <span class="hover-popover-title">“养龙虾”不是多一个聊天框</span>
+                                <span class="hover-popover-copy">更准确地说，是把你已经跑顺的操作步骤沉淀成 skill。下次再做同类任务，不用从头描述，直接调用这套做法就行。</span>
+                            </span>
+                        </span>
+                    </p>
                 </div>
             </div>
         </div>
@@ -3381,7 +3535,16 @@
 
                 <div class="experiment-concept-band">
                     <h4>这页先记住 1 句话</h4>
-                    <p>Computer Use = 让 AI 不只给建议，而是真的去操作网页、文件和界面，适合跨步骤任务。</p>
+                    <p>Computer Use = 让 AI 不只给建议，而是真的去操作网页、文件和界面，适合跨步骤任务。
+                        <span class="hover-illustration popover-right" tabindex="0">
+                            <span class="hover-trigger">悬停看图</span>
+                            <span class="hover-popover">
+                                <img src="assets/illustrations/computer-use-hover.svg" alt="Computer Use 示意图：AI 中控连接浏览器、文档和表格，自动执行多步操作">
+                                <span class="hover-popover-title">Computer Use 最好这样看</span>
+                                <span class="hover-popover-copy">不是 AI 说“你可以去做什么”，而是它自己去开网页、读文档、整理表格，再把结果放回给你检查。</span>
+                            </span>
+                        </span>
+                    </p>
                 </div>
             </div>
         </div>
