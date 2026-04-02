@@ -710,32 +710,41 @@
         .hover-trigger {
             display: inline-flex;
             align-items: center;
-            gap: 6px;
-            padding: 5px 10px;
-            border-radius: 999px;
+            justify-content: center;
+            width: 34px;
+            height: 34px;
+            padding: 0;
+            border-radius: 12px;
             border: 1px solid rgba(251, 146, 60, 0.32);
             background: rgba(249, 115, 22, 0.14);
             color: #FED7AA;
-            font-size: 11px;
-            font-weight: 700;
-            letter-spacing: 0.02em;
+            font-size: 0;
             cursor: pointer;
             user-select: none;
-            transition: transform 0.2s ease, background 0.2s ease, border-color 0.2s ease;
+            box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.08), 0 10px 24px rgba(15, 23, 42, 0.18);
+            transition: transform 0.2s ease, background 0.2s ease, border-color 0.2s ease, box-shadow 0.2s ease;
+            position: relative;
         }
 
         .hover-trigger::before {
-            content: "i";
-            width: 16px;
-            height: 16px;
+            content: '';
+            width: 15px;
+            height: 9px;
+            border: 1.8px solid currentColor;
+            border-radius: 999px;
+            display: block;
+            transform: rotate(-6deg);
+            opacity: 0.95;
+        }
+
+        .hover-trigger::after {
+            content: '';
+            position: absolute;
+            width: 5px;
+            height: 5px;
             border-radius: 50%;
-            display: inline-flex;
-            align-items: center;
-            justify-content: center;
-            background: rgba(255, 255, 255, 0.12);
-            color: #fff;
-            font-size: 11px;
-            font-weight: 800;
+            background: currentColor;
+            box-shadow: 8px -8px 0 -1px rgba(251, 146, 60, 0.6);
         }
 
         .hover-illustration:hover .hover-trigger,
@@ -743,6 +752,7 @@
             transform: translateY(-1px);
             background: rgba(249, 115, 22, 0.22);
             border-color: rgba(251, 146, 60, 0.5);
+            box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.12), 0 14px 28px rgba(15, 23, 42, 0.24);
         }
 
         .hover-popover {
@@ -3102,7 +3112,7 @@
                         <h5>历史一笔带过</h5>
                         <p><strong>1950 年</strong>，图灵提出一个有名的问题：如果机器聊天聊到让人分不清对面是不是人，算不算“会思考”？这就是后来常说的<strong>图灵测试</strong>。简单说，就是看机器能不能聊得像人。
                             <span class="hover-illustration" tabindex="0">
-                                <span class="hover-trigger">悬停看图</span>
+                                <span class="hover-trigger" aria-label="查看示意图" title="查看示意图"></span>
                                 <span class="hover-popover">
                                     <img src="assets/illustrations/turing-test-hover.svg" alt="图灵测试示意图：人和机器人分别坐在隔开的电脑前，通过文字对话">
                                     <span class="hover-popover-title">图灵测试可以先这样理解</span>
@@ -3425,7 +3435,7 @@
                     <h4>这页先记住 2 件事</h4>
                     <p>Agent = 会拆任务、调工具、把事情一件件往前做的 AI 助手。“养龙虾” = 把你常做的操作沉淀成 OpenClaw 里的 skill，下次就不用从头再教一遍。
                         <span class="hover-illustration popover-right" tabindex="0">
-                            <span class="hover-trigger">悬停看图</span>
+                            <span class="hover-trigger" aria-label="查看示意图" title="查看示意图"></span>
                             <span class="hover-popover">
                                 <img src="assets/illustrations/lobster-skill-hover.svg" alt="养龙虾示意图：把重复操作拆成步骤，再封装成可复用的技能">
                                 <span class="hover-popover-title">“养龙虾”不是多一个聊天框</span>
@@ -3537,7 +3547,7 @@
                     <h4>这页先记住 1 句话</h4>
                     <p>Computer Use = 让 AI 不只给建议，而是真的去操作网页、文件和界面，适合跨步骤任务。
                         <span class="hover-illustration popover-right" tabindex="0">
-                            <span class="hover-trigger">悬停看图</span>
+                            <span class="hover-trigger" aria-label="查看示意图" title="查看示意图"></span>
                             <span class="hover-popover">
                                 <img src="assets/illustrations/computer-use-hover.svg" alt="Computer Use 示意图：AI 中控连接浏览器、文档和表格，自动执行多步操作">
                                 <span class="hover-popover-title">Computer Use 最好这样看</span>
