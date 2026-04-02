@@ -1595,6 +1595,88 @@
             margin-top: 28px;
         }
 
+        .openclaw-hero-card {
+            max-width: 1180px;
+            width: 100%;
+            margin-top: 24px;
+            background:
+                radial-gradient(circle at top left, rgba(249, 115, 22, 0.18), transparent 28%),
+                radial-gradient(circle at top right, rgba(96, 212, 255, 0.16), transparent 26%),
+                rgba(255, 255, 255, 0.04);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            border-radius: 24px;
+            box-shadow: 0 20px 48px rgba(15, 23, 42, 0.3);
+            display: grid;
+            grid-template-columns: 1.2fr 0.8fr;
+            overflow: hidden;
+        }
+
+        .openclaw-hero-art {
+            min-height: 320px;
+            background: rgba(2, 6, 23, 0.48);
+        }
+
+        .openclaw-hero-art img {
+            width: 100%;
+            height: 100%;
+            display: block;
+            object-fit: cover;
+        }
+
+        .openclaw-hero-copy {
+            padding: 28px 28px 24px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            gap: 12px;
+        }
+
+        .openclaw-hero-kicker {
+            display: inline-flex;
+            align-items: center;
+            align-self: flex-start;
+            padding: 7px 12px;
+            border-radius: 999px;
+            background: rgba(249, 115, 22, 0.12);
+            border: 1px solid rgba(249, 115, 22, 0.22);
+            color: #FED7AA;
+            font-size: 11px;
+            font-weight: 700;
+            letter-spacing: 0.4px;
+        }
+
+        .openclaw-hero-copy h3 {
+            font-size: 28px;
+            line-height: 1.35;
+            color: #F8FAFC;
+        }
+
+        .openclaw-hero-copy p {
+            font-size: 15px;
+            line-height: 1.8;
+            color: #CBD5E1;
+        }
+
+        .openclaw-hero-points {
+            display: grid;
+            gap: 10px;
+            margin-top: 6px;
+        }
+
+        .openclaw-hero-point {
+            background: rgba(15, 23, 42, 0.55);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            border-radius: 14px;
+            padding: 12px 14px;
+            font-size: 13px;
+            line-height: 1.7;
+            color: #CBD5E1;
+        }
+
+        .openclaw-hero-point strong {
+            color: #F8FAFC;
+        }
+
         .origin-data-card {
             background: rgba(255, 255, 255, 0.04);
             border: 1px solid rgba(255, 255, 255, 0.08);
@@ -3005,7 +3087,7 @@
             .rtgf-grid, .demo-steps { grid-template-columns: repeat(2, 1fr); }
             .wb-features-grid, .official-proof-strip, .prepared-demos-grid, .capability-grid, .origin-why-grid { grid-template-columns: repeat(2, 1fr); }
             .roadmap-strip { grid-template-columns: 1fr; }
-            .prepared-demo-card, .workshop-layout, .experiment-layout, .openclaw-story-grid { grid-template-columns: 1fr; }
+            .prepared-demo-card, .workshop-layout, .experiment-layout, .openclaw-story-grid, .openclaw-hero-card { grid-template-columns: 1fr; }
             .experiment-quick-grid { grid-template-columns: 1fr; }
         }
 
@@ -3015,7 +3097,7 @@
             .pain-points-grid, .bad-good-wrapper, .function-grid, .tool-map { grid-template-columns: 1fr; }
             .emotion-bar, .suspense-tag { display: none; }
             .harvest-strip, .conversion-list { grid-template-columns: 1fr; }
-            .wb-features-grid, .official-proof-strip, .prepared-demos-grid, .activity-cards, .demo-tasks, .ai-output, .data-stats, .experiment-mini-grid, .experiment-quick-grid, .capability-grid, .roadmap-strip, .origin-why-grid, .openclaw-story-grid, .origin-metric-grid { grid-template-columns: 1fr; }
+            .wb-features-grid, .official-proof-strip, .prepared-demos-grid, .activity-cards, .demo-tasks, .ai-output, .data-stats, .experiment-mini-grid, .experiment-quick-grid, .capability-grid, .roadmap-strip, .origin-why-grid, .openclaw-story-grid, .origin-metric-grid, .openclaw-hero-card { grid-template-columns: 1fr; }
             .roadmap-stage::after { display: none; }
         }
 
@@ -3597,6 +3679,21 @@
         <span class="section-tag">📘 知识点 5</span>
         <h2 class="slide-title">OpenClaw：它是怎么来的？为什么最近全球技术圈都在聊？</h2>
         <p class="workshop-subtitle">先讲结论：它火，不只是因为名字有记忆点，而是把“个人助手、现有沟通入口、可执行技能”三件事真正拧到了一起。</p>
+
+        <div class="openclaw-hero-card">
+            <div class="openclaw-hero-art">
+                <img src="assets/illustrations/openclaw-hero-lobster.svg" alt="OpenClaw 形象示意：一只巨大的龙虾，左半边是红色生物体，右半边是机械结构">
+            </div>
+            <div class="openclaw-hero-copy">
+                <span class="openclaw-hero-kicker">记忆锚点示意</span>
+                <h3>你可以先把 OpenClaw 记成一只“半红龙虾、半机械体”的大龙虾</h3>
+                <p>左半边，代表它为什么容易被记住: 形象鲜明、社区讨论度高、传播速度快。右半边，代表它为什么值得认真看: 不只是一个梗，而是背后真有 skill、browser、gateway 这类可执行能力。</p>
+                <div class="openclaw-hero-points">
+                    <div class="openclaw-hero-point"><strong>红色这一半：</strong>先帮你记住它，知道最近为什么到处都在聊“龙虾”。</div>
+                    <div class="openclaw-hero-point"><strong>机械这一半：</strong>提醒你别只看热闹，要看它怎么把重复操作沉淀成可复用的 skill。</div>
+                </div>
+            </div>
+        </div>
 
         <div class="openclaw-story-grid">
             <div class="official-proof-card">
