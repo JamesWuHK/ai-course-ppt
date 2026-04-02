@@ -1582,6 +1582,127 @@
             color: var(--accent);
         }
 
+        .slide-5d {
+            background: linear-gradient(180deg, #0B1220 0%, #172554 55%, #0F172A 100%);
+        }
+
+        .openclaw-story-grid {
+            display: grid;
+            grid-template-columns: 1.15fr 0.85fr;
+            gap: 22px;
+            max-width: 1180px;
+            width: 100%;
+            margin-top: 28px;
+        }
+
+        .origin-data-card {
+            background: rgba(255, 255, 255, 0.04);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            border-radius: 18px;
+            overflow: hidden;
+            box-shadow: 0 18px 40px rgba(15, 23, 42, 0.32);
+        }
+
+        .origin-data-thumb {
+            padding: 22px 22px 18px;
+            background:
+                radial-gradient(circle at top right, rgba(249, 115, 22, 0.26), transparent 42%),
+                linear-gradient(135deg, rgba(30, 41, 59, 0.92), rgba(15, 23, 42, 0.98));
+            border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+        }
+
+        .origin-data-kicker {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            padding: 6px 10px;
+            border-radius: 999px;
+            background: rgba(249, 115, 22, 0.14);
+            border: 1px solid rgba(251, 146, 60, 0.24);
+            color: #FED7AA;
+            font-size: 11px;
+            font-weight: 700;
+            letter-spacing: 0.3px;
+            margin-bottom: 14px;
+        }
+
+        .origin-data-thumb h3 {
+            font-size: 26px;
+            line-height: 1.35;
+            color: #F8FAFC;
+            margin-bottom: 10px;
+        }
+
+        .origin-data-thumb p {
+            font-size: 14px;
+            line-height: 1.8;
+            color: #CBD5E1;
+        }
+
+        .origin-metric-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 12px;
+            margin-top: 18px;
+        }
+
+        .origin-metric {
+            background: rgba(15, 23, 42, 0.55);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            border-radius: 14px;
+            padding: 14px 14px 12px;
+        }
+
+        .origin-metric strong {
+            display: block;
+            font-size: 24px;
+            color: #F8FAFC;
+            margin-bottom: 4px;
+        }
+
+        .origin-metric span {
+            display: block;
+            font-size: 12px;
+            line-height: 1.6;
+            color: #CBD5E1;
+        }
+
+        .origin-footnote {
+            margin-top: 12px;
+            font-size: 11px;
+            line-height: 1.6;
+            color: #94A3B8;
+        }
+
+        .origin-why-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 16px;
+            max-width: 1180px;
+            width: 100%;
+            margin-top: 20px;
+        }
+
+        .origin-why-card {
+            background: rgba(15, 23, 42, 0.72);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            border-radius: 18px;
+            padding: 18px 18px 16px;
+            box-shadow: 0 16px 36px rgba(15, 23, 42, 0.2);
+        }
+
+        .origin-why-card h4 {
+            font-size: 15px;
+            color: #F8FAFC;
+            margin-bottom: 8px;
+        }
+
+        .origin-why-card p {
+            font-size: 13px;
+            line-height: 1.75;
+            color: #CBD5E1;
+        }
+
         /* Workshop Slides */
         .slide-workshop {
             background: linear-gradient(180deg, #0F172A 0%, #1E293B 100%);
@@ -2878,9 +2999,9 @@
         @media (max-width: 1200px) {
             .concept-cards, .cases-grid, .skill-categories, .function-grid, .tool-map { grid-template-columns: repeat(2, 1fr); }
             .rtgf-grid, .demo-steps { grid-template-columns: repeat(2, 1fr); }
-            .wb-features-grid, .official-proof-strip, .prepared-demos-grid, .capability-grid { grid-template-columns: repeat(2, 1fr); }
+            .wb-features-grid, .official-proof-strip, .prepared-demos-grid, .capability-grid, .origin-why-grid { grid-template-columns: repeat(2, 1fr); }
             .roadmap-strip { grid-template-columns: 1fr; }
-            .prepared-demo-card, .workshop-layout, .experiment-layout { grid-template-columns: 1fr; }
+            .prepared-demo-card, .workshop-layout, .experiment-layout, .openclaw-story-grid { grid-template-columns: 1fr; }
             .experiment-quick-grid { grid-template-columns: 1fr; }
         }
 
@@ -2890,7 +3011,7 @@
             .pain-points-grid, .bad-good-wrapper, .function-grid, .tool-map { grid-template-columns: 1fr; }
             .emotion-bar, .suspense-tag { display: none; }
             .harvest-strip, .conversion-list { grid-template-columns: 1fr; }
-            .wb-features-grid, .official-proof-strip, .prepared-demos-grid, .activity-cards, .demo-tasks, .ai-output, .data-stats, .experiment-mini-grid, .experiment-quick-grid, .capability-grid, .roadmap-strip { grid-template-columns: 1fr; }
+            .wb-features-grid, .official-proof-strip, .prepared-demos-grid, .activity-cards, .demo-tasks, .ai-output, .data-stats, .experiment-mini-grid, .experiment-quick-grid, .capability-grid, .roadmap-strip, .origin-why-grid, .openclaw-story-grid, .origin-metric-grid { grid-template-columns: 1fr; }
             .roadmap-stage::after { display: none; }
         }
 
@@ -2991,7 +3112,7 @@
             <div class="scroll-arrow"></div>
             <span>向下滚动</span>
         </div>
-        <div class="page-num">01 / 19</div>
+        <div class="page-num">01 / 20</div>
     </section>
 
     <!-- ==================== SLIDE 2: Icebreaker ==================== -->
@@ -3032,7 +3153,7 @@
         </div>
 
         <div class="interaction-badge live">先定一个目标：沟通准备、文案、反馈、数据，今天只选 1 项最想解决的。</div>
-        <div class="page-num">02 / 19</div>
+        <div class="page-num">02 / 20</div>
     </section>
 
     <!-- ==================== SLIDE 3: What is AI ==================== -->
@@ -3143,7 +3264,7 @@
         </div>
 
         <div class="interaction-badge live">现在试试：写一句真实任务，先拿到第一版，再追问 1 轮。</div>
-        <div class="page-num">03 / 19</div>
+        <div class="page-num">03 / 20</div>
     </section>
 
     <!-- ==================== SLIDE 4: Foundation Functions ==================== -->
@@ -3221,11 +3342,29 @@
                 <div class="experiment-quick-grid">
                     <div class="experiment-quick-card">
                         <h5>1. 特征提取</h5>
-                        <p>这个词听起来专业，简单说，就是先把文字、图片变成机器能计算的数字信号，像把一句话拆成它能处理的“痕迹”和模式。</p>
+                        <p>这个词听起来专业，简单说，就是先把文字、图片变成机器能计算的数字信号，像把一句话拆成它能处理的“痕迹”和模式。
+                            <span class="hover-illustration" tabindex="0">
+                                <span class="hover-trigger" aria-label="查看特征提取示意图" title="查看特征提取示意图"></span>
+                                <span class="hover-popover">
+                                    <img src="assets/illustrations/feature-extraction-hover.svg" alt="特征提取示意图：把文字和图片转换成机器可计算的特征块">
+                                    <span class="hover-popover-title">特征提取可以先这么理解</span>
+                                    <span class="hover-popover-copy">左边是原始文字和图片，中间是机器能处理的数字块，右边是整理后的关键信号。不是机器“听懂了人话”，而是先把内容转成它能算的形式。</span>
+                                </span>
+                            </span>
+                        </p>
                     </div>
                     <div class="experiment-quick-card">
                         <h5>2. 学习</h5>
-                        <p>训练时，模型会看<strong>数千亿到万亿级 token</strong> 的语料。`token` 你可以先把它当成被模型切开的文本片段，它不完全等于一个字。模型就是在大量样本里学规律。</p>
+                        <p>训练时，模型会看<strong>数千亿到万亿级 token</strong> 的语料。`token` 你可以先把它当成被模型切开的文本片段，它不完全等于一个字。模型就是在大量样本里学规律。
+                            <span class="hover-illustration" tabindex="0">
+                                <span class="hover-trigger" aria-label="查看 token 示意图" title="查看 token 示意图"></span>
+                                <span class="hover-popover">
+                                    <img src="assets/illustrations/token-hover.svg" alt="token 示意图：一句完整文本被切成多个小片段">
+                                    <span class="hover-popover-title">token 不是“一个字”这么简单</span>
+                                    <span class="hover-popover-copy">你可以先把它看成模型切出来的小片段。有时候一个字是一个 token，有时候一个词、一段符号，甚至半个词也可能算一个 token。</span>
+                                </span>
+                            </span>
+                        </p>
                     </div>
                     <div class="experiment-quick-card">
                         <h5>3. 推理</h5>
@@ -3245,7 +3384,7 @@
         </div>
 
         <div class="interaction-badge live">用自己的话说一句：为什么刚才那个实验是在用大模型？</div>
-        <div class="page-num">04 / 19</div>
+        <div class="page-num">04 / 20</div>
     </section>
 
     <!-- ==================== SLIDE 5: Common Tools ==================== -->
@@ -3349,7 +3488,25 @@
 
                 <div class="experiment-concept-band">
                     <h4>这页先记住 2 件事</h4>
-                    <p>多模态 = 不只看文字，还能理解图片/语音。AIGC = 已经开始替你生成新的内容成品。</p>
+                    <p>多模态 = 不只看文字，还能理解图片/语音。
+                        <span class="hover-illustration" tabindex="0">
+                            <span class="hover-trigger" aria-label="查看多模态示意图" title="查看多模态示意图"></span>
+                            <span class="hover-popover">
+                                <img src="assets/illustrations/multimodal-hover.svg" alt="多模态示意图：文字、图片和语音同时进入模型理解">
+                                <span class="hover-popover-title">多模态不是多开几个窗口</span>
+                                <span class="hover-popover-copy">意思是模型能同时接住不同类型的输入，比如文字、图片、语音，再一起理解，不是只能盯着一段文字看。</span>
+                            </span>
+                        </span>
+                        AIGC = 已经开始替你生成新的内容成品。
+                        <span class="hover-illustration popover-right" tabindex="0">
+                            <span class="hover-trigger" aria-label="查看 AIGC 示意图" title="查看 AIGC 示意图"></span>
+                            <span class="hover-popover">
+                                <img src="assets/illustrations/aigc-hover.svg" alt="AIGC 示意图：从原始素材和提示词生成新的海报与文档">
+                                <span class="hover-popover-title">AIGC 的重点是“新生成”</span>
+                                <span class="hover-popover-copy">左边是你给它的素材或提示词，中间是模型处理，右边是新做出来的海报、图片、视频或文档。它不是只点评原材料，而是开始产出新的内容。</span>
+                            </span>
+                        </span>
+                    </p>
                 </div>
             </div>
         </div>
@@ -3359,7 +3516,7 @@
         </div>
 
         <div class="interaction-badge live">现在试试：上传一张素材并追问一次，再判断这是多模态还是 AIGC。</div>
-        <div class="page-num">05 / 19</div>
+        <div class="page-num">05 / 20</div>
     </section>
 
     <!-- ==================== SLIDE 5B: AI vs Agent ==================== -->
@@ -3433,7 +3590,16 @@
 
                 <div class="experiment-concept-band">
                     <h4>这页先记住 2 件事</h4>
-                    <p>Agent = 会拆任务、调工具、把事情一件件往前做的 AI 助手。“养龙虾” = 把你常做的操作沉淀成 OpenClaw 里的 skill，下次就不用从头再教一遍。
+                    <p>Agent = 会拆任务、调工具、把事情一件件往前做的 AI 助手。
+                        <span class="hover-illustration" tabindex="0">
+                            <span class="hover-trigger" aria-label="查看 Agent 做事流程图" title="查看 Agent 做事流程图"></span>
+                            <span class="hover-popover">
+                                <img src="assets/illustrations/agent-flow-hover.svg" alt="Agent 流程示意图：接任务、拆步骤、调用工具、输出结果">
+                                <span class="hover-popover-title">Agent 更像一个做事流程</span>
+                                <span class="hover-popover-copy">先接任务，再拆成几步，接着去调工具，最后交付结果。区别不在“回复更长”，而在它会不会主动把任务往下推进。</span>
+                            </span>
+                        </span>
+                        “养龙虾” = 把你常做的操作沉淀成 OpenClaw 里的 skill，下次就不用从头再教一遍。
                         <span class="hover-illustration popover-right" tabindex="0">
                             <span class="hover-trigger" aria-label="查看示意图" title="查看示意图"></span>
                             <span class="hover-popover">
@@ -3452,7 +3618,80 @@
         </div>
 
         <div class="interaction-badge live">你会怎么补这句话：AIGC 是先帮我生成，Agent 是开始帮我把事情 ______。</div>
-        <div class="page-num">06 / 19</div>
+        <div class="page-num">06 / 20</div>
+    </section>
+
+    <!-- ==================== SLIDE 5C: OpenClaw Story ==================== -->
+    <section class="slide slide-5d">
+        <div class="timing-badge">⏱️ 工具 25-28分钟 | 情绪：开眼界</div>
+        <div class="suspense-tag">🦞 这阵子为什么这么火</div>
+
+        <span class="section-tag">📘 知识点 5</span>
+        <h2 class="slide-title">OpenClaw：它是怎么来的？为什么最近全球技术圈都在聊？</h2>
+        <p class="workshop-subtitle">先讲结论：它火，不只是因为名字有记忆点，而是把“个人助手、现有沟通入口、可执行技能”三件事真正拧到了一起。</p>
+
+        <div class="openclaw-story-grid">
+            <div class="official-proof-card">
+                <div class="official-proof-thumb">
+                    <img src="assets/screenshots/openclaw-lore.png" alt="OpenClaw 官方 lore 页面截图">
+                    <span class="official-proof-tag">官方 lore</span>
+                </div>
+                <div class="official-proof-body">
+                    <h4>起源不是凭空冒出来，而是一条产品演化线</h4>
+                    <p>OpenClaw 官方 lore 讲得很直白：它不是“突然换个名字重新包装”，而是一路从前身产品演进过来。2026 年 1 月底，因为商标压力，团队在很短时间里把名字、文档、GitHub、npm 包一起切到 OpenClaw。</p>
+                </div>
+            </div>
+
+            <div class="origin-data-card">
+                <div class="origin-data-thumb">
+                    <span class="origin-data-kicker">官方 GitHub + 官方 lore</span>
+                    <h3>这波爆起来，不只是改名，而是社区一下子被点燃了</h3>
+                    <p>截至 2026 年 4 月 2 日，OpenClaw GitHub 页面显示约 <strong>34.5 万 stars</strong>、<strong>6.87 万 forks</strong>、<strong>1700+ watching</strong>。官方 lore 还提到：改名公告在 <strong>90 分钟内拿到 20 万+</strong> 浏览。</p>
+                    <div class="origin-metric-grid">
+                        <div class="origin-metric">
+                            <strong>3 小时</strong>
+                            <span>官方 lore 提到，完成整套改名迁移的速度</span>
+                        </div>
+                        <div class="origin-metric">
+                            <strong>20 万+</strong>
+                            <span>改名公告 90 分钟内的浏览量</span>
+                        </div>
+                        <div class="origin-metric">
+                            <strong>34.5 万</strong>
+                            <span>GitHub stars，说明讨论已经不是小圈子热度</span>
+                        </div>
+                        <div class="origin-metric">
+                            <strong>6.87 万</strong>
+                            <span>GitHub forks，说明很多人不只是围观，还在上手改</span>
+                        </div>
+                    </div>
+                    <div class="origin-footnote">数据参考：OpenClaw 官方 lore、GitHub 仓库页面，截取时间 2026-04-02。</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="origin-why-grid">
+            <div class="origin-why-card">
+                <h4>1. 它不是只会聊天，而是主打“你自己的助手”</h4>
+                <p>OpenClaw 官方 GitHub 首页强调的是：你可以把它跑在自己的设备上，还能让它在你已经在用的沟通渠道里接任务。这一下就把“玩具”往“真助手”推近了一大步。</p>
+            </div>
+            <div class="origin-why-card">
+                <h4>2. 它把技能、入口、执行连成了一条线</h4>
+                <p>很多工具只解决一小段。OpenClaw 这波让大家兴奋的，是它把 channel、skill、browser、gateway 这些东西接到一起，让大家第一次更具体地看到“数字员工”可以长什么样。</p>
+            </div>
+            <div class="origin-why-card">
+                <h4>3. 它的故事和能力一起传播，所以传播速度特别快</h4>
+                <p>一边是官方 lore 里的改名故事，一边是开源社区的极快扩散，再加上“龙虾”这个梗本身记忆点很强，所以它不是只在开发者圈里热，而是很快出圈。</p>
+            </div>
+        </div>
+
+        <div class="experiment-concept-band" style="max-width: 1180px; width: 100%; margin-top: 20px;">
+            <h4>这页先记住 2 件事</h4>
+            <p>OpenClaw 这波火，不只是因为名字好记，而是因为很多人第一次更直观地看到：AI 可以不只待在聊天框里，还能带着技能和入口真正去做事。对机构来说，最值得学的不是热词，而是把常做动作沉淀成 skill，把它变成长期可复用的资产。</p>
+        </div>
+
+        <div class="interaction-badge live">如果把这个思路放回你的机构，最值得借鉴的一件事是什么？不是“追热词”，而是先把哪一类重复动作沉淀成自己的 skill？</div>
+        <div class="page-num">07 / 20</div>
     </section>
 
     <!-- ==================== SLIDE 5C: Agent Common Capabilities ==================== -->
@@ -3564,7 +3803,7 @@
         </div>
 
         <div class="interaction-badge live">试着把 6 个词串起来：AI、大模型、多模态、AIGC、Agent、Computer Use（让 AI 动电脑）。你最想先试哪一层？</div>
-        <div class="page-num">07 / 19</div>
+        <div class="page-num">08 / 20</div>
     </section>
 
     <!-- ==================== SLIDE 6: Workshop ==================== -->
@@ -3656,7 +3895,7 @@
         </div>
 
         <div class="interaction-badge live">这 4 条预案里，你最想先跑哪条？A 周复盘文档/PPT，B 公开课调研，C 网页留档，还是 D 做一个门店小工具原型？</div>
-        <div class="page-num">08 / 19</div>
+        <div class="page-num">09 / 20</div>
     </section>
 
     <!-- ==================== SLIDE 7: Workshop 场景1 文档与PPT ==================== -->
@@ -3717,7 +3956,7 @@
         </div>
 
         <div class="interaction-badge homework">课后马上试 1 次：找你机构一张本周真实数据表，加一份会议纪要或活动方案，跑一次“摘要 + 文档 + PPT”三件套。</div>
-        <div class="page-num">09 / 19</div>
+        <div class="page-num">10 / 20</div>
     </section>
 
     <!-- ==================== SLIDE 8: Workshop 场景2 搜索与网页调研 ==================== -->
@@ -3778,7 +4017,7 @@
         </div>
 
         <div class="interaction-badge live">如果今天就做一次竞品调研，你最想先比哪一项？公开课主题、海报卖点、价格表达，还是家长常见问题？</div>
-        <div class="page-num">10 / 19</div>
+        <div class="page-num">11 / 20</div>
     </section>
 
     <!-- ==================== SLIDE 9: Workshop 场景3 数据分析 ==================== -->
@@ -3839,14 +4078,14 @@
         </div>
 
         <div class="interaction-badge homework">课后马上试 1 次：找出一张本周可用的试听或续班数据表，完成一次“出图 + 结论 + 下周动作”的 AI 复盘。</div>
-        <div class="page-num">11 / 19</div>
+        <div class="page-num">12 / 20</div>
     </section>
 
     <!-- ==================== SLIDE 10: Case Studies 1 ==================== -->
     <section class="slide slide-7">
         <div class="timing-badge">⏱️ 案例 60-80分钟 | 情绪：学习深入</div>
         <div class="suspense-tag">📊 场景示意案例</div>
-        <span class="section-tag">📘 知识点 5</span>
+        <span class="section-tag">📘 知识点 6</span>
 
         <div class="cases-header">
             <h2>教培机构 AI 应用拆解</h2>
@@ -3935,7 +4174,7 @@
         </div>
 
         <div class="interaction-badge live">看完这 3 个案例后，你最想先复制的是“咨询口径包”“学习跟进”还是“课后反馈”？</div>
-        <div class="page-num">12 / 19</div>
+        <div class="page-num">13 / 20</div>
     </section>
 
     <!-- ==================== SLIDE 11: More Cases ==================== -->
@@ -3943,7 +4182,7 @@
         <div class="timing-badge">⏱️ 方法 80-88分钟 | 情绪：边界更清楚</div>
         <div class="suspense-tag">💡 先做这些</div>
 
-        <span class="section-tag">📘 知识点 6</span>
+        <span class="section-tag">📘 知识点 7</span>
         <h2 class="slide-title">哪些任务适合先交给 AI？</h2>
 
         <div class="more-cases-grid">
@@ -4011,7 +4250,7 @@
         </div>
 
         <div class="interaction-badge live">如果本周只试 1 个任务，你最愿意先把哪一类交给 AI 打底？</div>
-        <div class="page-num">13 / 19</div>
+        <div class="page-num">14 / 20</div>
     </section>
 
     <!-- ==================== SLIDE 12: New Paradigm ==================== -->
@@ -4019,7 +4258,7 @@
         <div class="timing-badge">⏱️ 核心技能 75-85分钟 | 情绪：掌握感</div>
         <div class="suspense-tag">🎯 范式转变</div>
 
-        <span class="section-tag">📘 知识点 7</span>
+        <span class="section-tag">📘 知识点 8</span>
         <h2 class="slide-title">哪些任务必须人工复核？</h2>
 
         <div class="comparison-example">
@@ -4057,7 +4296,7 @@
         </div>
 
         <div class="interaction-badge live">想清楚一件事：在你机构里，哪些内容一旦说错，影响最大？把那一类全部划进“必须人工复核”。</div>
-        <div class="page-num">14 / 19</div>
+        <div class="page-num">15 / 20</div>
     </section>
 
     <!-- ==================== SLIDE 13: Skill in Action ==================== -->
@@ -4065,7 +4304,7 @@
         <div class="timing-badge">⏱️ 演示 85-95分钟 | 情绪：恍然大悟</div>
         <div class="suspense-tag">🔥 实际演示</div>
 
-        <span class="section-tag">📘 知识点 8</span>
+        <span class="section-tag">📘 知识点 9</span>
         <h2 class="slide-title">一个马上能用的最小指令模板</h2>
 
         <div class="demo-container">
@@ -4116,14 +4355,14 @@
         </div>
 
         <div class="interaction-badge homework">课后马上试 1 次：用“对象 + 任务 + 约束 + 输出”模板，写出你机构的第一条正式指令并实际跑一次。</div>
-        <div class="page-num">15 / 19</div>
+        <div class="page-num">16 / 20</div>
     </section>
 
     <!-- ==================== SLIDE 14: Skill Ecosystem ==================== -->
     <section class="slide slide-11">
         <div class="timing-badge">⏱️ 工具 95-105分钟 | 情绪：成就期</div>
         <div class="suspense-tag">🧰 工具判断</div>
-        <span class="section-tag">📘 知识点 9</span>
+        <span class="section-tag">📘 知识点 10</span>
 
         <div class="skill-intro">
             <h2>工具生态怎么看，才不容易被热词带跑？</h2>
@@ -4185,7 +4424,7 @@
             选工具时，先看它能不能接住你的真实任务，再看权限、版本和接入方式。不同平台能做的事情不一样，不用急着下统一结论。
         </div>
 
-        <div class="page-num">16 / 19</div>
+        <div class="page-num">17 / 20</div>
     </section>
 
     <!-- ==================== SLIDE 15: Summary ==================== -->
@@ -4239,7 +4478,7 @@
         </div>
 
         <div class="interaction-badge live">课末留一个动作：写下你准备先试的第一个场景，再补一句“这一步我准备保留哪个审核点”。</div>
-        <div class="page-num">17 / 19</div>
+        <div class="page-num">18 / 20</div>
     </section>
 
     <!-- ==================== SLIDE 16: CTA ==================== -->
@@ -4336,7 +4575,7 @@
             AI 要落到日常工作里，靠的不是口号，而是把一个个真实任务接进去。更稳的做法是先把一件事跑通，再一件件接上去，而不是一口气全铺开。
         </div>
 
-        <div class="page-num">18 / 19</div>
+        <div class="page-num">19 / 20</div>
     </section>
 
     <!-- ==================== SLIDE 17: Final ==================== -->
@@ -4376,7 +4615,7 @@
             </div>
         </div>
 
-        <div class="page-num">19 / 19</div>
+        <div class="page-num">20 / 20</div>
     </section>
 
     <script>

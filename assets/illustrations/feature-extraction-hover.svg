@@ -1,0 +1,44 @@
+<svg width="960" height="720" viewBox="0 0 960 720" fill="none" xmlns="http://www.w3.org/2000/svg">
+<rect width="960" height="720" rx="40" fill="#0F172A"/>
+<rect x="28" y="28" width="904" height="664" rx="28" fill="url(#bg)"/>
+<rect x="100" y="166" width="250" height="220" rx="28" fill="#132033" stroke="#30435F" stroke-width="2"/>
+<rect x="386" y="166" width="188" height="220" rx="28" fill="#132033" stroke="#30435F" stroke-width="2"/>
+<rect x="610" y="166" width="250" height="220" rx="28" fill="#132033" stroke="#30435F" stroke-width="2"/>
+<rect x="128" y="200" width="194" height="66" rx="18" fill="#E2E8F0"/>
+<path d="M154 228H240" stroke="#60A5FA" stroke-width="12" stroke-linecap="round"/>
+<path d="M154 252H290" stroke="#94A3B8" stroke-width="8" stroke-linecap="round"/>
+<rect x="154" y="292" width="56" height="56" rx="14" fill="#FB923C"/>
+<rect x="226" y="292" width="96" height="56" rx="14" fill="#1D4ED8"/>
+<path d="M354 278H382" stroke="#F8FAFC" stroke-width="10" stroke-linecap="round"/>
+<path d="M554 278H582" stroke="#F8FAFC" stroke-width="10" stroke-linecap="round"/>
+<path d="M368 260L390 278L368 296" stroke="#F8FAFC" stroke-width="8" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M568 260L590 278L568 296" stroke="#F8FAFC" stroke-width="8" stroke-linecap="round" stroke-linejoin="round"/>
+<rect x="420" y="208" width="120" height="136" rx="24" fill="#1D4ED8"/>
+<rect x="442" y="230" width="18" height="18" rx="5" fill="#BFDBFE"/>
+<rect x="470" y="230" width="18" height="18" rx="5" fill="#93C5FD"/>
+<rect x="498" y="230" width="18" height="18" rx="5" fill="#60A5FA"/>
+<rect x="442" y="258" width="18" height="18" rx="5" fill="#93C5FD"/>
+<rect x="470" y="258" width="18" height="18" rx="5" fill="#60A5FA"/>
+<rect x="498" y="258" width="18" height="18" rx="5" fill="#BFDBFE"/>
+<rect x="442" y="286" width="18" height="18" rx="5" fill="#60A5FA"/>
+<rect x="470" y="286" width="18" height="18" rx="5" fill="#BFDBFE"/>
+<rect x="498" y="286" width="18" height="18" rx="5" fill="#93C5FD"/>
+<rect x="646" y="206" width="178" height="44" rx="14" fill="#F97316" fill-opacity="0.2" stroke="#FB923C"/>
+<rect x="646" y="270" width="178" height="44" rx="14" fill="#1D4ED8" fill-opacity="0.2" stroke="#60A5FA"/>
+<rect x="646" y="334" width="178" height="44" rx="14" fill="#22C55E" fill-opacity="0.15" stroke="#4ADE80"/>
+<path d="M682 228H788" stroke="#FDBA74" stroke-width="10" stroke-linecap="round"/>
+<path d="M682 292H786" stroke="#93C5FD" stroke-width="10" stroke-linecap="round"/>
+<path d="M682 356H770" stroke="#86EFAC" stroke-width="10" stroke-linecap="round"/>
+<rect x="148" y="94" width="164" height="38" rx="19" fill="#111827" stroke="#334155"/>
+<rect x="398" y="94" width="164" height="38" rx="19" fill="#111827" stroke="#334155"/>
+<rect x="648" y="94" width="164" height="38" rx="19" fill="#111827" stroke="#334155"/>
+<path d="M186 113H250" stroke="#93C5FD" stroke-width="8" stroke-linecap="round"/>
+<path d="M436 113H510" stroke="#60A5FA" stroke-width="8" stroke-linecap="round"/>
+<path d="M686 113H758" stroke="#86EFAC" stroke-width="8" stroke-linecap="round"/>
+<defs>
+<linearGradient id="bg" x1="480" y1="28" x2="480" y2="692" gradientUnits="userSpaceOnUse">
+<stop stop-color="#172554"/>
+<stop offset="1" stop-color="#0F172A"/>
+</linearGradient>
+</defs>
+</svg>

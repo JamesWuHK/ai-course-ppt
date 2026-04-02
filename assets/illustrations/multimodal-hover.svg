@@ -1,0 +1,33 @@
+<svg width="960" height="720" viewBox="0 0 960 720" fill="none" xmlns="http://www.w3.org/2000/svg">
+<rect width="960" height="720" rx="40" fill="#0F172A"/>
+<rect x="28" y="28" width="904" height="664" rx="28" fill="url(#bg)"/>
+<rect x="108" y="172" width="188" height="160" rx="26" fill="#132033" stroke="#30435F" stroke-width="2"/>
+<rect x="386" y="172" width="188" height="160" rx="26" fill="#132033" stroke="#30435F" stroke-width="2"/>
+<rect x="664" y="172" width="188" height="160" rx="26" fill="#132033" stroke="#30435F" stroke-width="2"/>
+<rect x="340" y="408" width="280" height="166" rx="32" fill="#1D4ED8"/>
+<rect x="162" y="230" width="80" height="12" rx="6" fill="#93C5FD"/>
+<rect x="162" y="254" width="108" height="10" rx="5" fill="#CBD5E1"/>
+<rect x="438" y="208" width="84" height="84" rx="18" fill="#E2E8F0"/>
+<circle cx="706" cy="224" r="16" fill="#FB923C"/>
+<rect x="694" y="250" width="24" height="48" rx="12" fill="#FB923C"/>
+<path d="M720 258C734 258 746 246 746 232" stroke="#FDBA74" stroke-width="8" stroke-linecap="round"/>
+<path d="M726 274C750 274 770 254 770 230" stroke="#FDBA74" stroke-width="8" stroke-linecap="round"/>
+<path d="M296 252H360" stroke="#F8FAFC" stroke-width="8" stroke-linecap="round"/>
+<path d="M574 252H638" stroke="#F8FAFC" stroke-width="8" stroke-linecap="round"/>
+<path d="M338 234L360 252L338 270" stroke="#F8FAFC" stroke-width="8" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M616 234L638 252L616 270" stroke="#F8FAFC" stroke-width="8" stroke-linecap="round" stroke-linejoin="round"/>
+<circle cx="480" cy="490" r="48" fill="#BFDBFE"/>
+<path d="M458 490L474 506L504 476" stroke="#1E3A8A" stroke-width="10" stroke-linecap="round" stroke-linejoin="round"/>
+<rect x="188" y="102" width="100" height="38" rx="19" fill="#111827" stroke="#334155"/>
+<rect x="466" y="102" width="100" height="38" rx="19" fill="#111827" stroke="#334155"/>
+<rect x="744" y="102" width="100" height="38" rx="19" fill="#111827" stroke="#334155"/>
+<path d="M222 122H254" stroke="#93C5FD" stroke-width="8" stroke-linecap="round"/>
+<path d="M500 122H532" stroke="#E2E8F0" stroke-width="8" stroke-linecap="round"/>
+<path d="M778 122H810" stroke="#FDBA74" stroke-width="8" stroke-linecap="round"/>
+<defs>
+<linearGradient id="bg" x1="480" y1="28" x2="480" y2="692" gradientUnits="userSpaceOnUse">
+<stop stop-color="#172554"/>
+<stop offset="1" stop-color="#0F172A"/>
+</linearGradient>
+</defs>
+</svg>
